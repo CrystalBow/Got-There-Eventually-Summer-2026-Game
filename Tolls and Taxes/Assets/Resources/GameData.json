@@ -1,0 +1,94 @@
+{
+    "Ally": {
+        "Samantha Pel": {
+            "hp": 8,
+            "mp": 5,
+            "atk": 2,
+            "def": 1,
+            "spd": 5,
+            "hpScale": 1.0,
+            "mpScale": 0.5,
+            "atkScale": 1.25,
+            "defScale": 0.75,
+            "speedScale": 1.0,
+            "Specialty Cards": {
+                "Attacks": {
+                    "Momentum Strike": {
+                        "description": "Increase speed your speed and deal 1 damage.",
+                        "damage": 1,
+                        "time": 1,
+                        "cost": 0,
+                        "effects": [
+                            7
+                        ]
+                    },
+                    "Sample Super Strike!": {
+                        "description": "Deal 5 damage!",
+                        "damage": 5,
+                        "time": -1,
+                        "cost": 0,
+                        "effects": []
+                    }
+                },
+                "Buffs": {},
+                "Healing": {
+                    "First Aid": {
+                        "description": "Heal 3!",
+                        "damage": -3,
+                        "time": -1,
+                        "cost": 1,
+                        "effects": []
+                    }
+                },
+                "Debuff": {}
+            }
+        }
+    },
+    "Location": {
+        "Tutorial": {
+            "Tutorial Bug": {
+                "hp": 10,
+                "atk": 2,
+                "def": 1,
+                "speed": 2
+            }
+        }
+    },
+    "Effects": {
+        "AOE": 1,
+        "2x": 2,
+        "3x": 3,
+        "4x": 4,
+        "Attack Up": 5,
+        "Defense Up": 6,
+        "Speed Up": 7,
+        "Magic Efficiency": 8,
+        "Attack Down": 9,
+        "Defense Down": 10,
+        "Speed Down": 11,
+        "Magic Inefficiency": 12
+    },
+    "Cards": {
+        "Attacks": {
+            "Attack!": {
+                "description": "Deal 1 Damage",
+                "damage": 1,
+                "time": -1,
+                "cost": 0,
+                "effects": []
+            },
+            "Force Bolt Barrage": {
+                "description": "Deal 2 Damage to all foes.",
+                "damage": 2,
+                "time": -1,
+                "cost": 1,
+                "effects": [
+                    1
+                ]
+            }
+        },
+        "Buffs": {},
+        "Healing": {},
+        "Debuffs": {}
+    }
+}
