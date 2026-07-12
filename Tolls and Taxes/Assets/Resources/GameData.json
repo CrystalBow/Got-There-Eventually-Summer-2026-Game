@@ -1,56 +1,56 @@
 {
     "Ally": {
         "Samantha Pel": {
-            "hp": 8,
-            "mp": 5,
-            "atk": 2,
-            "def": 1,
-            "spd": 5,
-            "hpScale": 1.0,
-            "mpScale": 0.5,
-            "atkScale": 1.25,
-            "defScale": 0.75,
-            "speedScale": 1.0,
-            "Specialty Cards": {
+            "Hp": 8,
+            "Mp": 5,
+            "Attack": 2,
+            "Defense": 1,
+            "Speed": 5,
+            "HpScale": 1.0,
+            "MpScale": 0.5,
+            "AttackScale": 1.25,
+            "DefenseScale": 0.75,
+            "SpeedScale": 1.0,
+            "SpecialtyCards": {
                 "Attacks": {
                     "Momentum Strike": {
-                        "description": "Increase speed your speed and deal 1 damage.",
-                        "damage": 1,
-                        "time": 1,
-                        "cost": 0,
-                        "effects": [
+                        "Description": "Increase speed your speed and deal 1 damage.",
+                        "Damage": 1,
+                        "Time": 1,
+                        "Cost": 0,
+                        "Effects": [
                             7
                         ]
                     },
                     "Sample Super Strike!": {
-                        "description": "Deal 5 damage!",
-                        "damage": 5,
-                        "time": -1,
-                        "cost": 0,
-                        "effects": []
+                        "Description": "Deal 5 damage!",
+                        "Damage": 5,
+                        "Time": -1,
+                        "Cost": 0,
+                        "Effects": []
                     }
                 },
                 "Buffs": {},
                 "Healing": {
                     "First Aid": {
-                        "description": "Heal 3!",
-                        "damage": -3,
-                        "time": -1,
-                        "cost": 1,
-                        "effects": []
+                        "Description": "Heal 3!",
+                        "Damage": -3,
+                        "Time": -1,
+                        "Cost": 1,
+                        "Effects": []
                     }
                 },
-                "Debuff": {}
+                "Debuffs": {}
             }
         }
     },
     "Location": {
         "Tutorial": {
             "Tutorial Bug": {
-                "hp": 10,
-                "atk": 2,
-                "def": 1,
-                "speed": 2
+                "Hp": 10,
+                "Attack": 2,
+                "Defense": 1,
+                "Speed": 2
             }
         }
     },
@@ -71,18 +71,18 @@
     "Cards": {
         "Attacks": {
             "Attack!": {
-                "description": "Deal 1 Damage",
-                "damage": 1,
-                "time": -1,
-                "cost": 0,
-                "effects": []
+                "Description": "Deal 1 Damage",
+                "Damage": 1,
+                "Time": -1,
+                "Cost": 0,
+                "Effects": []
             },
             "Force Bolt Barrage": {
-                "description": "Deal 2 Damage to all foes.",
-                "damage": 2,
-                "time": -1,
-                "cost": 1,
-                "effects": [
+                "Description": "Deal 2 Damage to all foes.",
+                "Damage": 2,
+                "Time": -1,
+                "Cost": 1,
+                "Effects": [
                     1
                 ]
             }

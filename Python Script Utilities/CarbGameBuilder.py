@@ -97,22 +97,22 @@ def makeAlly():
     defenseScale = floatInput("What is their DEF Scaling?")
     speedScale = floatInput("What is their speed Scaling?")
     # Store in everything in dictionary
-    FinalDict["Ally"][name]["hp"] = hp
-    FinalDict["Ally"][name]["mp"] = mp
-    FinalDict["Ally"][name]["atk"] = atk
-    FinalDict["Ally"][name]["def"] = defense
-    FinalDict["Ally"][name]["spd"] = speed
-    FinalDict["Ally"][name]["hpScale"] = hpScale
-    FinalDict["Ally"][name]["mpScale"] = mpScale
-    FinalDict["Ally"][name]["atkScale"] = atkScale
-    FinalDict["Ally"][name]["defScale"] = defenseScale
-    FinalDict["Ally"][name]["speedScale"] = speedScale
+    FinalDict["Ally"][name]["Hp"] = hp
+    FinalDict["Ally"][name]["Mp"] = mp
+    FinalDict["Ally"][name]["Attack"] = atk
+    FinalDict["Ally"][name]["Defense"] = defense
+    FinalDict["Ally"][name]["Speed"] = speed
+    FinalDict["Ally"][name]["HpScale"] = hpScale
+    FinalDict["Ally"][name]["MpScale"] = mpScale
+    FinalDict["Ally"][name]["AttackScale"] = atkScale
+    FinalDict["Ally"][name]["DefenseScale"] = defenseScale
+    FinalDict["Ally"][name]["SpeedScale"] = speedScale
     # Prep the specialty cards area
-    FinalDict["Ally"][name]["Specialty Cards"] = {}
-    FinalDict["Ally"][name]["Specialty Cards"]["Attacks"] = {}
-    FinalDict["Ally"][name]["Specialty Cards"]["Buffs"] = {}
-    FinalDict["Ally"][name]["Specialty Cards"]["Healing"] = {}
-    FinalDict["Ally"][name]["Specialty Cards"]["Debuff"] = {}
+    FinalDict["Ally"][name]["SpecialtyCards"] = {}
+    FinalDict["Ally"][name]["SpecialtyCards"]["Attacks"] = {}
+    FinalDict["Ally"][name]["SpecialtyCards"]["Buffs"] = {}
+    FinalDict["Ally"][name]["SpecialtyCards"]["Healing"] = {}
+    FinalDict["Ally"][name]["SpecialtyCards"]["Debuffs"] = {}
     # Card loop for adding 3 cards. If you use the same name it'll over right the previous one you put in and still count it.
     cardCounter = 0
     while cardCounter < 3:
@@ -120,13 +120,13 @@ def makeAlly():
                                    [0, 1, 2, 3])
         card = constructCard()
         if TypeAnswer == 0:
-            FinalDict["Ally"][name]["Specialty Cards"]["Attacks"].update(card)
+            FinalDict["Ally"][name]["SpecialtyCards"]["Attacks"].update(card)
         elif TypeAnswer == 1:
-            FinalDict["Ally"][name]["Specialty Cards"]["Buffs"].update(card)
+            FinalDict["Ally"][name]["SpecialtyCards"]["Buffs"].update(card)
         elif TypeAnswer == 2:
-            FinalDict["Ally"][name]["Specialty Cards"]["Healing"].update(card)
+            FinalDict["Ally"][name]["SpecialtyCards"]["Healing"].update(card)
         elif TypeAnswer == 3:
-            FinalDict["Ally"][name]["Specialty Cards"]["Debuff"].update(card)
+            FinalDict["Ally"][name]["SpecialtyCards"]["Debuffs"].update(card)
         cardCounter += 1
 
 
@@ -163,10 +163,10 @@ def makeEnemy():
         defense = inputAndCheck("What is their DEF?", [])
         speed = inputAndCheck("What is their speed?", [])
         # Store Data
-        FinalDict["Location"][locationName][name]["hp"] = hp
-        FinalDict["Location"][locationName][name]["atk"] = atk
-        FinalDict["Location"][locationName][name]["def"] = defense
-        FinalDict["Location"][locationName][name]["speed"] = speed
+        FinalDict["Location"][locationName][name]["Hp"] = hp
+        FinalDict["Location"][locationName][name]["Attack"] = atk
+        FinalDict["Location"][locationName][name]["Defense"] = defense
+        FinalDict["Location"][locationName][name]["Speed"] = speed
     else:
         # Does nothing if the location has not been made.
         print("Location Not Found! Please make the location first!")
@@ -183,7 +183,7 @@ def constructCard():
     time = inputAndCheck("How long does it last? (if it's instant just put a -1)", [])
     cost = inputAndCheck("How much cost? (if it restores then enter a negative number)", [])
     effects = effectPrompt()
-    return {name: {"description": description, "damage": damage, "time": time, "cost": cost, "effects": effects}}
+    return {name: {"Description": description, "Damage": damage, "Time": time, "Cost": cost, "Effects": effects}}
 
 def creationIteration():
     """
