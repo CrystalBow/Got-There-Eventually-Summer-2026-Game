@@ -44,6 +44,12 @@ TagManager:
   - name: Walls
     uniqueID: 1713444257
     locked: 0
+  - name: Units
+    uniqueID: 841239493
+    locked: 0
+  - name: ForeGround
+    uniqueID: 741007001
+    locked: 0
   m_RenderingLayers:
   - Default
   m_MigratedRenderPipelines: []
