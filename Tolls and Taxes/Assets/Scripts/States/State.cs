@@ -4,7 +4,7 @@ public abstract class State : MonoBehaviour
 {
     protected Character Owner { get; set; }
     
-    // Might be redundant
+    
     public abstract void EnterState();
 
     public abstract void ExitState();
