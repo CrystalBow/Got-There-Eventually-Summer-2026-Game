@@ -1,16 +1,18 @@
 using UnityEngine;
 
-public class Door : MonoBehaviour
+public class Door : InteractableObject
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void Interact()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (BodyCollider.isActiveAndEnabled == true)
+        {
+            BodyCollider.enabled = false;
+            SpriteRenderer.enabled = false;
+        }
+        else
+        {
+            BodyCollider.enabled = true;
+            SpriteRenderer.enabled = true;
+        }
     }
 }

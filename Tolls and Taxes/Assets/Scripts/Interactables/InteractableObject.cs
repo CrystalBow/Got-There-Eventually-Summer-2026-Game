@@ -5,13 +5,26 @@ public class InteractableObject : MonoBehaviour
 {
     protected CircleCollider2D InteractableCollider;
     protected bool IsInteractable = false;
-    protected Collider BodyCollider;
+    protected Collider2D BodyCollider;
+    protected SpriteRenderer SpriteRenderer;
     [SerializeField] public float radius = 0.5f;
     [SerializeField] public Vector2 center = Vector2.zero;
 
-    private void Start()
+    public virtual void Start()
     {
-        this.InteractableCollider = this.GetComponent<CircleCollider2D>();
+        Collider2D[] colliders = gameObject.GetComponents<Collider2D>();
+        foreach (Collider2D col in colliders)
+        {
+            if (col is CircleCollider2D)
+            {
+                InteractableCollider = col as CircleCollider2D;
+            }
+            else
+            {
+                BodyCollider = col;
+            }
+        }
+        SpriteRenderer = GetComponent<SpriteRenderer>();
         InteractableCollider.isTrigger = true;
         InteractableCollider.radius = this.radius;
         InteractableCollider.offset = this.center;
@@ -19,7 +32,12 @@ public class InteractableObject : MonoBehaviour
         
     }
 
-    private void PartyLeaderOnInteraction(Vector2 obj)
+    public virtual void Update()
+    {
+        
+    }
+
+    protected void PartyLeaderOnInteraction(Vector2 obj)
     {
         if (InteractableCollider.OverlapPoint(obj))
         {
@@ -27,7 +45,7 @@ public class InteractableObject : MonoBehaviour
         }
     }
     
-    public void Interact()
+    protected virtual void Interact()
     {
         Debug.Log("The object was interacted with.");
     }

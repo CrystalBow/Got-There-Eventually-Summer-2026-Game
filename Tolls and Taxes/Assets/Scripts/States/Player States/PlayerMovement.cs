@@ -9,6 +9,7 @@ public class PlayerMovement : State
     public Vector2 MoveDirection;
     private string leaderName;
     private InputAction interactAction;
+    private InputAction cardAction;
 
     // Update is called once per frame
     void Update()
@@ -27,7 +28,10 @@ public class PlayerMovement : State
         moveAction = InputSystem.actions.FindAction("Player/Move");
         moveAction.performed += OnMove;
         moveAction.canceled += OnMove;
-
+        
+        cardAction = InputSystem.actions.FindAction("Player/Jump");
+        cardAction.performed += OnCard;
+        
         interactAction = InputSystem.actions.FindAction("Player/Interact");
         interactAction.performed += OnInteract;
 
@@ -38,11 +42,16 @@ public class PlayerMovement : State
         }
     }
 
+    private void OnCard(InputAction.CallbackContext obj)
+    {
+        ChangeState(this.AddComponent<CardPicker>());
+    }
+
     public override void ExitState()
     {
         moveAction.performed -= OnMove;
         moveAction.canceled -= OnMove;
-
+        cardAction.performed -= OnCard;
         interactAction.performed -= OnInteract;
         Destroy(this);
     }
