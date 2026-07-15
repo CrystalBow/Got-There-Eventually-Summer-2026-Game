@@ -44,6 +44,7 @@ public class PlayerMovement : State
         moveAction.canceled -= OnMove;
 
         interactAction.performed -= OnInteract;
+        Destroy(this);
     }
 
     private void OnMove(InputAction.CallbackContext ctx)
@@ -55,19 +56,8 @@ public class PlayerMovement : State
     {
         // For debugging
         Debug.Log("E was pressed.");
-        if (InteractableObject.CurrentInteractable == null)
-        {
-            return;
-        }
-
-        InteractState interactState = GetComponent<InteractState>();
-
-        if (interactState == null)
-        {
-            interactState = gameObject.AddComponent<InteractState>();
-        }
-
+        
         // Uses the state-changing method already provided.
-        ChangeState(interactState);
+        ChangeState(this.AddComponent<InteractState>());
     }
 }

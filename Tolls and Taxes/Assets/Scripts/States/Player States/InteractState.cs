@@ -1,45 +1,44 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class InteractState : State
 {
     private InputAction interactAction;
+    private PartyLeader leader;
 
     public override void EnterState()
     {
-        // Make sure it's using right character.
+        // Setting up owner
         Owner = GetComponent<Character>();
         Owner.body.linearVelocity = Vector2.zero;
-
-        if (InteractableObject.CurrentInteractable != null)
+        if (Owner is PartyLeader)
         {
-            InteractableObject.CurrentInteractable.Interact();
+            leader = Owner as PartyLeader;
         }
-
-        // Pressing Interact again will close the interaction.
+        // Releasing the interact button will end the interaction
         interactAction = InputSystem.actions.FindAction("Player/Interact");
-        interactAction.performed += OnInteract;
+        interactAction.canceled += OnInteract;
+        if (leader != null)
+        {
+            UpdateState();
+        }
     }
 
     public override void ExitState()
     {
-        interactAction.performed -= OnInteract;
+        interactAction.canceled -= OnInteract;
         Debug.Log("Exited Interact State.");
+        Destroy(this);
     }
 
     public override void UpdateState()
     {
+        leader.InteractionActivation();
     }
 
     private void OnInteract(InputAction.CallbackContext ctx)
     {
-        PlayerMovement movementState = GetComponent<PlayerMovement>();
-
-        if (movementState == null)
-        {
-            movementState = gameObject.AddComponent<PlayerMovement>();
-        }
-
-        ChangeState(movementState);
+        ChangeState(this.AddComponent<PlayerMovement>());
     }
 }

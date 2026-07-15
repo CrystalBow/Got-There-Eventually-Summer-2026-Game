@@ -76,6 +76,7 @@ public class DataCenter : MonoBehaviour
         return names;
     }
     
+    
     // This ensures that whenever the game is run, this object will be instantiated.
     // This way we don't need to cluttered our scenes with the game object every single scene.
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
