@@ -42,6 +42,92 @@
                 },
                 "Debuffs": {}
             }
+        },
+        "Samantha Pel 2": {
+            "Hp": 8,
+            "Mp": 5,
+            "Attack": 2,
+            "Defense": 1,
+            "Speed": 5,
+            "HpScale": 1.0,
+            "MpScale": 0.5,
+            "AttackScale": 1.25,
+            "DefenseScale": 0.75,
+            "SpeedScale": 1.0,
+            "SpecialtyCards": {
+                "Attacks": {
+                    "Momentum Strike": {
+                        "Description": "Increase speed your speed and deal 1 damage.",
+                        "Damage": 1,
+                        "Time": 1,
+                        "Cost": 0,
+                        "Effects": [
+                            7
+                        ]
+                    },
+                    "Sample Super Strike!": {
+                        "Description": "Deal 5 damage!",
+                        "Damage": 5,
+                        "Time": -1,
+                        "Cost": 0,
+                        "Effects": []
+                    }
+                },
+                "Buffs": {},
+                "Healing": {
+                    "First Aid": {
+                        "Description": "Heal 3!",
+                        "Damage": -3,
+                        "Time": -1,
+                        "Cost": 1,
+                        "Effects": []
+                    }
+                },
+                "Debuffs": {}
+            }
+        },
+        "Samantha Pel 3": {
+            "Hp": 8,
+            "Mp": 5,
+            "Attack": 2,
+            "Defense": 1,
+            "Speed": 5,
+            "HpScale": 1.0,
+            "MpScale": 0.5,
+            "AttackScale": 1.25,
+            "DefenseScale": 0.75,
+            "SpeedScale": 1.0,
+            "SpecialtyCards": {
+                "Attacks": {
+                    "Momentum Strike": {
+                        "Description": "Increase speed your speed and deal 1 damage.",
+                        "Damage": 1,
+                        "Time": 1,
+                        "Cost": 0,
+                        "Effects": [
+                            7
+                        ]
+                    },
+                    "Sample Super Strike!": {
+                        "Description": "Deal 5 damage!",
+                        "Damage": 5,
+                        "Time": -1,
+                        "Cost": 0,
+                        "Effects": []
+                    }
+                },
+                "Buffs": {},
+                "Healing": {
+                    "First Aid": {
+                        "Description": "Heal 3!",
+                        "Damage": -3,
+                        "Time": -1,
+                        "Cost": 1,
+                        "Effects": []
+                    }
+                },
+                "Debuffs": {}
+            }
         }
     },
     "Location": {

@@ -6,7 +6,6 @@ using UnityEngine;
 public class PartyMember : Character
 {
     //Stat Stuff and Deck
-    [NonSerialized]
     public string MemberName = "Samantha Pel";
     [NonSerialized]
     public int HP;
