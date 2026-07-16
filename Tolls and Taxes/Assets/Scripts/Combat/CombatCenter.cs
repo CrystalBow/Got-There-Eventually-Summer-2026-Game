@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using static TransferCenter;
 
-public enum CombatState { START, PLAYERTURN, ENEMYTURN, WIN, LOSE }
 
 public class CombatCenter : Character
 {
@@ -54,6 +53,7 @@ public class CombatCenter : Character
 
     protected override void Start()
     {
+        CurrentState = this.AddComponent<Intialize>();
         Combatant[] combatants =  this.GameObject().GetComponentsInChildren<Combatant>();
         Combatant.OnDeath += CombatantOnOnDeath;
         initiativeOrder = new List<InitiativeToken>();
@@ -73,10 +73,6 @@ public class CombatCenter : Character
             }
         }
         
-
-        //initiativeOrder = SortTurnOrder(initiativeOrder, ourAllies, ourEnemies);
-        //outputTurnOrder(initiativeOrder);
-        //PerformCombat();
     }
 
     private void CombatantOnOnDeath(Combatant dead)
@@ -91,6 +87,7 @@ public class CombatCenter : Character
         }
     }
     
+    //---------------LEGACY STUFF-------------TO BE DELETED
 
     /// <summary>
     /// PerformCombat intakes all enemies and party members, constructs a list of strings,
@@ -118,7 +115,7 @@ public class CombatCenter : Character
             //instanceCombatState = CombatState.ENEMYTURN;
         }
     }
-    void EnemyTurn()
+    /*void EnemyTurn()
     {
         int whoToHit = Random.Range(0, aliveAllies);
 
@@ -135,7 +132,7 @@ public class CombatCenter : Character
             }
             temporaryTurnIterator++;
         }
-
+*/
         // When the loop ends, we deal damage to the chosen ally
 
         //ourAllies[initiativeOrder[lastAllyIndex].unitName].damage(ourEnemies[initiativeOrder[turnPosition].unitName].attack);
@@ -145,7 +142,7 @@ public class CombatCenter : Character
             //aliveAllies -= 1;
         //}
 
-        //incrementTurnOrder();
+/*        //incrementTurnOrder();
         checkInitiativeAndState();
     }
 

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Combatant : MonoBehaviour
+public class Combatant : Character
 {
     public string CombatantName;
     public string Location;
