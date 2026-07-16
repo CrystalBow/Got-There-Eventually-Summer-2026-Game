@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -82,5 +83,9 @@ public class PlayerMovement : State
         // Uses the state-changing method already provided.
         ChangeState(this.AddComponent<InteractState>());
     }
-    
+
+    private void OnDestroy()
+    {
+        ExitState();
+    }
 }

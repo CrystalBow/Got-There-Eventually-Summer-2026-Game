@@ -10,7 +10,7 @@ public class GameOverMenu : MonoBehaviour
         // Ensures the next scene is not left paused.
         Time.timeScale = 1f;
 
-        SceneManager.LoadScene(startSceneName);
+        SceneManager.LoadScene("Prototype Start");
     }
 
     public void ExitGame()

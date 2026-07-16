@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -54,9 +55,10 @@ public class PlayerTurn : State
             return;
         }
         center.cardUI[chosenCardIndex].cardBackground.color = Color.white;
-        Debug.Log("You Hit Space!");
-        combatant.Deck.DiscardCard(combatant.Deck.HandCards[chosenCardIndex]);
-        iterate();
+        CardHandler handler = this.AddComponent<CardHandler>();
+        handler.currentPlayer = combatant;
+        handler.currentCard = combatant.Deck.HandCards[chosenCardIndex];
+        ChangeState(handler);
     }
 
     private void OnMove(InputAction.CallbackContext obj)
@@ -139,5 +141,10 @@ public class PlayerTurn : State
                 ChangeState(this.AddComponent<EnemyTurn>());
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        ExitState();
     }
 }

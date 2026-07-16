@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TopofRound : State {
 
@@ -18,11 +19,11 @@ public class TopofRound : State {
 
         if (combatCenter.aliveEnemies == 0)
         {
-            // do something for victory
+            SceneManager.LoadScene("Prototype Start");
         }
         else if (combatCenter.aliveAllies == 0)
         {
-            // do something for getting your ass beat
+            SceneManager.LoadScene("Prototype GameOver");
         }
 
         combatCenter.turnPosition = 0;

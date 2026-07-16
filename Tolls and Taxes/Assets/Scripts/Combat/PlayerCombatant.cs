@@ -16,5 +16,15 @@ public class PlayerCombatant : Combatant
         currentHP =  data.CurrentHp;
         Deck = data.Deck;
         StaticData = StaticPlayableData;
+        CardHandler.CallAllies += CallAllies;
+    }
+
+    private void CallAllies()
+    {
+        if (isDead())
+        {
+            return;
+        }
+        CardHandler.allies.Add(this);
     }
 }
