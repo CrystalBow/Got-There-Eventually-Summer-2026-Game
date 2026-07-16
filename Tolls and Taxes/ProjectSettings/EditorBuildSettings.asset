@@ -6,13 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/StartMenu.unity
-    guid: f46fb63b90740f24a97f027ada430d4d
+    path: Assets/Scenes/Prototype Scenes/Prototype Exploration.unity
+    guid: 24e562e265bb4e742a46f1615d551fa5
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Prototype Scenes/Prototype Combat.unity
+    guid: 7233b2f43542c884a9bf43708b2e6310
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
-    guid: 96529f810f32b164a8192d37df246d04
+    path: Assets/Scenes/Prototype Scenes/Prototype Start.unity
+    guid: e1e8fbb0fc85f10408529afdd69beeb3
+  - enabled: 1
+    path: Assets/Scenes/Prototype Scenes/Prototype GameOver.unity
+    guid: 9db42cc653ca2594dbcf8f1cfdc0f8fc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}

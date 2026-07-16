@@ -35,6 +35,8 @@ public class Destroyable : InteractableObject
     protected override void Interact()
     {
         Debug.Log("Destroyable Down!");
+        PartyLeader.AOEAttack -= PartyLeaderOnAOEAttack;
+        PartyLeader.Attack -= PartyLeaderOnAttack;
         Destroy(gameObject);
     }
 

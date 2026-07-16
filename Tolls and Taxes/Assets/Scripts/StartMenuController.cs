@@ -3,19 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class StartMenuController : MonoBehaviour
 {
-    [SerializeField] private string gameplaySceneName = "SampleScene";
+    private string gameplaySceneName = "Prototype Exploration";
 
     public void StartGame()
     {
-        if (string.IsNullOrWhiteSpace(gameplaySceneName))
-        {
-            Debug.LogError("Gameplay scene name has not been assigned.");
-            return;
-        }
-
-        // Make sure gameplay is not accidentally left paused.
-        Time.timeScale = 1f;
-
         SceneManager.LoadScene(gameplaySceneName);
     }
 

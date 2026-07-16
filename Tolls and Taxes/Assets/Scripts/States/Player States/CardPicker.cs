@@ -69,11 +69,19 @@ public class CardPicker : State
     {
         if (SelectionType == selectionType.member)
         {
+            if (member.Deck.HandCards.Count == 0)
+            {
+                return;
+            }
             CardLogic(member.Deck.HandCards[chosenCardIndex]);
             member.Deck.DiscardCard(member.Deck.HandCards[chosenCardIndex]);
         }
         else
         {
+            if (leader.Deck.HandCards.Count == 0)
+            {
+                return;
+            }
             CardLogic(leader.Deck.HandCards[chosenCardIndex]);
             leader.Deck.DiscardCard(leader.Deck.HandCards[chosenCardIndex]);
         }
@@ -361,14 +369,7 @@ public class CardPicker : State
         {
             if (cardByte.StaticData.Effects.Contains(1))
             {
-                if (SelectionType == selectionType.member)
-                {
-                    leader.AOEAttackActivation(DamageCalc(cardByte.StaticData.Damage));
-                }
-                else
-                {
-                    
-                }
+                leader.AOEAttackActivation(DamageCalc(cardByte.StaticData.Damage));
             }
             else
             {
@@ -397,6 +398,7 @@ public class CardPicker : State
                     {
                         target.Hp -= DamageCalc(cardByte.StaticData.Damage);
                     }
+                    Destroyable.destroyables.Clear();
                 }
             }
             

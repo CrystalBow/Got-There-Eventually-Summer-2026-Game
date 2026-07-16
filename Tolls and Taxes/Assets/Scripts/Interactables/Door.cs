@@ -6,13 +6,12 @@ public class Door : InteractableObject
     {
         if (BodyCollider.isActiveAndEnabled == true)
         {
-            BodyCollider.enabled = false;
-            SpriteRenderer.enabled = false;
+            gameObject.SetActive(false);
         }
         else
         {
-            BodyCollider.enabled = true;
-            SpriteRenderer.enabled = true;
+            //BodyCollider.enabled = true;
+            //SpriteRenderer.enabled = true;
         }
     }
 }

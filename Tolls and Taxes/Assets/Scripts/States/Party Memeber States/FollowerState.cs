@@ -55,7 +55,7 @@ public class FollowerState : State
     {
         if ((partyMember.FollowTarget - this.transform.position).sqrMagnitude > partyMember.distance * partyMember.distance)
         {
-            this.transform.position = Vector3.MoveTowards(this.transform.position, partyMember.FollowTarget, partyMember.Leader.speed * Time.deltaTime);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, partyMember.FollowTarget, partyMember.Leader.speed * 1.5f *  Time.deltaTime);
             return true;
         }
         return false;
