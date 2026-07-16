@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,6 +11,8 @@ public class PlayerMovement : State
     private string leaderName;
     private InputAction interactAction;
     private InputAction cardAction;
+    private InputAction resetAction;
+    private PartyLeader leader;
 
     // Update is called once per frame
     void Update()
@@ -25,6 +28,7 @@ public class PlayerMovement : State
     public override void EnterState()
     {
         Owner = this.GetComponent<Character>();
+        leader =  Owner as PartyLeader;
         moveAction = InputSystem.actions.FindAction("Player/Move");
         moveAction.performed += OnMove;
         moveAction.canceled += OnMove;
@@ -34,12 +38,20 @@ public class PlayerMovement : State
         
         interactAction = InputSystem.actions.FindAction("Player/Interact");
         interactAction.performed += OnInteract;
+        
+        resetAction = InputSystem.actions.FindAction("Player/Attack");
+        resetAction.performed += OnReset;
 
         if (Owner is PartyLeader)
         {
             PartyLeader leader = Owner as PartyLeader;
             leaderName = leader.LeaderName;
         }
+    }
+
+    private void OnReset(InputAction.CallbackContext obj)
+    {
+        ChangeState(this.AddComponent<RestState>());
     }
 
     private void OnCard(InputAction.CallbackContext obj)
@@ -53,12 +65,13 @@ public class PlayerMovement : State
         moveAction.canceled -= OnMove;
         cardAction.performed -= OnCard;
         interactAction.performed -= OnInteract;
+        resetAction.performed -= OnReset;
         Destroy(this);
     }
 
     private void OnMove(InputAction.CallbackContext ctx)
     {
-        MoveDirection = ctx.ReadValue<Vector2>() * DataCenter.Instance.Allies[leaderName].Speed;
+        MoveDirection = ctx.ReadValue<Vector2>() * leader.speed;
     }
 
     private void OnInteract(InputAction.CallbackContext ctx)
@@ -69,4 +82,5 @@ public class PlayerMovement : State
         // Uses the state-changing method already provided.
         ChangeState(this.AddComponent<InteractState>());
     }
+    
 }

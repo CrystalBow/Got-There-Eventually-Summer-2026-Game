@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class CardPicker : State
     private InputAction NextAction;
     private InputAction PreviousAction;
     private InputAction approveAction;
+    private InputAction discardAction;
     private PartyLeader leader;
     private PartyMember member;
     private Character Selection;
@@ -43,16 +45,36 @@ public class CardPicker : State
         PreviousAction.performed += OnPrevious;
         approveAction = InputSystem.actions.FindAction("Player/Jump");
         approveAction.performed += OnApproved;
+        discardAction =  InputSystem.actions.FindAction("Player/Attack");
+        discardAction.performed += OnDiscard;
+    }
+
+    private void OnDiscard(InputAction.CallbackContext obj)
+    {
+        if (SelectionType == selectionType.member)
+        {
+            member.Deck.DiscardHand();
+        }
+        else
+        {
+           leader.Deck.DiscardHand(); 
+        }
+        UnfocusCard();
+        Selection.spriteRenderer.color = Color.white;
+        HideHand();
+        ChangeState(this.AddComponent<PlayerMovement>());
     }
 
     private void OnApproved(InputAction.CallbackContext obj)
     {
         if (SelectionType == selectionType.member)
         {
+            CardLogic(member.Deck.HandCards[chosenCardIndex]);
             member.Deck.DiscardCard(member.Deck.HandCards[chosenCardIndex]);
         }
         else
         {
+            CardLogic(leader.Deck.HandCards[chosenCardIndex]);
             leader.Deck.DiscardCard(leader.Deck.HandCards[chosenCardIndex]);
         }
         UnfocusCard();
@@ -65,6 +87,10 @@ public class CardPicker : State
     {
         if (SelectionType == selectionType.member)
         {
+            if (member.Deck.HandCards.Count == 0)
+            {
+                return;
+            }
             if (chosenCardIndex == 0)
             {
                 alterChosenIndex(member.Deck.HandCards.Count - 1);
@@ -76,6 +102,10 @@ public class CardPicker : State
         }
         else
         {
+            if (leader.Deck.HandCards.Count == 0)
+            {
+                return;
+            }
             if (chosenCardIndex == 0)
             {
                 alterChosenIndex(leader.Deck.HandCards.Count - 1);
@@ -91,6 +121,10 @@ public class CardPicker : State
     {
         if (SelectionType == selectionType.member)
         {
+            if (member.Deck.HandCards.Count == 0)
+            {
+                return;
+            }
             if (chosenCardIndex >= member.Deck.HandCards.Count - 1)
             {
                 alterChosenIndex(0);
@@ -102,6 +136,10 @@ public class CardPicker : State
         }
         else
         {
+            if (leader.Deck.HandCards.Count == 0)
+            {
+                return;
+            }
             if (chosenCardIndex >= leader.Deck.HandCards.Count - 1)
             {
                 alterChosenIndex(0);
@@ -127,6 +165,7 @@ public class CardPicker : State
         NextAction.performed -= OnNext;
         PreviousAction.performed -= OnPrevious;
         approveAction.performed -= OnApproved;
+        discardAction.performed -= OnDiscard;
         
         Destroy(this);
     }
@@ -278,6 +317,132 @@ public class CardPicker : State
         UnfocusCard();
         chosenCardIndex = index;
         FocusCard();
+    }
+
+    private void CardLogic(CardByte cardByte)
+    {
+        //Register Cost
+        if (cardByte.StaticData.Cost != 0)
+        {
+            if (SelectionType == selectionType.member)
+            {
+                if (cardByte.StaticData.Cost <= member.MP)
+                {
+                    member.MP -= cardByte.StaticData.Cost;
+                    if (member.MP > DataCenter.Instance.Allies[member.MemberName].Mp)
+                    {
+                        member.MP = DataCenter.Instance.Allies[member.MemberName].Mp;
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                if (cardByte.StaticData.Cost <= leader.MP)
+                {
+                    leader.MP -= cardByte.StaticData.Cost;
+                    if (leader.MP > DataCenter.Instance.Allies[leader.LeaderName].Mp)
+                    {
+                        leader.MP = DataCenter.Instance.Allies[leader.LeaderName].Mp;
+                    }
+                }
+                else
+                {
+                    return;
+                }
+            }
+        }
+        
+        //Deal Damage
+        if (cardByte.StaticData.Damage > 0)
+        {
+            if (cardByte.StaticData.Effects.Contains(1))
+            {
+                if (SelectionType == selectionType.member)
+                {
+                    leader.AOEAttackActivation(DamageCalc(cardByte.StaticData.Damage));
+                }
+                else
+                {
+                    
+                }
+            }
+            else
+            {
+                leader.AttackActivation();
+                List<Destroyable> potentialTargets = Destroyable.destroyables;
+                if (potentialTargets.Count > 0)
+                {
+                    Destroyable target = potentialTargets[0];
+                    float targetDistance = Vector2.Distance(leader.transform.position, target.transform.position);
+                    for (int i = 1; i < potentialTargets.Count; i++)
+                    {
+                        if (targetDistance > Vector2.Distance(potentialTargets[i].transform.position,
+                                leader.transform.position))
+                        {
+                            target = potentialTargets[i];
+                            targetDistance = Vector2.Distance(potentialTargets[i].transform.position,
+                                leader.transform.position);
+                        }
+                    }
+
+                    if (SelectionType == selectionType.member)
+                    {
+                        target.Hp -= DamageCalc(cardByte.StaticData.Damage);
+                    }
+                    else
+                    {
+                        target.Hp -= DamageCalc(cardByte.StaticData.Damage);
+                    }
+                }
+            }
+            
+            
+            
+            
+        }
+        
+        //Simple Healing
+        if (cardByte.StaticData.Damage < 0)
+        {
+            if (SelectionType == selectionType.member)
+                member.HP += HealCalc(cardByte.StaticData.Damage);
+            else
+                leader.HP += HealCalc(cardByte.StaticData.Damage);
+        }
+        
+        //Apply Effect
+        if (cardByte.StaticData.Effects.Contains(7))
+        {
+            leader.applyEffect(cardByte.StaticData.Time * 4, 7);
+        }
+    }
+    
+    public int DamageCalc(int Base)  
+    {
+        if (SelectionType == selectionType.member)
+        {
+            return Base + DataCenter.Instance.Allies[member.MemberName].Attack;
+        }
+        else
+        {
+            return Base + DataCenter.Instance.Allies[leader.LeaderName].Attack;
+        }
+    }
+
+    public int HealCalc(int Base)
+    {
+        if (SelectionType == selectionType.member)
+        {
+            return (Base * -1) + DataCenter.Instance.Allies[member.MemberName].Attack;
+        }
+        else
+        {
+            return (Base * -1) + DataCenter.Instance.Allies[leader.LeaderName].Attack;
+        }
     }
 
 }
