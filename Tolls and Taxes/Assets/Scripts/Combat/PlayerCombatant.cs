@@ -8,7 +8,7 @@ public class PlayerCombatant : Combatant
     public PlayableData StaticPlayableData { get; set; }
     public Deck Deck;
 
-    public override void Start()
+    protected override void Start()
     {
         StaticPlayableData = DataCenter.Instance.Allies[CombatantName];
         TransferCenter.CharacterSessionData data = TransferCenter.Instance.GetCharacterState(CombatantName);

@@ -10,7 +10,7 @@ public class Combatant : Character
     
     public static event Action<Combatant> OnDeath;
 
-    public virtual void Start()
+    protected override void Start()
     {
         StaticData = DataCenter.Instance.Locations[Location][CombatantName];
         currentHP = StaticData.Hp;
