@@ -15,5 +15,6 @@ public class PlayerCombatant : Combatant
         currentMP = data.CurrentMp;
         currentHP =  data.CurrentHp;
         Deck = data.Deck;
+        StaticData = StaticPlayableData;
     }
 }

@@ -10,13 +10,12 @@ public class EnemyTurn : State
     {
         Owner = this.GetComponent<CombatCenter>();
         combatCenter = Owner as CombatCenter;
-        // throw new System.NotImplementedException();
+        performEnemyTurn();
     }
 
     public override void ExitState()
     {
         Destroy(this);
-        // throw new System.NotImplementedException();
     }
 
     public override void UpdateState()
@@ -56,6 +55,7 @@ public class EnemyTurn : State
             if (combatCenter.turnPosition >= combatCenter.initiativeOrder.Count)
             {
                 ChangeState(this.AddComponent<TopofRound>());
+                return;
             }
 
             foundDeadGuy = combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.isDead();

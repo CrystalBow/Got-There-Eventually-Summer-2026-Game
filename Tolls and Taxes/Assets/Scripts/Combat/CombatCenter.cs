@@ -7,22 +7,12 @@ using static TransferCenter;
 
 public class CombatCenter : Character
 {
-    // TO BE REMOVED
     Dictionary<string, UnitData> EnemiesInCombat;
     public List<InitiativeToken> initiativeOrder;
+    public GameObject cardTray;
+    public List<CardUI> cardUI;
     
-    // List<Comabatant> (String Name, Refrence to what ever it is, boolean)
-    // Combatant (Enemies) (UnitData, Name, Currents)
-    // Player : Combatant (Deck, PlayableDate, Currents MP)
-    // Initilize - Load up the the intiativeTokens and detemine the intial order
-    // EnemeyTrun 
-    // PlayerTurn (Yimer)
-    // TopofRound - You Check win or loss conditions and change scene are nessary or return to top.
-    /// <summary>
-    /// For combat, initiative requires we know two things
-    /// We need to know who goes when, and if the person going is an enemy or an ally
-    /// Therefore, we have this very simply initiative token
-    /// </summary>
+
     public class InitiativeToken
     {
         public string unitName { get; init; }
@@ -54,25 +44,8 @@ public class CombatCenter : Character
     protected override void Start()
     {
         CurrentState = this.AddComponent<Intialize>();
-        Combatant[] combatants =  this.GameObject().GetComponentsInChildren<Combatant>();
+        CurrentState.EnterState();
         Combatant.OnDeath += CombatantOnOnDeath;
-        initiativeOrder = new List<InitiativeToken>();
-        aliveAllies = 0;
-        aliveEnemies = 0;
-        foreach (Combatant combatant in combatants)
-        {
-            if (combatant is PlayerCombatant)
-            {
-                aliveAllies += 1;
-                initiativeOrder.Add(new InitiativeToken(combatant.CombatantName, true, combatant));
-            }
-            else
-            {
-                aliveEnemies += 1;
-                initiativeOrder.Add(new InitiativeToken(combatant.CombatantName, false, combatant));
-            }
-        }
-        
     }
 
     private void CombatantOnOnDeath(Combatant dead)
