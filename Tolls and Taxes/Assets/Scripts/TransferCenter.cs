@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// Singleton for storing transfer data.
+/// </summary>
 public class TransferCenter : MonoBehaviour
 {
     public static TransferCenter Instance { get; private set; }

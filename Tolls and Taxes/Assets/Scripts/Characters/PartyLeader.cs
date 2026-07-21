@@ -9,12 +9,12 @@ using UnityEngine.Serialization;
 /// </summary>
 public class PartyLeader : PartyMember
 {
-    
+    // Events for Attacks and interactions
     public static event Action<Vector2> Interaction;
     public static event Action<Vector2> Attack;
     public static event Action<Vector2,int> AOEAttack;
     
-    
+    //Speed stat.
     public int speed;
     
     //Start the queue
@@ -47,7 +47,9 @@ public class PartyLeader : PartyMember
         FollowCrumbs.Enqueue(Crumb);
         Crumb = this.transform.position;
     }
-
+    
+    // ------------------------------------------------- Activation Functions
+    // They expose the actions as public methods, so states can use them.
     public void InteractionActivation()
     {
         Interaction?.Invoke(new Vector2(this.transform.position.x, this.transform.position.y));
@@ -62,7 +64,8 @@ public class PartyLeader : PartyMember
     {
         AOEAttack?.Invoke(new Vector2(this.transform.position.x, this.transform.position.y), damage);
     }
-
+    
+    // ----------------------------------------------------- Effects stuff
     //Coroutine for effects 
     IEnumerator effect(float time, int id)
     {
@@ -92,6 +95,7 @@ public class PartyLeader : PartyMember
     public void removeEffect(int id)
     {
         effectRoster.Remove(id);
+        //Logic upon removal.
         switch (id)
         {
             case 7:

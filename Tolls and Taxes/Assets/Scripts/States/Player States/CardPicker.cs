@@ -1,31 +1,49 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// State for playing cards in the overworld.
+/// </summary>
 public class CardPicker : State
 {
-    private int selectedCardIndex;
+    // Actions
     private InputAction moveAction;
     private InputAction cancelAction;
     private InputAction NextAction;
     private InputAction PreviousAction;
     private InputAction approveAction;
     private InputAction discardAction;
+    
+    // Controller Limiting
+    private Coroutine limiter;
+    private bool isLimited;
+    
+    // Party member selection
     private PartyLeader leader;
     private PartyMember _activeMember;
 
+    // Card selection
     int chosenCardIndex;
     
+
+    /// <inheritdoc/>
     public override void EnterState()
     {
+        // Set owner and other variables
         Owner = this.GetComponent<Character>();
         Owner.body.linearVelocity = Vector2.zero;
         leader = Owner as PartyLeader;
         _activeMember = leader;
         leader.spriteRenderer.color = Color.blue;
+        isLimited = false;
+        // Activate UI
         ShowHand();
+        
+        // Subscribe to controls
         moveAction = InputSystem.actions.FindAction("Player/Move");
         moveAction.performed += OnMove;
         cancelAction = InputSystem.actions.FindAction("Player/Crouch");
@@ -39,9 +57,10 @@ public class CardPicker : State
         discardAction =  InputSystem.actions.FindAction("Player/Attack");
         discardAction.performed += OnDiscard;
     }
-
+    
     private void OnDiscard(InputAction.CallbackContext obj)
     {
+        // Player discards their hand.
         _activeMember.Deck.DiscardHand();
         UnfocusCard();
         _activeMember.spriteRenderer.color = Color.white;
@@ -49,6 +68,9 @@ public class CardPicker : State
         ChangeState(this.AddComponent<PlayerMovement>());
     }
 
+    /// <summary>
+    /// A card get played
+    /// </summary>
     private void OnApproved(InputAction.CallbackContext obj)
     {
         if (_activeMember.Deck.HandCards.Count == 0)
@@ -65,6 +87,7 @@ public class CardPicker : State
 
     private void OnPrevious(InputAction.CallbackContext obj)
     {
+        //Select left
         if (_activeMember.Deck.HandCards.Count == 0)
         {
             return;
@@ -81,6 +104,7 @@ public class CardPicker : State
 
     private void OnNext(InputAction.CallbackContext obj)
     {
+        //Select Right
         if (_activeMember.Deck.HandCards.Count == 0)
         {
             return;
@@ -97,23 +121,31 @@ public class CardPicker : State
 
     private void OnCancel(InputAction.CallbackContext obj)
     {
+        // Canceling sends us back to walking
         _activeMember.spriteRenderer.color = Color.white;
         HideHand();
         ChangeState(this.AddComponent<PlayerMovement>());
     }
 
+    /// <inheritdoc/>
     public override void ExitState()
     {
+        //Unsubscribe from controls
         moveAction.performed -= OnMove;
         cancelAction.performed -= OnCancel;
         NextAction.performed -= OnNext;
         PreviousAction.performed -= OnPrevious;
         approveAction.performed -= OnApproved;
         discardAction.performed -= OnDiscard;
-        
+        // Halt the rate limiter
+        if (limiter != null)
+        {
+            StopCoroutine(limiter);
+        }
         Destroy(this);
     }
-
+    
+    /// <inheritdoc/>
     public override void UpdateState()
     {
         
@@ -121,26 +153,35 @@ public class CardPicker : State
 
     private void OnMove(InputAction.CallbackContext ctx)
     {
-        Vector2 direction = ctx.ReadValue<Vector2>();
-        float x = direction.x;
-        _activeMember.spriteRenderer.color = Color.white;
-        if (x > 0)
+        // Check the rate limiter
+        if (!isLimited)
         {
-            SwapSelection(_activeMember.NextMember);
+            // Change who the targeted member is.
+            Vector2 direction = ctx.ReadValue<Vector2>();
+            float x = direction.x;
+            _activeMember.spriteRenderer.color = Color.white;
+            if (x > 0)
+            {
+                SwapSelection(_activeMember.NextMember);
+            }
+            else
+            {
+                SwapSelection(_activeMember.PreviousMember);
+            }
+            _activeMember.spriteRenderer.color = Color.blue;
+            limiter = StartCoroutine(slowJoystick(0.2f));
         }
-        else
-        {
-            SwapSelection(_activeMember.PreviousMember);
-        }
-        _activeMember.spriteRenderer.color = Color.blue;
     }
 
     private void ShowHand() 
     {   
+        //Activate the card tray
         _activeMember.cardTray.SetActive(true);
+        //Make sure hand is full
         _activeMember.Deck.DrawHand(5 - _activeMember.Deck.HandCards.Count);
         for (int i = 0; i < _activeMember.cards.Count; i++)
         {
+            //Iterate over UI to swt active and display the cards in hand.
             if (i < _activeMember.Deck.HandCards.Count)
             {
                 _activeMember.cards[i].gameObject.SetActive(true);
@@ -151,6 +192,7 @@ public class CardPicker : State
                 _activeMember.cards[i].gameObject.SetActive(false);
             }
         }
+        //Reset the selection Index
         alterChosenIndex(0);
     }
 
@@ -159,7 +201,10 @@ public class CardPicker : State
         _activeMember.cardTray.SetActive(false);
     }
     
-    
+    /// <summary>
+    /// Change the selected party member
+    /// </summary>
+    /// <param name="newSelection">The new party member.</param>
     private void SwapSelection(PartyMember newSelection)
     {
         HideHand();
@@ -168,12 +213,20 @@ public class CardPicker : State
         ShowHand();
     }
 
+    /// <summary>
+    /// Highlights selected card.
+    /// </summary>
     private void FocusCard() => _activeMember.cards[chosenCardIndex].cardBackground.color = Color.darkViolet;
 
-
+    /// <summary>
+    /// Unhighlights selected card.
+    /// </summary>
     private void UnfocusCard() => _activeMember.cards[chosenCardIndex].cardBackground.color = Color.white;
 
-    
+    /// <summary>
+    /// Alters the chose index and changes the highlighting.
+    /// </summary>
+    /// <param name="index">The new index</param>
     private void alterChosenIndex(int index)
     {
         UnfocusCard();
@@ -181,6 +234,10 @@ public class CardPicker : State
         FocusCard();
     }
 
+    /// <summary>
+    /// Takes in a card byte and executes the card.
+    /// </summary>
+    /// <param name="cardByte">the chose cards data</param>
     private void CardLogic(CardByte cardByte)
     {
         //Register Cost
@@ -248,15 +305,34 @@ public class CardPicker : State
             leader.applyEffect(cardByte.StaticData.Time * 4, 7);
         }
     }
-    
+    /// <summary>
+    /// Calculates Damage
+    /// </summary>
+    /// <param name="Base">The Base Damage of a card/param>
+    /// <returns>the calculated damage</returns>
     public int DamageCalc(int Base)  
     {
         return Base + DataCenter.Instance.Allies[_activeMember.MemberName].Attack;
     }
 
+    /// <summary>
+    /// Calculates Healing
+    /// </summary>
+    /// <param name="Base">Base healing of the card</param>
+    /// <returns>the calculated healing</returns>
     public int HealCalc(int Base)
     {
         return (Base * -1) + DataCenter.Instance.Allies[_activeMember.MemberName].Attack;
     }
 
+    /// <summary>
+    /// Slows the joystick to make party member selection more manageable on controller.
+    /// </summary>
+    /// <param name="time">How long to lock it out for.</param>
+    IEnumerator slowJoystick(float time)
+    {
+        isLimited = true;
+        yield return new WaitForSeconds(time);
+        isLimited = false;
+    }
 }

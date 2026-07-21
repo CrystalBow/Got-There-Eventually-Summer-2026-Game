@@ -13,10 +13,12 @@ public class PartyMember : Character
     public int MP;
     public Deck Deck = new Deck();
     
-    // Linked List and Movement Data
+    // Linked List Links
     public PartyMember NextMember;
     public PartyMember PreviousMember;
     public PartyLeader Leader;
+    
+    //Movement Data
     [NonSerialized]
     public LineStatus Status;
     public Queue<Vector3> FollowCrumbs = new Queue<Vector3>();
@@ -36,14 +38,18 @@ public class PartyMember : Character
     public List<CardUI> cards = new List<CardUI>();
     // Effect Tracking
     public Dictionary<int, Coroutine> effectRoster = new Dictionary<int, Coroutine>();
+    
     protected override void Start()
     {
+        //Fetch from transfer center
         TransferCenter.CharacterSessionData data = TransferCenter.Instance.GetCharacterState(MemberName);
         //Temp renderer
         spriteRenderer = GetComponent<SpriteRenderer>();
+        //Deploy from transfer center
         Deck = data.Deck;
         HP = data.CurrentHp;
         MP = data.CurrentMp;
+        //Shuffle the deck and prep the follow queue
         Deck.Shuffle();
         FollowTarget = this.transform.position;
         FollowCrumbs.Enqueue(this.transform.position);
@@ -55,7 +61,7 @@ public class PartyMember : Character
         {
             Status = LineStatus.middle;
         }
-
+        //Initialize the follower state
         CurrentState = this.AddComponent<FollowerState>();
         CurrentState.EnterState();
     }

@@ -2,11 +2,18 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// State for interacting with interactable objects
+/// </summary>
 public class InteractState : State
 {
+    //Inputs
     private InputAction interactAction;
+    //Party Leader
     private PartyLeader leader;
 
+
+    /// <inheritdoc/>
     public override void EnterState()
     {
         // Setting up owner
@@ -25,13 +32,16 @@ public class InteractState : State
         }
     }
 
+    /// <inheritdoc/>
     public override void ExitState()
     {
+        //Unsubscribe from inputs
         interactAction.canceled -= OnInteract;
         Debug.Log("Exited Interact State.");
         Destroy(this);
     }
 
+    /// <inheritdoc/>
     public override void UpdateState()
     {
         leader.InteractionActivation();
@@ -39,6 +49,7 @@ public class InteractState : State
 
     private void OnInteract(InputAction.CallbackContext ctx)
     {
+        // When the botton is lifted player movement is made available again.
         ChangeState(this.AddComponent<PlayerMovement>());
     }
 }

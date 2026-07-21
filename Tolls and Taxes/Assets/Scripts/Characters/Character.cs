@@ -2,6 +2,9 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
+/// <summary>
+///  Generic character class most thhings with state machines will branch off of.
+/// </summary>
 public class Character : MonoBehaviour
 {
     public State CurrentState { get; set; }

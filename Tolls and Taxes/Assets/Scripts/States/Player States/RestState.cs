@@ -5,18 +5,30 @@ using System.Collections;
 
 public class RestState : State
 {
+    // Input
     private InputAction cancelAction;
+    
+    // Coroutine Container
     private Coroutine restTimer;
+    
+    // The leader
     private PartyLeader leader;
 
+
+    /// <inheritdoc/>
     public override void EnterState()
     {
+        // Set owner and leader
         Owner = this.GetComponent<Character>();
         Owner.body.linearVelocity = Vector2.zero;
         Owner.spriteRenderer.color = Color.darkGreen;
+        leader = Owner as PartyLeader;
+        
+        // Subscribe to controls
         cancelAction = InputSystem.actions.FindAction("Player/Crouch");
         cancelAction.performed += OnCancel;
-        leader = Owner as PartyLeader;
+        
+        //Start the rest countdown
         restTimer = StartCoroutine(RestTimer());
     }
 
@@ -27,18 +39,24 @@ public class RestState : State
         ChangeState(this.AddComponent<PlayerMovement>());
     }
 
+    /// <inheritdoc/>
     public override void ExitState()
     {
+        // Unsubscribe from controls
         cancelAction.performed -= OnCancel;
         Owner.spriteRenderer.color = Color.white;
         Destroy(this);
     }
 
+    /// <inheritdoc/>
     public override void UpdateState()
     {
         throw new System.NotImplementedException();
     }
 
+    /// <summary>
+    /// Coroutine that shuffles everyone's decks after timer expires
+    /// </summary>
     IEnumerator RestTimer()
     {
         Debug.Log("Resting!");

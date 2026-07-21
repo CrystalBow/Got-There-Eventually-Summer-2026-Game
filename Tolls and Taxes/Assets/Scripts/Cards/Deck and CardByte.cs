@@ -87,10 +87,13 @@ public class Deck
         Shuffle();
     }
 }
-
+/// <summary>
+/// A container for card information.
+/// </summary>
 [System.Serializable]
 public class CardByte
 {
+    // Basic info.
     public bool isSpecialty;
     public string Name;
     public string Type;
