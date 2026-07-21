@@ -44,10 +44,10 @@ public class RestState : State
         Debug.Log("Resting!");
         yield return new WaitForSeconds(3f);
         leader.Deck.ResetAndShuffle();
-        if (leader.nextMember != null)
+        if (leader.NextMember != leader)
         {
-            PartyMember currentMember = leader.nextMember;
-            while (currentMember != null)
+            PartyMember currentMember = leader.NextMember;
+            while (currentMember != leader)
             {
                 currentMember.Deck.ResetAndShuffle();
                 currentMember = currentMember.NextMember;

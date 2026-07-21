@@ -720,6 +720,10 @@ PrefabInstance:
       propertyPath: NextMember
       value: 
       objectReference: {fileID: 570601872}
+    - target: {fileID: 3484511342352408828, guid: 5a9368bd2a2cdba4293fc7d9cac0b1d5, type: 3}
+      propertyPath: PreviousMember
+      value: 
+      objectReference: {fileID: 1358157177}
     - target: {fileID: 9117342755590586700, guid: 5a9368bd2a2cdba4293fc7d9cac0b1d5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.587931
@@ -21702,13 +21706,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8353701830811337775, guid: 693b0a4fc7badf84780aaac48ed3b263, type: 3}
+      propertyPath: Leader
+      value: 
+      objectReference: {fileID: 1358157177}
+    - target: {fileID: 8353701830811337775, guid: 693b0a4fc7badf84780aaac48ed3b263, type: 3}
       propertyPath: LastMember
       value: 
       objectReference: {fileID: 570601872}
     - target: {fileID: 8353701830811337775, guid: 693b0a4fc7badf84780aaac48ed3b263, type: 3}
+      propertyPath: NextMember
+      value: 
+      objectReference: {fileID: 2120336497}
+    - target: {fileID: 8353701830811337775, guid: 693b0a4fc7badf84780aaac48ed3b263, type: 3}
       propertyPath: nextMember
       value: 
       objectReference: {fileID: 2120336497}
+    - target: {fileID: 8353701830811337775, guid: 693b0a4fc7badf84780aaac48ed3b263, type: 3}
+      propertyPath: PreviousMember
+      value: 
+      objectReference: {fileID: 570601872}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21910,6 +21926,10 @@ PrefabInstance:
       propertyPath: MemberName
       value: Samantha Pel 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3484511342352408828, guid: 5a9368bd2a2cdba4293fc7d9cac0b1d5, type: 3}
+      propertyPath: NextMember
+      value: 
+      objectReference: {fileID: 1358157177}
     - target: {fileID: 3484511342352408828, guid: 5a9368bd2a2cdba4293fc7d9cac0b1d5, type: 3}
       propertyPath: PreviousMember
       value: 

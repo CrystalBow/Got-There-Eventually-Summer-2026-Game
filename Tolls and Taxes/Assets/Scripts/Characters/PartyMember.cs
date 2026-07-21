@@ -31,11 +31,11 @@ public class PartyMember : Character
         middle,
         second,
     }
-    
     //Card UI Stuff
     public GameObject cardTray;
     public List<CardUI> cards = new List<CardUI>();
-    
+    // Effect Tracking
+    public Dictionary<int, Coroutine> effectRoster = new Dictionary<int, Coroutine>();
     protected override void Start()
     {
         TransferCenter.CharacterSessionData data = TransferCenter.Instance.GetCharacterState(MemberName);

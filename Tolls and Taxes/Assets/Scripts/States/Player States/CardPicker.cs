@@ -14,26 +14,17 @@ public class CardPicker : State
     private InputAction approveAction;
     private InputAction discardAction;
     private PartyLeader leader;
-    private PartyMember member;
-    private Character Selection;
-    int chosenCardIndex;
-    selectionType SelectionType;
+    private PartyMember _activeMember;
 
-    
-    enum selectionType
-    {
-        member,
-        leader
-    }
+    int chosenCardIndex;
     
     public override void EnterState()
     {
         Owner = this.GetComponent<Character>();
         Owner.body.linearVelocity = Vector2.zero;
         leader = Owner as PartyLeader;
-        Selection = leader;
-        Selection.spriteRenderer.color = Color.blue;
-        SelectionType = selectionType.leader;
+        _activeMember = leader;
+        leader.spriteRenderer.color = Color.blue;
         ShowHand();
         moveAction = InputSystem.actions.FindAction("Player/Move");
         moveAction.performed += OnMove;
@@ -51,117 +42,62 @@ public class CardPicker : State
 
     private void OnDiscard(InputAction.CallbackContext obj)
     {
-        if (SelectionType == selectionType.member)
-        {
-            member.Deck.DiscardHand();
-        }
-        else
-        {
-           leader.Deck.DiscardHand(); 
-        }
+        _activeMember.Deck.DiscardHand();
         UnfocusCard();
-        Selection.spriteRenderer.color = Color.white;
+        _activeMember.spriteRenderer.color = Color.white;
         HideHand();
         ChangeState(this.AddComponent<PlayerMovement>());
     }
 
     private void OnApproved(InputAction.CallbackContext obj)
     {
-        if (SelectionType == selectionType.member)
+        if (_activeMember.Deck.HandCards.Count == 0)
         {
-            if (member.Deck.HandCards.Count == 0)
-            {
-                return;
-            }
-            CardLogic(member.Deck.HandCards[chosenCardIndex]);
-            member.Deck.DiscardCard(member.Deck.HandCards[chosenCardIndex]);
+            return;
         }
-        else
-        {
-            if (leader.Deck.HandCards.Count == 0)
-            {
-                return;
-            }
-            CardLogic(leader.Deck.HandCards[chosenCardIndex]);
-            leader.Deck.DiscardCard(leader.Deck.HandCards[chosenCardIndex]);
-        }
+        CardLogic(_activeMember.Deck.HandCards[chosenCardIndex]);
+        _activeMember.Deck.DiscardCard(_activeMember.Deck.HandCards[chosenCardIndex]);
         UnfocusCard();
-        Selection.spriteRenderer.color = Color.white;
+        _activeMember.spriteRenderer.color = Color.white;
         HideHand();
         ChangeState(this.AddComponent<PlayerMovement>());
     }
 
     private void OnPrevious(InputAction.CallbackContext obj)
     {
-        if (SelectionType == selectionType.member)
+        if (_activeMember.Deck.HandCards.Count == 0)
         {
-            if (member.Deck.HandCards.Count == 0)
-            {
-                return;
-            }
-            if (chosenCardIndex == 0)
-            {
-                alterChosenIndex(member.Deck.HandCards.Count - 1);
-            }
-            else
-            {
-                alterChosenIndex(chosenCardIndex - 1);
-            }
+            return;
+        }
+        if (chosenCardIndex == 0)
+        {
+            alterChosenIndex(_activeMember.Deck.HandCards.Count - 1);
         }
         else
         {
-            if (leader.Deck.HandCards.Count == 0)
-            {
-                return;
-            }
-            if (chosenCardIndex == 0)
-            {
-                alterChosenIndex(leader.Deck.HandCards.Count - 1);
-            }
-            else
-            {
-                alterChosenIndex(chosenCardIndex - 1);
-            }
+            alterChosenIndex(chosenCardIndex - 1);
         }
     }
 
     private void OnNext(InputAction.CallbackContext obj)
     {
-        if (SelectionType == selectionType.member)
+        if (_activeMember.Deck.HandCards.Count == 0)
         {
-            if (member.Deck.HandCards.Count == 0)
-            {
-                return;
-            }
-            if (chosenCardIndex >= member.Deck.HandCards.Count - 1)
-            {
-                alterChosenIndex(0);
-            }
-            else
-            {
-                alterChosenIndex(chosenCardIndex + 1);
-            }
+            return;
+        }
+        if (chosenCardIndex >= _activeMember.Deck.HandCards.Count - 1)
+        {
+            alterChosenIndex(0);
         }
         else
         {
-            if (leader.Deck.HandCards.Count == 0)
-            {
-                return;
-            }
-            if (chosenCardIndex >= leader.Deck.HandCards.Count - 1)
-            {
-                alterChosenIndex(0);
-            }
-            else
-            {
-                alterChosenIndex(chosenCardIndex + 1);
-            }
+            alterChosenIndex(chosenCardIndex + 1);
         }
     }
 
     private void OnCancel(InputAction.CallbackContext obj)
     {
-        Selection.spriteRenderer.color = Color.white;
+        _activeMember.spriteRenderer.color = Color.white;
         HideHand();
         ChangeState(this.AddComponent<PlayerMovement>());
     }
@@ -187,80 +123,32 @@ public class CardPicker : State
     {
         Vector2 direction = ctx.ReadValue<Vector2>();
         float x = direction.x;
-        Selection.spriteRenderer.color = Color.white;
+        _activeMember.spriteRenderer.color = Color.white;
         if (x > 0)
         {
-            if (SelectionType == selectionType.leader)
-            {
-                SwapSelection(leader.nextMember);
-            }
-            else
-            {
-                if (member.NextMember == null)
-                {
-                    SwapSelection(leader);
-                }
-                else
-                {
-                    SwapSelection(member.NextMember);
-                }
-            }
+            SwapSelection(_activeMember.NextMember);
         }
         else
         {
-            if (SelectionType == selectionType.leader)
-            {
-                SwapSelection(leader.LastMember);
-            }
-            else
-            {
-                if (member.PreviousMember == null)
-                {
-                    SwapSelection(leader);
-                }
-                else
-                {
-                    SwapSelection(member.PreviousMember);
-                }
-            }
+            SwapSelection(_activeMember.PreviousMember);
         }
-        Selection.spriteRenderer.color = Color.blue;
+        _activeMember.spriteRenderer.color = Color.blue;
     }
 
     private void ShowHand() 
     {   
-        if (SelectionType == selectionType.member)
+        _activeMember.cardTray.SetActive(true);
+        _activeMember.Deck.DrawHand(5 - _activeMember.Deck.HandCards.Count);
+        for (int i = 0; i < _activeMember.cards.Count; i++)
         {
-            member.cardTray.SetActive(true);
-            member.Deck.DrawHand(5 - member.Deck.HandCards.Count);
-            for (int i = 0; i < member.cards.Count; i++)
+            if (i < _activeMember.Deck.HandCards.Count)
             {
-                if (i < member.Deck.HandCards.Count)
-                {
-                    member.cards[i].gameObject.SetActive(true);
-                    member.cards[i].DisplayCard(member.Deck.HandCards[i]);
-                }
-                else
-                {
-                    member.cards[i].gameObject.SetActive(false);
-                }
+                _activeMember.cards[i].gameObject.SetActive(true);
+                _activeMember.cards[i].DisplayCard(_activeMember.Deck.HandCards[i]);
             }
-        }
-        else
-        {
-            leader.cardTray.SetActive(true);
-            leader.Deck.DrawHand(5-leader.Deck.HandCards.Count);
-            for (int i = 0; i < leader.cards.Count; i++)
+            else
             {
-                if (i < leader.Deck.HandCards.Count)
-                {
-                    leader.cards[i].gameObject.SetActive(true);
-                    leader.cards[i].DisplayCard(leader.Deck.HandCards[i]);
-                }
-                else
-                {
-                    leader.cards[i].gameObject.SetActive(false);
-                }
+                _activeMember.cards[i].gameObject.SetActive(false);
             }
         }
         alterChosenIndex(0);
@@ -268,57 +156,23 @@ public class CardPicker : State
 
     private void HideHand()
     {
-        if (SelectionType == selectionType.member)
-        {
-            member.cardTray.SetActive(false);
-        }
-        else
-        {
-            leader.cardTray.SetActive(false);
-        }
+        _activeMember.cardTray.SetActive(false);
     }
     
     
-    private void SwapSelection(Character newSelection)
+    private void SwapSelection(PartyMember newSelection)
     {
         HideHand();
         alterChosenIndex(0);
-        Selection = newSelection;
-        if (Selection is PartyMember)
-        {
-            SelectionType = selectionType.member;
-            member = Selection as PartyMember;
-        }
-        else
-        {
-            SelectionType = selectionType.leader;
-        }
+        _activeMember = newSelection;
         ShowHand();
     }
 
-    private void FocusCard()
-    {
-        if (SelectionType == selectionType.member)
-        {
-            member.cards[chosenCardIndex].cardBackground.color = Color.darkViolet;
-        }
-        else
-        {
-            leader.cards[chosenCardIndex].cardBackground.color = Color.darkViolet;
-        }
-    }
+    private void FocusCard() => _activeMember.cards[chosenCardIndex].cardBackground.color = Color.darkViolet;
 
-    private void UnfocusCard()
-    {
-        if (SelectionType == selectionType.member)
-        {
-            member.cards[chosenCardIndex].cardBackground.color = Color.white;
-        }
-        else
-        {
-            leader.cards[chosenCardIndex].cardBackground.color = Color.white;
-        }
-    }
+
+    private void UnfocusCard() => _activeMember.cards[chosenCardIndex].cardBackground.color = Color.white;
+
     
     private void alterChosenIndex(int index)
     {
@@ -332,35 +186,17 @@ public class CardPicker : State
         //Register Cost
         if (cardByte.StaticData.Cost != 0)
         {
-            if (SelectionType == selectionType.member)
+            if (cardByte.StaticData.Cost <= _activeMember.MP)
             {
-                if (cardByte.StaticData.Cost <= member.MP)
+                _activeMember.MP -= cardByte.StaticData.Cost;
+                if (_activeMember.MP > DataCenter.Instance.Allies[_activeMember.MemberName].Mp)
                 {
-                    member.MP -= cardByte.StaticData.Cost;
-                    if (member.MP > DataCenter.Instance.Allies[member.MemberName].Mp)
-                    {
-                        member.MP = DataCenter.Instance.Allies[member.MemberName].Mp;
-                    }
-                }
-                else
-                {
-                    return;
+                    _activeMember.MP = DataCenter.Instance.Allies[_activeMember.MemberName].Mp;
                 }
             }
             else
             {
-                if (cardByte.StaticData.Cost <= leader.MP)
-                {
-                    leader.MP -= cardByte.StaticData.Cost;
-                    if (leader.MP > DataCenter.Instance.Allies[leader.LeaderName].Mp)
-                    {
-                        leader.MP = DataCenter.Instance.Allies[leader.LeaderName].Mp;
-                    }
-                }
-                else
-                {
-                    return;
-                }
+                return;
             }
         }
         
@@ -389,15 +225,8 @@ public class CardPicker : State
                                 leader.transform.position);
                         }
                     }
-
-                    if (SelectionType == selectionType.member)
-                    {
-                        target.Hp -= DamageCalc(cardByte.StaticData.Damage);
-                    }
-                    else
-                    {
-                        target.Hp -= DamageCalc(cardByte.StaticData.Damage);
-                    }
+                    
+                    target.Hp -= DamageCalc(cardByte.StaticData.Damage);
                     Destroyable.destroyables.Clear();
                 }
             }
@@ -410,10 +239,7 @@ public class CardPicker : State
         //Simple Healing
         if (cardByte.StaticData.Damage < 0)
         {
-            if (SelectionType == selectionType.member)
-                member.HP += HealCalc(cardByte.StaticData.Damage);
-            else
-                leader.HP += HealCalc(cardByte.StaticData.Damage);
+            _activeMember.HP += HealCalc(cardByte.StaticData.Damage);
         }
         
         //Apply Effect
@@ -425,26 +251,12 @@ public class CardPicker : State
     
     public int DamageCalc(int Base)  
     {
-        if (SelectionType == selectionType.member)
-        {
-            return Base + DataCenter.Instance.Allies[member.MemberName].Attack;
-        }
-        else
-        {
-            return Base + DataCenter.Instance.Allies[leader.LeaderName].Attack;
-        }
+        return Base + DataCenter.Instance.Allies[_activeMember.MemberName].Attack;
     }
 
     public int HealCalc(int Base)
     {
-        if (SelectionType == selectionType.member)
-        {
-            return (Base * -1) + DataCenter.Instance.Allies[member.MemberName].Attack;
-        }
-        else
-        {
-            return (Base * -1) + DataCenter.Instance.Allies[leader.LeaderName].Attack;
-        }
+        return (Base * -1) + DataCenter.Instance.Allies[_activeMember.MemberName].Attack;
     }
 
 }

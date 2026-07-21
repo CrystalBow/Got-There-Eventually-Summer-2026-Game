@@ -43,7 +43,7 @@ public class FollowerState : State
                 partyMember.FollowCrumbs.Enqueue(partyMember.Crumb);
                 break;
             case PartyMember.LineStatus.second:
-                partyMember.FollowTarget = partyMember.Leader.followCrumbs.Dequeue();
+                partyMember.FollowTarget = partyMember.Leader.FollowCrumbs.Dequeue();
                 CheckDistance();
                 partyMember.FollowCrumbs.Enqueue(partyMember.Crumb);
                 break;
