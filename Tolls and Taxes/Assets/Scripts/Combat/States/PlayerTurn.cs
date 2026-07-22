@@ -22,6 +22,7 @@ public class PlayerTurn : State
         {
             iterate();
         }
+        
         moveAction = InputSystem.actions.FindAction("Player/Move");
         moveAction.performed += OnMove;
         approveAction = InputSystem.actions.FindAction("Player/Jump");
@@ -30,13 +31,21 @@ public class PlayerTurn : State
         discardAction.performed += OnDiscard;
         restAction = InputSystem.actions.FindAction("Player/Attack");
         restAction.performed += OnRest;
+        if (combatant.Deck.HandCards.Count == 0)
+        {
+            moveAction.performed -= OnMove;
+            discardAction.performed -= OnDiscard;
+        }
         chosenCardIndex = 0;
         UpdateState();
     }
 
     private void OnRest(InputAction.CallbackContext obj)
     {
-        UnfocusCurrentCard();
+        if (combatant.Deck.HandCards.Count > 0)
+        {
+            UnfocusCurrentCard();
+        }
         combatant.Deck.ResetAndShuffle();
         iterate();
     }
@@ -52,6 +61,7 @@ public class PlayerTurn : State
     {
         if (combatant.Deck.HandCards.Count <= 0)
         {
+            iterate();
             return;
         }
         UnfocusCurrentCard();

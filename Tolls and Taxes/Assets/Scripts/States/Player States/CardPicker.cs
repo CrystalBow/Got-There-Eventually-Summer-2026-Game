@@ -78,8 +78,8 @@ public class CardPicker : State
             return;
         }
         CardLogic(_activeMember.Deck.HandCards[chosenCardIndex]);
-        _activeMember.Deck.DiscardCard(_activeMember.Deck.HandCards[chosenCardIndex]);
         UnfocusCard();
+        _activeMember.Deck.DiscardCard(_activeMember.Deck.HandCards[chosenCardIndex]);
         _activeMember.spriteRenderer.color = Color.white;
         HideHand();
         ChangeState(this.AddComponent<PlayerMovement>());
@@ -194,7 +194,7 @@ public class CardPicker : State
             }
         }
         //Reset the selection Index
-        alterChosenIndex(0);
+        
     }
 
     private void HideHand()
