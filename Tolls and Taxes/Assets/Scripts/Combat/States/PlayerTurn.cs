@@ -21,6 +21,7 @@ public class PlayerTurn : State
         if (combatant.isDead())
         {
             iterate();
+            return;
         }
         
         moveAction = InputSystem.actions.FindAction("Player/Move");
