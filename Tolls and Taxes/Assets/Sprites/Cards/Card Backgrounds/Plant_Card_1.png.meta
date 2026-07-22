@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 46de985be165d1449a54f15540d0ca53
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8340804817456788971
+    second: Plant_Card_1_0
+  - first:
+      213: -7004370851370283101
+    second: Plant_Card_1_1
+  - first:
+      213: -8408054390485332602
+    second: Plant_Card_1_2
+  - first:
+      213: 9154193260103614802
+    second: Plant_Card_1_3
+  - first:
+      213: 8151069780180895559
+    second: Plant_Card_1_4
+  - first:
+      213: 4251691484747960577
+    second: Plant_Card_1_5
+  - first:
+      213: -7420104785123859080
+    second: Plant_Card_1_6
+  - first:
+      213: -8172371344678729580
+    second: Plant_Card_1_7
+  - first:
+      213: 5266505571095522604
+    second: Plant_Card_1_8
+  - first:
+      213: -5852406771351733574
+    second: Plant_Card_1_9
+  - first:
+      213: 302863561084053342
+    second: Plant_Card_1_10
+  - first:
+      213: 476084575200138059
+    second: Plant_Card_1_11
+  - first:
+      213: 4469862951928908641
+    second: Plant_Card_1_12
+  - first:
+      213: -6874986283531895827
+    second: Plant_Card_1_13
+  - first:
+      213: 3676550163424093130
+    second: Plant_Card_1_14
+  - first:
+      213: -6395590701736832117
+    second: Plant_Card_1_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Plant_Card_1_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 159
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51a0f92c5328f3c80800000000000000
+      internalID: -8340804817456788971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant_Card_1_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 159
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3af49f842d97bce90800000000000000
+      internalID: -7004370851370283101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant_Card_1_2
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 159
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68d45f26417905b80800000000000000
+      internalID: -8408054390485332602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant_Card_1_3
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 255
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25140c1e44a3a0f70800000000000000
+      internalID: 9154193260103614802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant_Card_1_4
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 255
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7478a1367ca6e1170800000000000000
+      internalID: 8151069780180895559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant_Card_1_5
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10194f201ea010b30800000000000000
+      internalID: 4251691484747960577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant_Card_1_6
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 223
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8752486e20e760990800000000000000
+      internalID: -7420104785123859080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant_Card_1_7
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 223
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 498c7d3af87e59e80800000000000000
+      internalID: -8172371344678729580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant_Card_1_8
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 223
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2da3cce9e2661940800000000000000
+      internalID: 5266505571095522604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant_Card_1_9
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 191
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aba3d708c0318cea0800000000000000
+      internalID: -5852406771351733574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant_Card_1_10
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 191
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5723ddddccf33400800000000000000
+      internalID: 302863561084053342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant_Card_1_11
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 175
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b43d8d316646b9600800000000000000
+      internalID: 476084575200138059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant_Card_1_12
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 175
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16bc6642ca4280e30800000000000000
+      internalID: 4469862951928908641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant_Card_1_13
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 15
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: debf56e76642790a0800000000000000
+      internalID: -6874986283531895827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant_Card_1_14
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 15
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac32cc9f4eab50330800000000000000
+      internalID: 3676550163424093130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant_Card_1_15
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 15
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b835f2e542c4e37a0800000000000000
+      internalID: -6395590701736832117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Plant_Card_1_0: -8340804817456788971
+      Plant_Card_1_1: -7004370851370283101
+      Plant_Card_1_10: 302863561084053342
+      Plant_Card_1_11: 476084575200138059
+      Plant_Card_1_12: 4469862951928908641
+      Plant_Card_1_13: -6874986283531895827
+      Plant_Card_1_14: 3676550163424093130
+      Plant_Card_1_15: -6395590701736832117
+      Plant_Card_1_2: -8408054390485332602
+      Plant_Card_1_3: 9154193260103614802
+      Plant_Card_1_4: 8151069780180895559
+      Plant_Card_1_5: 4251691484747960577
+      Plant_Card_1_6: -7420104785123859080
+      Plant_Card_1_7: -8172371344678729580
+      Plant_Card_1_8: 5266505571095522604
+      Plant_Card_1_9: -5852406771351733574
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

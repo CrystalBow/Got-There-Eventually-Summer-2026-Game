@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 0f70f644e0aa0c2408dd9ff08b5c4734
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8324969965806183122
+    second: Charm_Card_7_0
+  - first:
+      213: 736048108309076261
+    second: Charm_Card_7_1
+  - first:
+      213: 5407198815177521188
+    second: Charm_Card_7_2
+  - first:
+      213: 5946408665093304589
+    second: Charm_Card_7_3
+  - first:
+      213: 8790752866309809959
+    second: Charm_Card_7_4
+  - first:
+      213: 1135066497521618637
+    second: Charm_Card_7_5
+  - first:
+      213: 1369049920361930554
+    second: Charm_Card_7_6
+  - first:
+      213: 3622305669780882875
+    second: Charm_Card_7_7
+  - first:
+      213: 3516550208518994638
+    second: Charm_Card_7_8
+  - first:
+      213: 6029834679973730321
+    second: Charm_Card_7_9
+  - first:
+      213: 1049883369830506710
+    second: Charm_Card_7_10
+  - first:
+      213: 8488272201974482928
+    second: Charm_Card_7_11
+  - first:
+      213: 4782910169393874398
+    second: Charm_Card_7_12
+  - first:
+      213: 4165243341989035324
+    second: Charm_Card_7_13
+  - first:
+      213: -5122125435552731102
+    second: Charm_Card_7_14
+  - first:
+      213: 7787958976509311552
+    second: Charm_Card_7_15
+  - first:
+      213: 4899222101169111514
+    second: Charm_Card_7_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Charm_Card_7_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 159
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d26ca9831c388370800000000000000
+      internalID: 8324969965806183122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charm_Card_7_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 159
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5295c51dad7f63a00800000000000000
+      internalID: 736048108309076261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charm_Card_7_2
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 159
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 428b1908caa3a0b40800000000000000
+      internalID: 5407198815177521188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charm_Card_7_3
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 255
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d01f03cec23e58250800000000000000
+      internalID: 5946408665093304589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charm_Card_7_4
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 255
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 727a4a018270ff970800000000000000
+      internalID: 8790752866309809959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charm_Card_7_5
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dce093537f090cf00800000000000000
+      internalID: 1135066497521618637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charm_Card_7_6
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 259
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3f13f626a7dff210800000000000000
+      internalID: 1369049920361930554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charm_Card_7_7
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 223
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb54c2b90d3054230800000000000000
+      internalID: 3622305669780882875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charm_Card_7_8
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 223
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecab99d78cb4dc030800000000000000
+      internalID: 3516550208518994638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charm_Card_7_9
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 223
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1185a2aa1b64ea350800000000000000
+      internalID: 6029834679973730321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charm_Card_7_10
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 191
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d06652cc5fe19e00800000000000000
+      internalID: 1049883369830506710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charm_Card_7_11
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 191
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f7038b48966cc570800000000000000
+      internalID: 8488272201974482928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charm_Card_7_12
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 175
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed54357457f406240800000000000000
+      internalID: 4782910169393874398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charm_Card_7_13
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 175
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3d315a40caedc930800000000000000
+      internalID: 4165243341989035324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charm_Card_7_14
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 15
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 220f2e6fd0e8ae8b0800000000000000
+      internalID: -5122125435552731102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charm_Card_7_15
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 15
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04af6204d63641c60800000000000000
+      internalID: 7787958976509311552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Charm_Card_7_16
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 15
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad18de73b888df340800000000000000
+      internalID: 4899222101169111514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Charm_Card_7_0: 8324969965806183122
+      Charm_Card_7_1: 736048108309076261
+      Charm_Card_7_10: 1049883369830506710
+      Charm_Card_7_11: 8488272201974482928
+      Charm_Card_7_12: 4782910169393874398
+      Charm_Card_7_13: 4165243341989035324
+      Charm_Card_7_14: -5122125435552731102
+      Charm_Card_7_15: 7787958976509311552
+      Charm_Card_7_16: 4899222101169111514
+      Charm_Card_7_2: 5407198815177521188
+      Charm_Card_7_3: 5946408665093304589
+      Charm_Card_7_4: 8790752866309809959
+      Charm_Card_7_5: 1135066497521618637
+      Charm_Card_7_6: 1369049920361930554
+      Charm_Card_7_7: 3622305669780882875
+      Charm_Card_7_8: 3516550208518994638
+      Charm_Card_7_9: 6029834679973730321
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

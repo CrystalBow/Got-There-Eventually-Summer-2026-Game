@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 5dd8bc4d440de5d47901ff218624689c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6372995895109032475
+    second: Demon_Card_1_0
+  - first:
+      213: 6212111773423555811
+    second: Demon_Card_1_1
+  - first:
+      213: -5240524582425575840
+    second: Demon_Card_1_2
+  - first:
+      213: 1044856212025034195
+    second: Demon_Card_1_3
+  - first:
+      213: 1474925286709633572
+    second: Demon_Card_1_4
+  - first:
+      213: 2664277551737213997
+    second: Demon_Card_1_5
+  - first:
+      213: -6278136225649138404
+    second: Demon_Card_1_6
+  - first:
+      213: -5301321488099990042
+    second: Demon_Card_1_7
+  - first:
+      213: -7611339873996279239
+    second: Demon_Card_1_8
+  - first:
+      213: -3166751827135020241
+    second: Demon_Card_1_9
+  - first:
+      213: -974751551770594656
+    second: Demon_Card_1_10
+  - first:
+      213: -5405411464019244259
+    second: Demon_Card_1_11
+  - first:
+      213: 4512781655072478642
+    second: Demon_Card_1_12
+  - first:
+      213: 2812103153360977469
+    second: Demon_Card_1_13
+  - first:
+      213: -7650119320607887381
+    second: Demon_Card_1_14
+  - first:
+      213: 1046336297367059081
+    second: Demon_Card_1_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Demon_Card_1_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 159
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1a1ff2400e617850800000000000000
+      internalID: 6372995895109032475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon_Card_1_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 159
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e4dee7aebad53650800000000000000
+      internalID: 6212111773423555811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon_Card_1_2
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 159
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06e32d368aae547b0800000000000000
+      internalID: -5240524582425575840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon_Card_1_3
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 255
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d5cc1f5033108e00800000000000000
+      internalID: 1044856212025034195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon_Card_1_4
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 255
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 422a198dbbcf77410800000000000000
+      internalID: 1474925286709633572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon_Card_1_5
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d24185e315a69f420800000000000000
+      internalID: 2664277551737213997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon_Card_1_6
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 260
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c15eba2ad549fd8a0800000000000000
+      internalID: -6278136225649138404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon_Card_1_7
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 260
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e5a7a5b13ced66b0800000000000000
+      internalID: -5301321488099990042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon_Card_1_8
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 223
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9327fa116b61f5690800000000000000
+      internalID: -7611339873996279239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon_Card_1_9
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 223
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f234ccbcdff6d04d0800000000000000
+      internalID: -3166751827135020241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon_Card_1_10
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 223
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a2f37cc0acf872f0800000000000000
+      internalID: -974751551770594656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon_Card_1_11
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 228
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1b0f4e99ee1cf4b0800000000000000
+      internalID: -5405411464019244259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon_Card_1_12
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 228
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b59e7b610f90ae30800000000000000
+      internalID: 4512781655072478642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon_Card_1_13
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 15
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3e36d73be8960720800000000000000
+      internalID: 2812103153360977469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon_Card_1_14
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 15
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bef60dd820155d590800000000000000
+      internalID: -7650119320607887381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Demon_Card_1_15
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 15
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a39289155558e00800000000000000
+      internalID: 1046336297367059081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Demon_Card_1_0: 6372995895109032475
+      Demon_Card_1_1: 6212111773423555811
+      Demon_Card_1_10: -974751551770594656
+      Demon_Card_1_11: -5405411464019244259
+      Demon_Card_1_12: 4512781655072478642
+      Demon_Card_1_13: 2812103153360977469
+      Demon_Card_1_14: -7650119320607887381
+      Demon_Card_1_15: 1046336297367059081
+      Demon_Card_1_2: -5240524582425575840
+      Demon_Card_1_3: 1044856212025034195
+      Demon_Card_1_4: 1474925286709633572
+      Demon_Card_1_5: 2664277551737213997
+      Demon_Card_1_6: -6278136225649138404
+      Demon_Card_1_7: -5301321488099990042
+      Demon_Card_1_8: -7611339873996279239
+      Demon_Card_1_9: -3166751827135020241
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

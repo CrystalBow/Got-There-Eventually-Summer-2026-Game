@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: ed832ae1cdcbd1349a4e146410b68944
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4562709085496225401
+    second: Void_Card_4_0
+  - first:
+      213: 7750329296496357785
+    second: Void_Card_4_1
+  - first:
+      213: -3659436100582561709
+    second: Void_Card_4_2
+  - first:
+      213: 4893400414656465430
+    second: Void_Card_4_3
+  - first:
+      213: -900705001194447240
+    second: Void_Card_4_4
+  - first:
+      213: 1706394461133941908
+    second: Void_Card_4_5
+  - first:
+      213: 5256709936930788097
+    second: Void_Card_4_6
+  - first:
+      213: 1574984067444535562
+    second: Void_Card_4_7
+  - first:
+      213: -8123951859103717954
+    second: Void_Card_4_8
+  - first:
+      213: 5547591930119910558
+    second: Void_Card_4_9
+  - first:
+      213: -947866773913242371
+    second: Void_Card_4_10
+  - first:
+      213: 5248909365789296846
+    second: Void_Card_4_11
+  - first:
+      213: -1903547560048062137
+    second: Void_Card_4_12
+  - first:
+      213: -8321254037297887396
+    second: Void_Card_4_13
+  - first:
+      213: 4413129506450332337
+    second: Void_Card_4_14
+  - first:
+      213: -918334441460090447
+    second: Void_Card_4_15
+  - first:
+      213: -1282038939847583377
+    second: Void_Card_4_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Void_Card_4_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 159
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97e237e2dbff15f30800000000000000
+      internalID: 4562709085496225401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Card_4_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 159
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 991f7f1ae63be8b60800000000000000
+      internalID: 7750329296496357785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Card_4_2
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 159
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 358298a4142173dc0800000000000000
+      internalID: -3659436100582561709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Card_4_3
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 255
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61a095330c9d8e340800000000000000
+      internalID: 4893400414656465430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Card_4_4
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 255
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87e1364d29d0083f0800000000000000
+      internalID: -900705001194447240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Card_4_5
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c2596b8b45ea710800000000000000
+      internalID: 1706394461133941908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Card_4_6
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 259
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 103960e16d593f840800000000000000
+      internalID: 5256709936930788097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Card_4_7
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 223
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a017eea2aa77bd510800000000000000
+      internalID: 1574984067444535562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Card_4_8
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 223
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb5afb1a3dce14f80800000000000000
+      internalID: -8123951859103717954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Card_4_9
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 223
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e94fe91d7710dfc40800000000000000
+      internalID: 5547591930119910558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Card_4_10
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 191
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df4718ee03088d2f0800000000000000
+      internalID: -947866773913242371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Card_4_11
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 191
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec8871e124fd7d840800000000000000
+      internalID: 5248909365789296846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Card_4_12
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 175
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 741164e549d3595e0800000000000000
+      internalID: -1903547560048062137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Card_4_13
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 175
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c57031d7a87f48c80800000000000000
+      internalID: -8321254037297887396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Card_4_14
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 15
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ba54c387e59e3d30800000000000000
+      internalID: 4413129506450332337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Card_4_15
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 15
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b9b3c7e0bb6143f0800000000000000
+      internalID: -918334441460090447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Void_Card_4_16
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 15
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f699a227068453ee0800000000000000
+      internalID: -1282038939847583377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Void_Card_4_0: 4562709085496225401
+      Void_Card_4_1: 7750329296496357785
+      Void_Card_4_10: -947866773913242371
+      Void_Card_4_11: 5248909365789296846
+      Void_Card_4_12: -1903547560048062137
+      Void_Card_4_13: -8321254037297887396
+      Void_Card_4_14: 4413129506450332337
+      Void_Card_4_15: -918334441460090447
+      Void_Card_4_16: -1282038939847583377
+      Void_Card_4_2: -3659436100582561709
+      Void_Card_4_3: 4893400414656465430
+      Void_Card_4_4: -900705001194447240
+      Void_Card_4_5: 1706394461133941908
+      Void_Card_4_6: 5256709936930788097
+      Void_Card_4_7: 1574984067444535562
+      Void_Card_4_8: -8123951859103717954
+      Void_Card_4_9: 5547591930119910558
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

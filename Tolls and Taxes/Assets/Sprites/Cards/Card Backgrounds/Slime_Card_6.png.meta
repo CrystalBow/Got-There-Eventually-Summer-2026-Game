@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 7afcfcbd1f2687e4fa16feafb2414824
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8023818209333734238
+    second: Slime_Card_6_0
+  - first:
+      213: 3060582761842486922
+    second: Slime_Card_6_1
+  - first:
+      213: -4322088727814619184
+    second: Slime_Card_6_2
+  - first:
+      213: 5648811611535231592
+    second: Slime_Card_6_3
+  - first:
+      213: -4298479696233232925
+    second: Slime_Card_6_4
+  - first:
+      213: 8183698001670655225
+    second: Slime_Card_6_5
+  - first:
+      213: -4262278550261946357
+    second: Slime_Card_6_6
+  - first:
+      213: -5081802527231273327
+    second: Slime_Card_6_7
+  - first:
+      213: -5180796068117095939
+    second: Slime_Card_6_8
+  - first:
+      213: 4860691476705473214
+    second: Slime_Card_6_9
+  - first:
+      213: 437012563234175436
+    second: Slime_Card_6_10
+  - first:
+      213: 6274246728948711489
+    second: Slime_Card_6_11
+  - first:
+      213: -3132645680126650298
+    second: Slime_Card_6_12
+  - first:
+      213: 4304922864232673672
+    second: Slime_Card_6_13
+  - first:
+      213: -2338832162959719378
+    second: Slime_Card_6_14
+  - first:
+      213: -6803875263572818927
+    second: Slime_Card_6_15
+  - first:
+      213: 4936943902098645955
+    second: Slime_Card_6_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Slime_Card_6_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 159
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a41a52c9dba5a090800000000000000
+      internalID: -8023818209333734238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_Card_6_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 159
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8e2e456ecf597a20800000000000000
+      internalID: 3060582761842486922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_Card_6_2
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 159
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dfb3e2933bd404c0800000000000000
+      internalID: -4322088727814619184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_Card_6_3
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 255
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86ac8a46b3c946e40800000000000000
+      internalID: 5648811611535231592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_Card_6_4
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 255
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e50ac79d7bb854c0800000000000000
+      internalID: -4298479696233232925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_Card_6_5
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fc47a239f5529170800000000000000
+      internalID: 8183698001670655225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_Card_6_6
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 259
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b08aed5bd3859d4c0800000000000000
+      internalID: -4262278550261946357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_Card_6_7
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 223
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19692b9a68fc979b0800000000000000
+      internalID: -5081802527231273327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_Card_6_8
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 223
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df9d322dc6d1a18b0800000000000000
+      internalID: -5180796068117095939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_Card_6_9
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 223
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb27ccf1525a47340800000000000000
+      internalID: 4860691476705473214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_Card_6_10
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 191
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc9b4f16c94901600800000000000000
+      internalID: 437012563234175436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_Card_6_11
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 191
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1400528582a921750800000000000000
+      internalID: 6274246728948711489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_Card_6_12
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 175
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64893e4f95b9684d0800000000000000
+      internalID: -3132645680126650298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_Card_6_13
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 175
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 881bb0c59882ebb30800000000000000
+      internalID: 4304922864232673672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_Card_6_14
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 15
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2407891a8cca8fd0800000000000000
+      internalID: -2338832162959719378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_Card_6_15
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 15
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 114ccaa0f77c391a0800000000000000
+      internalID: -6803875263572818927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_Card_6_16
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 15
+        width: 82
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c3ee98625c838440800000000000000
+      internalID: 4936943902098645955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Slime_Card_6_0: -8023818209333734238
+      Slime_Card_6_1: 3060582761842486922
+      Slime_Card_6_10: 437012563234175436
+      Slime_Card_6_11: 6274246728948711489
+      Slime_Card_6_12: -3132645680126650298
+      Slime_Card_6_13: 4304922864232673672
+      Slime_Card_6_14: -2338832162959719378
+      Slime_Card_6_15: -6803875263572818927
+      Slime_Card_6_16: 4936943902098645955
+      Slime_Card_6_2: -4322088727814619184
+      Slime_Card_6_3: 5648811611535231592
+      Slime_Card_6_4: -4298479696233232925
+      Slime_Card_6_5: 8183698001670655225
+      Slime_Card_6_6: -4262278550261946357
+      Slime_Card_6_7: -5081802527231273327
+      Slime_Card_6_8: -5180796068117095939
+      Slime_Card_6_9: 4860691476705473214
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

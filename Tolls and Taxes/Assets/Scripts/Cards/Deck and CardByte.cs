@@ -97,6 +97,10 @@ public class CardByte
     public bool isSpecialty;
     public string Name;
     public string Type;
+    /// <summary>
+    /// String with the sprite name. add 0 for default and 1 for selected.
+    /// </summary>
+    public string SpriteName {get; private set;}
     
     // Reference to the Data in DataCenter. Can't be edited
     [System.NonSerialized] 
@@ -112,12 +116,95 @@ public class CardByte
     /// <returns></returns>
     public static CardByte Create(string cardName, string cardType, CardData staticData, bool isSpecialty = false)
     {
-        return new CardByte
+        CardByte newCard = new CardByte
         {
             Name = cardName,
             Type = cardType,
             isSpecialty = isSpecialty,
             StaticData = staticData
         };
+        newCard.GenerateSpriteName();
+        return newCard;
+    }
+    
+    /// <summary>
+    /// Generates the sprite name.
+    /// </summary>
+    private void GenerateSpriteName()
+    {
+        //Variable Set up
+        SpriteName = "";
+        bool altColor = false;
+        //Checks type and if it has cost for base.
+        if (Type == "Attacks")
+        {
+            if (StaticData.Cost <= 0)
+            {
+                SpriteName += "Attack_Card";
+            }
+            else
+            {
+                SpriteName += "Thunder_Card";
+            }
+        } else if (Type == "Buffs")
+        {
+            altColor = true;
+            if (StaticData.Cost > 0)
+            {
+                SpriteName += "Light_Card";
+            }
+            else
+            {
+                SpriteName += "Sun_Card";
+            }
+        }
+        else if (Type == "Debuffs")
+        {
+            altColor = true;
+            if (StaticData.Cost <= 0)
+            {
+                SpriteName += "Moon_Card";
+            }
+            else
+            {
+                SpriteName += "Void_Card";
+            }
+        }
+        else
+        {
+            //Healing cards
+            if (StaticData.Cost > 0)
+            {
+                SpriteName += "Charm_Card";
+            }
+            else
+            {
+                SpriteName += "Heal_Card";
+            }
+        }
+        
+        // Checks specialty and alt color for color value
+        if (isSpecialty)
+        {
+            if (altColor)
+            {
+                SpriteName += "_5_";
+            }
+            else
+            {
+                SpriteName += "_4_";
+            }
+        }
+        else
+        {
+            if (altColor)
+            {
+                SpriteName += "_2_";
+            }
+            else
+            {
+                SpriteName += "_3_";
+            }
+        }
     }
 }

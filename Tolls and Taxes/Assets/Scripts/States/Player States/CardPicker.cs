@@ -185,7 +185,8 @@ public class CardPicker : State
             if (i < _activeMember.Deck.HandCards.Count)
             {
                 _activeMember.cards[i].gameObject.SetActive(true);
-                _activeMember.cards[i].DisplayCard(_activeMember.Deck.HandCards[i]);
+                bool isSelected = (i == chosenCardIndex);
+                _activeMember.cards[i].DisplayCard(_activeMember.Deck.HandCards[i], isSelected);
             }
             else
             {
@@ -216,12 +217,20 @@ public class CardPicker : State
     /// <summary>
     /// Highlights selected card.
     /// </summary>
-    private void FocusCard() => _activeMember.cards[chosenCardIndex].cardBackground.color = Color.darkViolet;
+    private void FocusCard()
+    {
+        CardByte card = _activeMember.Deck.HandCards[chosenCardIndex];
+        _activeMember.cards[chosenCardIndex].SetFocusState(card, isFocused: true);
+    }
 
     /// <summary>
     /// Unhighlights selected card.
     /// </summary>
-    private void UnfocusCard() => _activeMember.cards[chosenCardIndex].cardBackground.color = Color.white;
+    private void UnfocusCard()
+    {
+        CardByte card = _activeMember.Deck.HandCards[chosenCardIndex];
+        _activeMember.cards[chosenCardIndex].SetFocusState(card, isFocused: false);
+    }
 
     /// <summary>
     /// Alters the chose index and changes the highlighting.

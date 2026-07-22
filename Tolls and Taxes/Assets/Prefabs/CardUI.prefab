@@ -121,6 +121,7 @@ MonoBehaviour:
   typeText: {fileID: 6048439092252381952}
   costText: {fileID: 4042879083014728835}
   cardBackground: {fileID: 6538057997156041395}
+  cardAtlas: {fileID: 100100200, guid: da4c2b1251e16404eafc910c1a2933c1, type: 3}
 --- !u!1 &3046767524006717847
 GameObject:
   m_ObjectHideFlags: 0

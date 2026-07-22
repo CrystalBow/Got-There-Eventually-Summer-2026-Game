@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.U2D; // Needed for SpriteAtlas
 
 public class CardUI : MonoBehaviour
 {
@@ -9,25 +10,60 @@ public class CardUI : MonoBehaviour
     [SerializeField] private TMP_Text typeText;
     [SerializeField] private TMP_Text costText;
     public Image cardBackground;
+    
 
+    
+    
+    
+    [Header("Sprite Atlas Reference")]
+    [SerializeField] private SpriteAtlas cardAtlas;
     /// <summary>
-    /// Updates the text elements of this specific card UI container using runtime data.
+    /// Updates the text and background sprite of this UI container.
     /// </summary>
-    public void DisplayCard(CardByte card)
+    public void DisplayCard(CardByte card, bool isFocused = false)
     {
-        // Assign basic string properties straight from CardByte
         nameText.text = card.Name;
         typeText.text = card.Type;
 
-        // Safely dig into the immutable StaticData
         if (card.StaticData != null)
         {
             costText.text = card.StaticData.Cost.ToString();
         }
         else
         {
-            // Error
             costText.text = "0-0"; 
+        }
+
+        // Set the background sprite based on focus state
+        SetCardSprite(card.SpriteName, isFocused);
+    }
+
+    /// <summary>
+    /// Swaps the card background sprite when selection changes.
+    /// </summary>
+    public void SetFocusState(CardByte card, bool isFocused)
+    {
+        SetCardSprite(card.SpriteName, isFocused);
+    }
+
+    private void SetCardSprite(string baseSpriteName, bool isFocused)
+    {
+        if (string.IsNullOrEmpty(baseSpriteName) || cardBackground == null || cardAtlas == null) 
+            return;
+
+        // Builds the exact sprite name in the atlas (e.g., "Attacks_Card_3_1" or "Attacks_Card_3_0")
+        string fullSpriteKey = $"{baseSpriteName}{(isFocused ? "1" : "0")}";
+
+        // Grabs sprite directly from the atlas by key
+        Sprite loadedSprite = cardAtlas.GetSprite(fullSpriteKey);
+
+        if (loadedSprite != null)
+        {
+            cardBackground.sprite = loadedSprite;
+        }
+        else
+        {
+            Debug.LogWarning($"[CardUI] Sprite '{fullSpriteKey}' was not found inside CardSpriteAtlas!");
         }
     }
 }

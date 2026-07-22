@@ -36,14 +36,14 @@ public class PlayerTurn : State
 
     private void OnRest(InputAction.CallbackContext obj)
     {
-        center.cardUI[chosenCardIndex].cardBackground.color = Color.white;
+        UnfocusCurrentCard();
         combatant.Deck.ResetAndShuffle();
         iterate();
     }
 
     private void OnDiscard(InputAction.CallbackContext obj)
     {
-        center.cardUI[chosenCardIndex].cardBackground.color = Color.white;
+        UnfocusCurrentCard();
         combatant.Deck.DiscardHand();
         iterate();
     }
@@ -54,7 +54,7 @@ public class PlayerTurn : State
         {
             return;
         }
-        center.cardUI[chosenCardIndex].cardBackground.color = Color.white;
+        UnfocusCurrentCard();
         CardHandler handler = this.AddComponent<CardHandler>();
         handler.currentPlayer = combatant;
         handler.currentCard = combatant.Deck.HandCards[chosenCardIndex];
@@ -81,7 +81,6 @@ public class PlayerTurn : State
         approveAction.performed -= OnApproved;
         discardAction.performed -= OnDiscard;
         restAction.performed -= OnRest;
-        center.cardTray.SetActive(false);
         Destroy(this);
     }
 
@@ -94,19 +93,20 @@ public class PlayerTurn : State
             if (i < combatant.Deck.HandCards.Count)
             {
                 center.cardUI[i].gameObject.SetActive(true);
-                center.cardUI[i].DisplayCard(combatant.Deck.HandCards[i]);
+                bool isSelected = (i == chosenCardIndex);
+                // Pass focus state directly to DisplayCard
+                center.cardUI[i].DisplayCard(combatant.Deck.HandCards[i], isSelected);
             }
             else
             {
                 center.cardUI[i].gameObject.SetActive(false);
             }
         }
-        center.cardUI[chosenCardIndex].cardBackground.color = Color.saddleBrown;
     }
 
     public void changeIndex(int amount)
     {
-        center.cardUI[chosenCardIndex].cardBackground.color = Color.white;
+        UnfocusCurrentCard();
         chosenCardIndex += amount;
         if (chosenCardIndex >= combatant.Deck.HandCards.Count)
         {
@@ -115,8 +115,21 @@ public class PlayerTurn : State
         {
             chosenCardIndex = combatant.Deck.HandCards.Count - 1;
         }
-        center.cardUI[chosenCardIndex].cardBackground.color = Color.saddleBrown;
+        FocusCurrentCard();
     }
+    
+    private void FocusCurrentCard()
+    {
+        var hand = combatant.Deck.HandCards;
+        center.cardUI[chosenCardIndex].SetFocusState(hand[chosenCardIndex], isFocused: true);
+    }
+    
+    private void UnfocusCurrentCard()
+    {
+        var hand = combatant.Deck.HandCards;
+        center.cardUI[chosenCardIndex].SetFocusState(hand[chosenCardIndex], isFocused: false);
+    }
+    
 
     public void iterate()
     {
