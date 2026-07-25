@@ -101,11 +101,11 @@ Tilemap:
   m_TileAssetArray:
   - serializedVersion: 2
     m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: fb990609e6952b74998843e0e2284479, type: 2}
+    m_Data: {fileID: 11400000, guid: c73d5f32d07915042a8332a19f74e3c0, type: 2}
   m_TileSpriteArray:
   - serializedVersion: 2
     m_RefCount: 1
-    m_Data: {fileID: 5027102531021973376, guid: f5d38e42dc69cd247b17d37f2b8bfbaa, type: 3}
+    m_Data: {fileID: 21300000, guid: 4ee36be3bd340c44897ed2397b9f8cec, type: 3}
   m_TileMatrixArray:
   - serializedVersion: 2
     m_RefCount: 1
@@ -210,7 +210,7 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
---- !u!114 &5747102279169907654
+--- !u!114 &204306779114903827
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
