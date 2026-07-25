@@ -21,6 +21,7 @@ public class PlayerMovement : State
     private InputAction interactAction;
     private InputAction cardAction;
     private InputAction resetAction;
+    private InputAction DeckViewAction;
 
 
     // Update is called once per frame
@@ -56,8 +57,16 @@ public class PlayerMovement : State
         resetAction = InputSystem.actions.FindAction("Player/Attack");
         resetAction.performed += OnReset;
         
+        DeckViewAction = InputSystem.actions.FindAction("Player/DeckView");
+        DeckViewAction.performed += DeckViewActionOnPerformed;
+        
     }
-    
+
+    private void DeckViewActionOnPerformed(InputAction.CallbackContext obj)
+    {
+        ChangeState(this.AddComponent<DeckViewing>());
+    }
+
     // We shuffle the deck
     private void OnReset(InputAction.CallbackContext obj)
     {
@@ -79,6 +88,7 @@ public class PlayerMovement : State
         cardAction.performed -= OnCard;
         interactAction.performed -= OnInteract;
         resetAction.performed -= OnReset;
+        DeckViewAction.performed -= DeckViewActionOnPerformed;
         //the required destroy
         Destroy(this);
     }
@@ -96,6 +106,8 @@ public class PlayerMovement : State
         // Uses the state-changing method already provided.
         ChangeState(this.AddComponent<InteractState>());
     }
+    
+    
 
     //Can't recall why this was here...
     private void OnDestroy()

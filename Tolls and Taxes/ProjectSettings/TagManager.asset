@@ -15,7 +15,7 @@ TagManager:
   - Walls
   - 
   - 
-  - 
+  - Actual UI
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: ForeGround
     uniqueID: 741007001
+    locked: 0
+  - name: UI
+    uniqueID: 3173763803
     locked: 0
   m_RenderingLayers:
   - Default

@@ -13,6 +13,8 @@ public class PartyLeader : PartyMember
     public static event Action<Vector2> Interaction;
     public static event Action<Vector2> Attack;
     public static event Action<Vector2,int> AOEAttack;
+
+    [SerializeField] public DeckViewOverLay DeckMenu;
     
     //Speed stat.
     public int speed;

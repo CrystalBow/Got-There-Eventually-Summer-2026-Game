@@ -1,5 +1,6 @@
-using UnityEngine;
+using System;
 using System.Collections.Generic;
+using Random = UnityEngine.Random;
 
 public class Deck
 {
@@ -91,7 +92,7 @@ public class Deck
 /// A container for card information.
 /// </summary>
 [System.Serializable]
-public class CardByte
+public class CardByte : IComparable<CardByte>
 {
     // Basic info.
     public bool isSpecialty;
@@ -206,5 +207,13 @@ public class CardByte
                 SpriteName += "_3_";
             }
         }
+    }
+
+
+    public int CompareTo(CardByte other)
+    {
+        if (other == null) return 1;
+        
+        return this.Name.CompareTo(other.Name);
     }
 }
