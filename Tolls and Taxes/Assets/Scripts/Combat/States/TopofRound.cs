@@ -51,8 +51,16 @@ public class TopofRound : State {
         // throw new System.NotImplementedException();
     }
 
+    /*
+     * As you might expect, this function sorts initiativeOrder.
+     * It's important to note that this only runs at top of round, 
+     * meaning speed changes come to effect only after the new round begins.
+     */
     public void sortInitiativeList()
     {
+        // We have 2 lists, the current initiativeOrder, and a new list.
+        // We replace the old list with a reference to toReturn after toSort is dealt with.
+        // We need to replace the staticdata references once we add the effects manager
         List<CombatCenter.InitiativeToken> toSort = combatCenter.initiativeOrder;
         List<CombatCenter.InitiativeToken> toReturn = new List<CombatCenter.InitiativeToken>();
 

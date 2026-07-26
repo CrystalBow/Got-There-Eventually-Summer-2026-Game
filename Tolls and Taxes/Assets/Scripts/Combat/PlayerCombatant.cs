@@ -2,6 +2,9 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
+/*
+ * This script manages an individual combatatant for the player.
+ */
 public class PlayerCombatant : Combatant
 {
     public int currentMP { get; set; }
