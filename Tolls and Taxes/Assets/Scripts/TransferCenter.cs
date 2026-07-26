@@ -15,6 +15,8 @@ public class TransferCenter : MonoBehaviour
         public Deck Deck;
         public int CurrentHp;
         public int CurrentMp;
+        public int CurrentLevel;
+        public int CurrentXp;
     }
     
     private readonly Dictionary<string, CharacterSessionData> _partySessionData = new Dictionary<string, CharacterSessionData>();
@@ -39,7 +41,7 @@ public class TransferCenter : MonoBehaviour
     /// <summary>
     /// Saves or updates a character's complete exploration/combat state.
     /// </summary>
-    public void SaveCharacterState(string characterName, Deck currentDeck, int hp, int mp)
+    public void SaveCharacterState(string characterName, Deck currentDeck, int hp, int mp, int level, int xp)
     {
         if (!_partySessionData.ContainsKey(characterName))
         {
@@ -51,7 +53,9 @@ public class TransferCenter : MonoBehaviour
             CharacterName = characterName,
             Deck = currentDeck,
             CurrentHp = hp,
-            CurrentMp = mp
+            CurrentMp = mp,
+            CurrentLevel = level,
+            CurrentXp = xp
         };
         Debug.Log("Saved Character: " + characterName);
     }

@@ -18,7 +18,7 @@ public class BuildDeckScript : MonoBehaviour
         FirstDeck.AddCard(CardByte.Create("Attack!","Attacks",DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
         FirstDeck.AddCard(CardByte.Create("Attack!","Attacks",DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
         FirstDeck.AddCard(CardByte.Create("Force Bolt Barrage","Attacks", DataCenter.Instance.GlobalCards.Attacks["Force Bolt Barrage"]));
-        TransferCenter.Instance.SaveCharacterState("Samantha Pel", FirstDeck, DataCenter.Instance.Allies["Samantha Pel"].Hp, DataCenter.Instance.Allies["Samantha Pel"].Mp);
+        TransferCenter.Instance.SaveCharacterState("Samantha Pel", FirstDeck, DataCenter.Instance.Allies["Samantha Pel"].Hp, DataCenter.Instance.Allies["Samantha Pel"].Mp,1, 0);
         
         secondDeck.AddCard(CardByte.Create("Momentum Strike", "Attacks", DataCenter.Instance.Allies["Samantha Pel"].SpecialtyCards.Attacks["Momentum Strike"], true));
         secondDeck.AddCard(CardByte.Create("Sample Super Strike!","Attacks", DataCenter.Instance.Allies["Samantha Pel"].SpecialtyCards.Attacks["Sample Super Strike!"], true));
@@ -26,7 +26,7 @@ public class BuildDeckScript : MonoBehaviour
         secondDeck.AddCard(CardByte.Create("Attack!","Attacks",DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
         secondDeck.AddCard(CardByte.Create("Attack!","Attacks",DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
         secondDeck.AddCard(CardByte.Create("Force Bolt Barrage","Attacks", DataCenter.Instance.GlobalCards.Attacks["Force Bolt Barrage"]));
-        TransferCenter.Instance.SaveCharacterState("Samantha Pel 2", secondDeck, DataCenter.Instance.Allies["Samantha Pel"].Hp, DataCenter.Instance.Allies["Samantha Pel"].Mp);
+        TransferCenter.Instance.SaveCharacterState("Samantha Pel 2", secondDeck, DataCenter.Instance.Allies["Samantha Pel"].Hp, DataCenter.Instance.Allies["Samantha Pel"].Mp, 2, 0);
         
         thirdDeck.AddCard(CardByte.Create("Momentum Strike", "Attacks", DataCenter.Instance.Allies["Samantha Pel"].SpecialtyCards.Attacks["Momentum Strike"], true));
         thirdDeck.AddCard(CardByte.Create("Sample Super Strike!","Attacks", DataCenter.Instance.Allies["Samantha Pel"].SpecialtyCards.Attacks["Sample Super Strike!"], true));
@@ -34,7 +34,7 @@ public class BuildDeckScript : MonoBehaviour
         thirdDeck.AddCard(CardByte.Create("Attack!","Attacks",DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
         thirdDeck.AddCard(CardByte.Create("Attack!","Attacks",DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
         thirdDeck.AddCard(CardByte.Create("Force Bolt Barrage","Attacks", DataCenter.Instance.GlobalCards.Attacks["Force Bolt Barrage"]));
-        TransferCenter.Instance.SaveCharacterState("Samantha Pel 3", thirdDeck, DataCenter.Instance.Allies["Samantha Pel"].Hp, DataCenter.Instance.Allies["Samantha Pel"].Mp);
+        TransferCenter.Instance.SaveCharacterState("Samantha Pel 3", thirdDeck, DataCenter.Instance.Allies["Samantha Pel"].Hp, DataCenter.Instance.Allies["Samantha Pel"].Mp, 10,0);
         Destroy(this.gameObject);
     }
 

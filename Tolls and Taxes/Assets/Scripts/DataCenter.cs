@@ -85,5 +85,15 @@ public class DataCenter : MonoBehaviour
         GameObject g = new GameObject("Generated_DataCenter");
         g.AddComponent<DataCenter>();
     }
+
+    public int StatCalculation(int statBase, float scale, int level = 1)
+    {
+        return statBase + (int)(scale * (level-1));
+    }
+
+    public int NextXpCalcultation(int level = 1)
+    {
+        return 10 * level*level;
+    }
     
 }

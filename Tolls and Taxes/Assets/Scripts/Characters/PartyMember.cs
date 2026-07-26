@@ -11,6 +11,8 @@ public class PartyMember : Character
     public int HP;
     [NonSerialized]
     public int MP;
+    [NonSerialized] public int XP;
+    [NonSerialized] public int Level;
     public Deck Deck = new Deck();
     
     // Linked List Links
@@ -49,6 +51,8 @@ public class PartyMember : Character
         Deck = data.Deck;
         HP = data.CurrentHp;
         MP = data.CurrentMp;
+        Level = data.CurrentLevel;
+        XP = data.CurrentXp;
         //Shuffle the deck and prep the follow queue
         Deck.Shuffle();
         FollowTarget = this.transform.position;
