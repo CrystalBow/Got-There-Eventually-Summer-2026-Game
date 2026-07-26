@@ -86,9 +86,34 @@ public class DataCenter : MonoBehaviour
         g.AddComponent<DataCenter>();
     }
 
-    public int StatCalculation(int statBase, float scale, int level = 1)
+    private int StatCalculation(int statBase, float scale, int level = 1)
     {
         return statBase + (int)(scale * (level-1));
+    }
+
+    public int AttackCalculation(PlayableData playableData, int level = 1)
+    {
+        return StatCalculation(playableData.Attack, playableData.AttackScale, level);
+    }
+
+    public int DefenseCalculation(PlayableData playableData, int level = 1)
+    {
+        return StatCalculation(playableData.Defense, playableData.DefenseScale, level);
+    }
+
+    public int SpeedCalculation(PlayableData playableData, int level = 1)
+    {
+        return StatCalculation(playableData.Speed, playableData.SpeedScale, level);
+    }
+
+    public int maxHealthCalculation(PlayableData playableData, int level = 1)
+    {
+        return StatCalculation(playableData.Hp, playableData.HpScale, level);
+    }
+
+    public int maxManaCalculation(PlayableData playableData, int level = 1)
+    {
+        return StatCalculation(playableData.Mp, playableData.MpScale, level);
     }
 
     public int NextXpCalcultation(int level = 1)

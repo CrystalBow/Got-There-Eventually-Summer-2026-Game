@@ -7,6 +7,8 @@ using UnityEngine;
  */
 public class PlayerCombatant : Combatant
 {
+    public int Level;
+    public int currentXP;
     public int currentMP { get; set; }
     public PlayableData StaticPlayableData { get; set; }
     public Deck Deck;
@@ -17,6 +19,8 @@ public class PlayerCombatant : Combatant
         TransferCenter.CharacterSessionData data = TransferCenter.Instance.GetCharacterState(CombatantName);
         currentMP = data.CurrentMp;
         currentHP =  data.CurrentHp;
+        currentXP = data.CurrentXp;
+        Level = data.CurrentLevel;
         Deck = data.Deck;
         StaticData = StaticPlayableData;
         CardHandler.CallAllies += CallAllies;
@@ -29,5 +33,23 @@ public class PlayerCombatant : Combatant
             return;
         }
         CardHandler.allies.Add(this);
+    }
+
+    public override void damage(int damageNumber)
+    {
+        int defense = DataCenter.Instance.DefenseCalculation(StaticPlayableData, Level);
+        if (defense >= damageNumber)
+        {
+            
+        }
+        else
+        {
+            currentHP -= (damageNumber - defense);
+            if (isDead())
+            {
+                OnDeathInvoker(this);
+            }
+        }
+        
     }
 }

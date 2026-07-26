@@ -43,14 +43,14 @@ public class Combatant : Character
     /*
      * This function deals damage to this enemy, accounting automatically for defense.
      */
-    public void damage(int damageNumber)
+    public virtual void damage(int damageNumber)
     {
         if (StaticData.Defense >= damageNumber)
         {
             return;
         }
 
-        // If the damage kills thsi enemy, we want to ensure we count it and take it off the screen.
+        // If the damage kills this enemy, we want to ensure we count it and take it off the screen.
         currentHP -= (damageNumber - StaticData.Defense);
         if (isDead())
         {
@@ -68,6 +68,10 @@ public class Combatant : Character
         }
         return false;
     }
-    
+
+    protected void OnDeathInvoker(Combatant combatant)
+    {
+        OnDeath?.Invoke(combatant);
+    }
     
 }

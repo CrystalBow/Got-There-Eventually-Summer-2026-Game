@@ -90,9 +90,10 @@ public class CardHandler : State
         if (currentCard.StaticData.Cost <= currentPlayer.currentMP)
         {
             currentPlayer.currentMP -= currentCard.StaticData.Cost;
-            if (currentPlayer.currentMP > currentPlayer.StaticPlayableData.Mp)
+            int MaxMP = DataCenter.Instance.maxManaCalculation(currentPlayer.StaticPlayableData, currentPlayer.Level);
+            if (currentPlayer.currentMP > MaxMP)
             {
-                currentPlayer.currentMP = currentPlayer.StaticPlayableData.Mp;
+                currentPlayer.currentMP = MaxMP;
             }
         }
         else

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -13,7 +14,7 @@ public class CombatCenter : Character
     public List<CardUI> cardUI;
 
 
-    public class InitiativeToken
+    public class InitiativeToken : IComparable<InitiativeToken>
     {
         public string unitName { get; init; }
         public bool isAlly { get; init; }
@@ -25,6 +26,27 @@ public class CombatCenter : Character
             this.unitName = toName;
             this.isAlly = toAlly;
             this.Reference = reference;
+        }
+
+        public int CompareTo(InitiativeToken other)
+        {
+            int OtherSpeed = other.Reference.StaticData.Speed;
+            int ourSpeed = Reference.StaticData.Speed;
+            if (other == null)
+            {
+                return 1;
+            }
+            if (other.isAlly)
+            {
+                PlayerCombatant playerCombatant = other.Reference as PlayerCombatant;
+                OtherSpeed = DataCenter.Instance.SpeedCalculation(playerCombatant.StaticPlayableData, playerCombatant.Level);
+            }
+            if (isAlly)
+            {
+                PlayerCombatant playerCombatant = other.Reference as PlayerCombatant;
+                ourSpeed = DataCenter.Instance.SpeedCalculation(playerCombatant.StaticPlayableData, playerCombatant.Level);
+            }
+            return ourSpeed.CompareTo(OtherSpeed);
         }
     }
 
