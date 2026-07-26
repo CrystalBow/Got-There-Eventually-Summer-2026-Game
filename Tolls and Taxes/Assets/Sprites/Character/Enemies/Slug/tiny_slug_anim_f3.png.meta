@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1de6cc68e5b390d4c8e4ed9ea7e5489a
+guid: f9e221aa83e4a6843a437bde8624dfee
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3780994726546096666
-    second: NPC_TollClerk_0
+      213: -6870263189603159055
+    second: tiny_slug_anim_f3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NPC_TollClerk_0
+      name: tiny_slug_anim_f3_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 2
         y: 0
-        width: 14
-        height: 24
+        width: 13
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ed389a2455378bc0800000000000000
-      internalID: -3780994726546096666
+      spriteID: 1f3f24e770ce7a0a0800000000000000
+      internalID: -6870263189603159055
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      NPC_TollClerk_0: -3780994726546096666
+      tiny_slug_anim_f3_0: -6870263189603159055
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
