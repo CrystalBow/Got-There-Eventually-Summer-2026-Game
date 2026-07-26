@@ -73,7 +73,7 @@
                     "name": "Next",
                     "type": "Button",
                     "id": "b7230bb6-fc9b-4f52-8b25-f5e19cb2c2ba",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -82,7 +82,7 @@
                     "name": "Sprint",
                     "type": "Button",
                     "id": "641cd816-40e6-41b4-8c3d-04687c349290",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -90,7 +90,7 @@
                 {
                     "name": "DeckView",
                     "type": "Button",
-                    "id": "1b0f0db9-12a4-4d05-9517-85b9fdb3959b",
+                    "id": "b1537998-4ba5-4fb2-b2d0-a36de0c560ab",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -485,19 +485,19 @@
                 },
                 {
                     "name": "",
-                    "id": "f6ec5fcb-4387-4fdb-a54f-d22802d96366",
-                    "path": "<Keyboard>/tab",
+                    "id": "9797f4a5-0eaf-4b0e-9805-2ee42b2a2245",
+                    "path": "<Keyboard>/v",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "DeckView",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "fd09be10-59f0-4495-82a6-73f3bf9ff3d8",
-                    "path": "",
+                    "id": "c3f2d539-148d-45bc-bec1-c56c3ce53185",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

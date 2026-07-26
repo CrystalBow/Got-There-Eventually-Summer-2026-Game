@@ -11,7 +11,6 @@ public abstract class State : MonoBehaviour
     /// Can be used to fetch other components or cast to get other methods of a character subclass.
     /// </remarks>
     protected Character Owner { get; set; }
-    
     /// <summary>
     /// Occurs when the state enters
     /// </summary>
