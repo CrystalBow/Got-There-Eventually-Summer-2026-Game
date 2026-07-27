@@ -127,8 +127,8 @@
                 "Attacks": {
                     "Radiant Mace": {
                         "Description": "Deal 3 Damage.",
-                        "Damage": 0,
-                        "Time": 1,
+                        "Damage": 3,
+                        "Time": -1,
                         "Cost": 1,
                         "Effects": []
                     }

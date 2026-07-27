@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /*
  * The EnemyTurn class is a state class that performs an enemy turn when triggered by a separate state.
@@ -61,7 +62,7 @@ public class EnemyTurn : State
          * attackTarget[x] holds an index for an ally in the initiativeOrder, which means you must reference both.
          */
         int attackTarget = Random.Range(0, alliedIndices.Count);
-
+        
         // Right now, we just do basic damage.
         // Recall that defense is automatically accounted for without external input by the combatant classes.
         combatCenter.initiativeOrder[alliedIndices[attackTarget]].Reference.damage(combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.StaticData.Attack);
@@ -69,7 +70,8 @@ public class EnemyTurn : State
         // We know we just attacked, so we reference this automatically tracked variable to see if the player has lost.
         if (combatCenter.aliveAllies == 0)
         {
-            // Do scene transition here for loss
+            SceneManager.LoadScene("Prototype GameOver");
+            return;
         }
 
         bool foundDeadGuy = true;

@@ -13,6 +13,7 @@ public class CombatTransitionManager : MonoBehaviour
     [Header("Positioning")]
     [Tooltip("Distance offset to place the combat scene root objects in world space.")]
     [SerializeField] private Vector3 combatSceneOffset = new Vector3(5000f, 5000f, 5000f);
+    [SerializeField] private Vector3 cameraOffset = new Vector3(5000f, 5000f, 4990f);
 
     private Scene mainWorldScene;
     private Scene combatScene;
@@ -77,8 +78,14 @@ public class CombatTransitionManager : MonoBehaviour
         GameObject[] rootObjects = scene.GetRootGameObjects();
         foreach (GameObject go in rootObjects)
         {
-            // Shift each root object by the offset
-            go.transform.position += offset;
+            if (go.TryGetComponent<Camera>(out Camera c))
+            {
+                c.transform.position += cameraOffset;
+            }
+            else
+            {
+                go.transform.position += offset;
+            }
         }
     }
 

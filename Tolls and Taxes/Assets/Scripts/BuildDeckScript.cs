@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class BuildDeckScript : MonoBehaviour
 {
+    public static BuildDeckScript Instance { get; private set; }
+    Deck HealerDeck;
+    Deck AttackerDeck;
+    Deck DefenderDeck;
+    
     
     void Start()
     {
@@ -9,33 +14,114 @@ public class BuildDeckScript : MonoBehaviour
         {
             
         }
-        Deck FirstDeck = new Deck();
-        Deck secondDeck = new Deck();
-        Deck thirdDeck = new Deck();
-        FirstDeck.AddCard(CardByte.Create("Momentum Strike", "Attacks", DataCenter.Instance.Allies["Samantha Pel"].SpecialtyCards.Attacks["Momentum Strike"], true));
-        FirstDeck.AddCard(CardByte.Create("Sample Super Strike!","Attacks", DataCenter.Instance.Allies["Samantha Pel"].SpecialtyCards.Attacks["Sample Super Strike!"], true));
-        FirstDeck.AddCard(CardByte.Create("First Aid", "Healing", DataCenter.Instance.Allies["Samantha Pel"].SpecialtyCards.Healing["First Aid"], true));
-        FirstDeck.AddCard(CardByte.Create("Attack!","Attacks",DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
-        FirstDeck.AddCard(CardByte.Create("Attack!","Attacks",DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
-        FirstDeck.AddCard(CardByte.Create("Force Bolt Barrage","Attacks", DataCenter.Instance.GlobalCards.Attacks["Force Bolt Barrage"]));
-        TransferCenter.Instance.SaveCharacterState("Samantha Pel", FirstDeck, DataCenter.Instance.Allies["Samantha Pel"].Hp, DataCenter.Instance.Allies["Samantha Pel"].Mp,1, 0);
         
-        secondDeck.AddCard(CardByte.Create("Momentum Strike", "Attacks", DataCenter.Instance.Allies["Samantha Pel"].SpecialtyCards.Attacks["Momentum Strike"], true));
-        secondDeck.AddCard(CardByte.Create("Sample Super Strike!","Attacks", DataCenter.Instance.Allies["Samantha Pel"].SpecialtyCards.Attacks["Sample Super Strike!"], true));
-        secondDeck.AddCard(CardByte.Create("First Aid", "Healing", DataCenter.Instance.Allies["Samantha Pel"].SpecialtyCards.Healing["First Aid"], true));
-        secondDeck.AddCard(CardByte.Create("Attack!","Attacks",DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
-        secondDeck.AddCard(CardByte.Create("Attack!","Attacks",DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
-        secondDeck.AddCard(CardByte.Create("Force Bolt Barrage","Attacks", DataCenter.Instance.GlobalCards.Attacks["Force Bolt Barrage"]));
-        TransferCenter.Instance.SaveCharacterState("Samantha Pel 2", secondDeck, DataCenter.Instance.Allies["Samantha Pel"].Hp, DataCenter.Instance.Allies["Samantha Pel"].Mp, 2, 0);
         
-        thirdDeck.AddCard(CardByte.Create("Momentum Strike", "Attacks", DataCenter.Instance.Allies["Samantha Pel"].SpecialtyCards.Attacks["Momentum Strike"], true));
-        thirdDeck.AddCard(CardByte.Create("Sample Super Strike!","Attacks", DataCenter.Instance.Allies["Samantha Pel"].SpecialtyCards.Attacks["Sample Super Strike!"], true));
-        thirdDeck.AddCard(CardByte.Create("First Aid", "Healing", DataCenter.Instance.Allies["Samantha Pel"].SpecialtyCards.Healing["First Aid"], true));
-        thirdDeck.AddCard(CardByte.Create("Attack!","Attacks",DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
-        thirdDeck.AddCard(CardByte.Create("Attack!","Attacks",DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
-        thirdDeck.AddCard(CardByte.Create("Force Bolt Barrage","Attacks", DataCenter.Instance.GlobalCards.Attacks["Force Bolt Barrage"]));
-        TransferCenter.Instance.SaveCharacterState("Samantha Pel 3", thirdDeck, DataCenter.Instance.Allies["Samantha Pel"].Hp, DataCenter.Instance.Allies["Samantha Pel"].Mp, 10,0);
-        Destroy(this.gameObject);
+
+        if (Instance == null)
+        {
+            BuildDeckScript.Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        // Deck Builds
+        Deck currDeck = new Deck();
+        //Healer (Samantha Pel)
+        PlayableData currAlly = DataCenter.Instance.Allies["Samantha Pel"];
+        foreach (string cardName in currAlly.SpecialtyCards.Attacks.Keys)
+        {
+            currDeck.AddCard(CardByte.Create(cardName, "Attacks",currAlly.SpecialtyCards.Attacks[cardName], true));
+        }
+        foreach (string cardName in currAlly.SpecialtyCards.Buffs.Keys)
+        {
+            currDeck.AddCard(CardByte.Create(cardName, "Buffs",currAlly.SpecialtyCards.Buffs[cardName], true));
+        }
+        foreach (string cardName in currAlly.SpecialtyCards.Debuffs.Keys)
+        {
+            currDeck.AddCard(CardByte.Create(cardName, "Debuffs",currAlly.SpecialtyCards.Debuffs[cardName], true));
+        }
+        foreach (string cardName in currAlly.SpecialtyCards.Healing.Keys)
+        {
+            currDeck.AddCard(CardByte.Create(cardName, "Healing",currAlly.SpecialtyCards.Healing[cardName], true));
+        }
+        currDeck.AddCard(CardByte.Create("Accelerate","Buffs",DataCenter.Instance.GlobalCards.Buffs["Accelerate"]));
+        currDeck.AddCard(CardByte.Create("Force Bolt Barrage","Attacks",DataCenter.Instance.GlobalCards.Attacks["Force Bolt Barrage"]));
+        currDeck.AddCard(CardByte.Create("Force Bolt Barrage","Attacks",DataCenter.Instance.GlobalCards.Attacks["Force Bolt Barrage"]));
+        currDeck.AddCard(CardByte.Create("First Aid","Healing", DataCenter.Instance.GlobalCards.Healing["First Aid"]));
+        currDeck.AddCard(CardByte.Create("First Aid","Healing", DataCenter.Instance.GlobalCards.Healing["First Aid"]));
+        currDeck.AddCard(CardByte.Create("Attack!", "Attacks", DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
+        currDeck.AddCard(CardByte.Create("Attack!", "Attacks", DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
+        currDeck.AddCard(CardByte.Create("Attack!", "Attacks", DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
+        HealerDeck = currDeck;
+        TransferCenter.Instance.SaveCharacterState("Samantha Pel", HealerDeck, currAlly.Hp, currAlly.Mp,1,0);
+        
+        
+        //Defender (John Goblinus)
+        currDeck = new Deck();
+        currAlly = DataCenter.Instance.Allies["John Goblinus"];
+        foreach (string cardName in currAlly.SpecialtyCards.Attacks.Keys)
+        {
+            currDeck.AddCard(CardByte.Create(cardName, "Attacks",currAlly.SpecialtyCards.Attacks[cardName], true));
+        }
+        foreach (string cardName in currAlly.SpecialtyCards.Buffs.Keys)
+        {
+            currDeck.AddCard(CardByte.Create(cardName, "Buffs",currAlly.SpecialtyCards.Buffs[cardName], true));
+        }
+        foreach (string cardName in currAlly.SpecialtyCards.Debuffs.Keys)
+        {
+            currDeck.AddCard(CardByte.Create(cardName, "Debuffs",currAlly.SpecialtyCards.Debuffs[cardName], true));
+        }
+        foreach (string cardName in currAlly.SpecialtyCards.Healing.Keys)
+        {
+            currDeck.AddCard(CardByte.Create(cardName, "Healing",currAlly.SpecialtyCards.Healing[cardName], true));
+        }
+        currDeck.AddCard(CardByte.Create("Accelerate","Buffs",DataCenter.Instance.GlobalCards.Buffs["Accelerate"]));
+        currDeck.AddCard(CardByte.Create("Attack!", "Attacks", DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
+        currDeck.AddCard(CardByte.Create("Attack!", "Attacks", DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
+        currDeck.AddCard(CardByte.Create("Attack!", "Attacks", DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
+        currDeck.AddCard(CardByte.Create("Attack!", "Attacks", DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
+        currDeck.AddCard(CardByte.Create("Attack!", "Attacks", DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
+        currDeck.AddCard(CardByte.Create("First Aid","Healing", DataCenter.Instance.GlobalCards.Healing["First Aid"]));
+        currDeck.AddCard(CardByte.Create("Sharpen Steel","Buffs", DataCenter.Instance.GlobalCards.Buffs["Sharpen Steel"]));
+        currDeck.AddCard(CardByte.Create("Reckless Attack", "Attacks", DataCenter.Instance.GlobalCards.Attacks["Reckless Attack"]));
+        
+        
+        DefenderDeck = currDeck;
+        TransferCenter.Instance.SaveCharacterState("John Goblinus",DefenderDeck,currAlly.Hp, currAlly.Mp,1,0);
+        
+        
+        //Attacker (Marvin Bold)
+        currDeck = new Deck();
+        currAlly = DataCenter.Instance.Allies["Marvin Bold"];
+        foreach (string cardName in currAlly.SpecialtyCards.Attacks.Keys)
+        {
+            currDeck.AddCard(CardByte.Create(cardName, "Attacks",currAlly.SpecialtyCards.Attacks[cardName], true));
+        }
+        foreach (string cardName in currAlly.SpecialtyCards.Buffs.Keys)
+        {
+            currDeck.AddCard(CardByte.Create(cardName, "Buffs",currAlly.SpecialtyCards.Buffs[cardName], true));
+        }
+        foreach (string cardName in currAlly.SpecialtyCards.Debuffs.Keys)
+        {
+            currDeck.AddCard(CardByte.Create(cardName, "Debuffs",currAlly.SpecialtyCards.Debuffs[cardName], true));
+        }
+        foreach (string cardName in currAlly.SpecialtyCards.Healing.Keys)
+        {
+            currDeck.AddCard(CardByte.Create(cardName, "Healing",currAlly.SpecialtyCards.Healing[cardName], true));
+        }
+        
+        currDeck.AddCard(CardByte.Create("Attack!", "Attacks", DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
+        currDeck.AddCard(CardByte.Create("Attack!", "Attacks", DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
+        currDeck.AddCard(CardByte.Create("Attack!", "Attacks", DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
+        currDeck.AddCard(CardByte.Create("Attack!", "Attacks", DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
+        currDeck.AddCard(CardByte.Create("Attack!", "Attacks", DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
+        currDeck.AddCard(CardByte.Create("First Aid","Healing", DataCenter.Instance.GlobalCards.Healing["First Aid"]));
+        currDeck.AddCard(CardByte.Create("Growl","Debuffs", DataCenter.Instance.GlobalCards.Debuffs["Growl"]));
+        AttackerDeck = currDeck;
+        TransferCenter.Instance.SaveCharacterState("Marvin Bold",DefenderDeck,currAlly.Hp, currAlly.Mp,1,0);
+        currDeck = new Deck();
+        
     }
 
     // Update is called once per frame

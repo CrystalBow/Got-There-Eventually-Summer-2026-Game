@@ -49,7 +49,7 @@ public class PartyLeader : PartyMember
         PartyMember memeber = NextMember;
         while (memeber != this)
         {
-            TransferCenter.Instance.SaveCharacterState(memeber.name, memeber.Deck, memeber.HP, memeber.MP, memeber.Level, memeber.XP);
+            TransferCenter.Instance.SaveCharacterState(memeber.MemberName, memeber.Deck, memeber.HP, memeber.MP, memeber.Level, memeber.XP);
             memeber = memeber.NextMember;
         }
     }

@@ -15,16 +15,19 @@ public class Intialize : State
             combatCenter.aliveAllies = 0;
             combatCenter.aliveEnemies = 0;
             Combatant[] combatants =  this.GameObject().GetComponentsInChildren<Combatant>();
+            Debug.Log(combatants.Length);
             foreach (Combatant combatant in combatants)
             {
                 combatant.Initialize();
                 if (combatant is PlayerCombatant)
                 {
                     combatCenter.aliveAllies += 1;
+                    Debug.Log("Player Registered");
                     combatCenter.initiativeOrder.Add(new CombatCenter.InitiativeToken(combatant.CombatantName, true, combatant));
                 }
                 else
                 {
+                    Debug.Log("Foe Registered");
                     combatCenter.aliveEnemies += 1;
                     combatCenter.initiativeOrder.Add(new CombatCenter.InitiativeToken(combatant.CombatantName, false, combatant));
                 }

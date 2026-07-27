@@ -51,8 +51,18 @@ public class CardUI : MonoBehaviour
         if (string.IsNullOrEmpty(baseSpriteName) || cardBackground == null || cardAtlas == null) 
             return;
 
-        // Builds the exact sprite name in the atlas (e.g., "Attacks_Card_3_1" or "Attacks_Card_3_0")
-        string fullSpriteKey = $"{baseSpriteName}{(isFocused ? "1" : "0")}";
+        string fullSpriteKey;
+
+        if (baseSpriteName == "Light_Card_2_" || baseSpriteName == "Light_Card_5_")
+        {
+            fullSpriteKey = $"{baseSpriteName}{(isFocused ? "15" : "14")}";
+        }
+        else
+        {
+            // Builds the exact sprite name in the atlas (e.g., "Attacks_Card_3_1" or "Attacks_Card_3_0")
+            fullSpriteKey = $"{baseSpriteName}{(isFocused ? "1" : "0")}";
+        }
+        
 
         // Grabs sprite directly from the atlas by key
         Sprite loadedSprite = cardAtlas.GetSprite(fullSpriteKey);

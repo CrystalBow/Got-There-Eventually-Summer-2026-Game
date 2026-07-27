@@ -12,6 +12,8 @@ public class CombatCenter : Character
     public List<InitiativeToken> initiativeOrder;
     public GameObject cardTray;
     public List<CardUI> cardUI;
+    private EnemyLoader loader;
+    public static event Action OnGameWon;
 
 
     public class InitiativeToken : IComparable<InitiativeToken>
@@ -65,6 +67,8 @@ public class CombatCenter : Character
 
     protected override void Start()
     {
+        loader = GetComponent<EnemyLoader>();
+        loader.SpawnUnits();
         CurrentState = this.AddComponent<Intialize>();
         CurrentState.EnterState();
         Combatant.OnDeath += CombatantOnOnDeath;
@@ -81,4 +85,10 @@ public class CombatCenter : Character
             aliveEnemies -= 1;
         }
     }
+    
+    public void battleWon()
+    {
+        OnGameWon?.Invoke();
+    }
+    
 }

@@ -73,6 +73,18 @@ public class PartyMember : Character
     protected override void Update()
     {
     }
-    
-    
+
+    public void OnEnable()
+    {
+        if (CurrentState == null)
+        {
+            return;
+        }
+        TransferCenter.CharacterSessionData data = TransferCenter.Instance.GetCharacterState(MemberName);
+        Deck = data.Deck;
+        HP = data.CurrentHp;
+        MP = data.CurrentMp;
+        Level = data.CurrentLevel;
+        XP = data.CurrentXp;
+    }
 }

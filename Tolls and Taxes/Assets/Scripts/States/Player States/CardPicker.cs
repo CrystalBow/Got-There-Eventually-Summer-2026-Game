@@ -61,8 +61,8 @@ public class CardPicker : State
     private void OnDiscard(InputAction.CallbackContext obj)
     {
         // Player discards their hand.
-        _activeMember.Deck.DiscardHand();
         UnfocusCard();
+        _activeMember.Deck.DiscardHand();
         _activeMember.spriteRenderer.color = Color.white;
         HideHand();
         ChangeState(this.AddComponent<PlayerMovement>());

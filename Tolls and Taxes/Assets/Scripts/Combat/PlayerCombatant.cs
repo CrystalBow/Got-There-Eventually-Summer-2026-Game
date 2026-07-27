@@ -25,6 +25,12 @@ public class PlayerCombatant : Combatant
         Level = data.CurrentLevel;
         Deck = data.Deck;
         CardHandler.CallAllies += CallAllies;
+        CombatCenter.OnGameWon += CombatCenterOnOnGameWon;
+    }
+
+    private void CombatCenterOnOnGameWon()
+    {
+        TransferCenter.Instance.SaveCharacterState(CombatantName, Deck,currentHP, currentMP, Level, currentXP);
     }
 
     private void CallAllies()
