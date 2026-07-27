@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class Character : MonoBehaviour
     public State CurrentState { get; set; }
     [NonSerialized]
     public Rigidbody2D body;
+    public List<GameObject> PartrolRoute = new List<GameObject>();
     
     // For testing
     [NonSerialized]

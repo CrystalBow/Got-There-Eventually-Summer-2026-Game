@@ -555,7 +555,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c282f396deea10d43b902be3e08f2179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Foe
+  PartrolRoute: []
   bodyCollider: {fileID: 0}
+  Foes:
+  - Tutorial Bug
 --- !u!1 &1684544900
 GameObject:
   m_ObjectHideFlags: 0

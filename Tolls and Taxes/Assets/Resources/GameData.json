@@ -1,129 +1,165 @@
 {
     "Ally": {
+        "Marvin Bold": {
+            "Hp": 7,
+            "Mp": 6,
+            "Attack": 3,
+            "Defense": 1,
+            "Speed": 6,
+            "HpScale": 1.2,
+            "MpScale": 0.6,
+            "AttackScale": 1.4,
+            "DefenseScale": 0.6,
+            "SpeedScale": 1.15,
+            "SpecialtyCards": {
+                "Attacks": {
+                    "Crushing Blow": {
+                        "Description": "Attack an enemy and weaken their defenses for 2 turns.",
+                        "Damage": 1,
+                        "Time": 1,
+                        "Cost": 1,
+                        "Effects": [
+                            10
+                        ]
+                    },
+                    "Double Attack": {
+                        "Description": "Attack twice!",
+                        "Damage": 1,
+                        "Time": -1,
+                        "Cost": 1,
+                        "Effects": [
+                            2
+                        ]
+                    },
+                    "Momentum Strike": {
+                        "Description": "Deal 1 damage and increase your speed.",
+                        "Damage": 1,
+                        "Time": 2,
+                        "Cost": 0,
+                        "Effects": [
+                            7
+                        ]
+                    },
+                    "Triple Fury": {
+                        "Description": "Attack thrice!",
+                        "Damage": 1,
+                        "Time": -1,
+                        "Cost": 2,
+                        "Effects": [
+                            3
+                        ]
+                    },
+                    "The 4 Way Path": {
+                        "Description": "Attack 4 times!",
+                        "Damage": 1,
+                        "Time": -1,
+                        "Cost": 4,
+                        "Effects": [
+                            4
+                        ]
+                    }
+                },
+                "Buffs": {},
+                "Healing": {},
+                "Debuffs": {}
+            }
+        },
+        "John Goblinus": {
+            "Hp": 9,
+            "Mp": 5,
+            "Attack": 2,
+            "Defense": 2,
+            "Speed": 4,
+            "HpScale": 1.5,
+            "MpScale": 0.5,
+            "AttackScale": 1.05,
+            "DefenseScale": 0.8,
+            "SpeedScale": 0.9,
+            "SpecialtyCards": {
+                "Attacks": {
+                    "Trip": {
+                        "Description": "Deal 1 damage and reduce their speed for 3 rounds.",
+                        "Damage": 1,
+                        "Time": 2,
+                        "Cost": 1,
+                        "Effects": [
+                            11
+                        ]
+                    },
+                    "Full Swing": {
+                        "Description": "Deal 6 Damage, but increase card costs for 3 rounds.",
+                        "Damage": 6,
+                        "Time": -1,
+                        "Cost": 0,
+                        "Effects": [
+                            12
+                        ]
+                    }
+                },
+                "Buffs": {
+                    "Steadfast": {
+                        "Description": "Raise defense significantly, but lower your speed for 3 turns.",
+                        "Damage": 0,
+                        "Time": 2,
+                        "Cost": 1,
+                        "Effects": [
+                            6,
+                            11
+                        ]
+                    }
+                },
+                "Healing": {},
+                "Debuffs": {}
+            }
+        },
         "Samantha Pel": {
-            "Hp": 8,
-            "Mp": 5,
+            "Hp": 7,
+            "Mp": 8,
             "Attack": 2,
             "Defense": 1,
             "Speed": 5,
-            "HpScale": 1.0,
-            "MpScale": 0.5,
-            "AttackScale": 1.25,
-            "DefenseScale": 0.75,
-            "SpeedScale": 1.0,
+            "HpScale": 1.1,
+            "MpScale": 0.8,
+            "AttackScale": 1.0,
+            "DefenseScale": 0.65,
+            "SpeedScale": 1.05,
             "SpecialtyCards": {
                 "Attacks": {
-                    "Momentum Strike": {
-                        "Description": "Increase speed your speed and deal 1 damage.",
-                        "Damage": 1,
+                    "Radiant Mace": {
+                        "Description": "Deal 3 Damage.",
+                        "Damage": 0,
                         "Time": 1,
-                        "Cost": 0,
-                        "Effects": [
-                            7
-                        ]
-                    },
-                    "Sample Super Strike!": {
-                        "Description": "Deal 5 damage!",
-                        "Damage": 5,
-                        "Time": -1,
-                        "Cost": 0,
-                        "Effects": []
-                    }
-                },
-                "Buffs": {},
-                "Healing": {
-                    "First Aid": {
-                        "Description": "Heal 2!",
-                        "Damage": -2,
-                        "Time": -1,
                         "Cost": 1,
                         "Effects": []
                     }
                 },
-                "Debuffs": {}
-            }
-        },
-        "Samantha Pel 2": {
-            "Hp": 8,
-            "Mp": 5,
-            "Attack": 2,
-            "Defense": 1,
-            "Speed": 5,
-            "HpScale": 1.0,
-            "MpScale": 0.5,
-            "AttackScale": 1.25,
-            "DefenseScale": 0.75,
-            "SpeedScale": 1.0,
-            "SpecialtyCards": {
-                "Attacks": {
-                    "Momentum Strike": {
-                        "Description": "Increase speed your speed and deal 1 damage.",
-                        "Damage": 1,
+                "Buffs": {
+                    "Sharpen Will": {
+                        "Description": "Reduce card costs for 2 turns.",
+                        "Damage": 0,
                         "Time": 1,
-                        "Cost": 0,
+                        "Cost": 2,
                         "Effects": [
-                            7
+                            8
                         ]
-                    },
-                    "Sample Super Strike!": {
-                        "Description": "Deal 5 damage!",
-                        "Damage": 5,
-                        "Time": -1,
-                        "Cost": 0,
-                        "Effects": []
                     }
                 },
-                "Buffs": {},
                 "Healing": {
-                    "First Aid": {
-                        "Description": "Heal 3!",
-                        "Damage": -3,
+                    "Meditate": {
+                        "Description": "Restore 2 mana.",
+                        "Damage": 0,
                         "Time": -1,
-                        "Cost": 1,
+                        "Cost": -2,
                         "Effects": []
-                    }
-                },
-                "Debuffs": {}
-            }
-        },
-        "Samantha Pel 3": {
-            "Hp": 8,
-            "Mp": 5,
-            "Attack": 2,
-            "Defense": 1,
-            "Speed": 5,
-            "HpScale": 1.0,
-            "MpScale": 0.5,
-            "AttackScale": 1.25,
-            "DefenseScale": 0.75,
-            "SpeedScale": 1.0,
-            "SpecialtyCards": {
-                "Attacks": {
-                    "Momentum Strike": {
-                        "Description": "Increase speed your speed and deal 1 damage.",
-                        "Damage": 1,
+                    },
+                    "Holy Light": {
+                        "Description": "Heal an ally and raise their defense for 2 turns.",
+                        "Damage": -1,
                         "Time": 1,
-                        "Cost": 0,
-                        "Effects": [
-                            7
-                        ]
-                    },
-                    "Sample Super Strike!": {
-                        "Description": "Deal 5 damage!",
-                        "Damage": 5,
-                        "Time": -1,
-                        "Cost": 0,
-                        "Effects": []
-                    }
-                },
-                "Buffs": {},
-                "Healing": {
-                    "First Aid": {
-                        "Description": "Heal 3!",
-                        "Damage": -3,
-                        "Time": -1,
                         "Cost": 1,
-                        "Effects": []
+                        "Effects": [
+                            6
+                        ]
                     }
                 },
                 "Debuffs": {}
@@ -132,11 +168,35 @@
     },
     "Location": {
         "Tutorial": {
-            "Tutorial Bug": {
-                "Hp": 10,
-                "Attack": 2,
+            "Skeleton": {
+                "Hp": 9,
+                "Attack": 5,
+                "Defense": 1,
+                "Speed": 3
+            },
+            "Zombie": {
+                "Hp": 12,
+                "Attack": 3,
+                "Defense": 2,
+                "Speed": 1
+            },
+            "Bandit": {
+                "Hp": 15,
+                "Attack": 5,
+                "Defense": 3,
+                "Speed": 4
+            },
+            "Living Shrub": {
+                "Hp": 3,
+                "Attack": 3,
                 "Defense": 1,
                 "Speed": 2
+            },
+            "Tutorial Bug": {
+                "Hp": 25,
+                "Attack": 6,
+                "Defense": 4,
+                "Speed": 4
             }
         }
     },
@@ -158,24 +218,71 @@
     "Cards": {
         "Attacks": {
             "Attack!": {
-                "Description": "Deal 1 Damage",
+                "Description": "Deal 1 Damage.",
                 "Damage": 1,
                 "Time": -1,
                 "Cost": 0,
                 "Effects": []
             },
             "Force Bolt Barrage": {
-                "Description": "Deal 2 Damage to all foes.",
+                "Description": "Deal 2 damage to all foes.",
                 "Damage": 2,
                 "Time": -1,
-                "Cost": 1,
+                "Cost": 2,
                 "Effects": [
                     1
                 ]
+            },
+            "Reckless Attack": {
+                "Description": "Deal 3 damage, but lower your defense.",
+                "Damage": 3,
+                "Time": 1,
+                "Cost": 0,
+                "Effects": [
+                    13
+                ]
             }
         },
-        "Buffs": {},
-        "Healing": {},
-        "Debuffs": {}
+        "Buffs": {
+            "Sharpen Steel": {
+                "Description": "Raise your attack for 3 turns.",
+                "Damage": 0,
+                "Time": 2,
+                "Cost": 2,
+                "Effects": [
+                    5
+                ]
+            },
+            "Accelerate": {
+                "Description": "Increase your speed for 3 rounds.",
+                "Damage": 0,
+                "Time": 2,
+                "Cost": 2,
+                "Effects": [
+                    7
+                ]
+            }
+        },
+        "Healing": {
+            "First Aid": {
+                "Description": "Heal 1!",
+                "Damage": -1,
+                "Time": -1,
+                "Cost": 1,
+                "Effects": []
+            }
+        },
+        "Debuffs": {
+            "Growl": {
+                "Description": "Lower a targets Defense and Attack for 2 turns.",
+                "Damage": 0,
+                "Time": 1,
+                "Cost": 1,
+                "Effects": [
+                    9,
+                    10
+                ]
+            }
+        }
     }
 }

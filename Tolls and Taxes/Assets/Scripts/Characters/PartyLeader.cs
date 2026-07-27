@@ -31,6 +31,7 @@ public class PartyLeader : PartyMember
         TransferCenter.CharacterSessionData data = TransferCenter.Instance.GetCharacterState(MemberName);
         //Temp Renderer
         this.spriteRenderer = GetComponent<SpriteRenderer>();
+        Foe.PreBattleProcessing += FoeOnPreBattleProcessing;
         Deck = data.Deck;
         Deck.Shuffle();
         HP = data.CurrentHp;
@@ -40,6 +41,17 @@ public class PartyLeader : PartyMember
         Crumb = this.transform.position;
         CurrentState.EnterState();
         speed = DataCenter.Instance.Allies[MemberName].Speed;
+    }
+
+    private void FoeOnPreBattleProcessing()
+    {
+        TransferCenter.Instance.SaveCharacterState(MemberName, Deck, HP, MP,Level,XP);
+        PartyMember memeber = NextMember;
+        while (memeber != this)
+        {
+            TransferCenter.Instance.SaveCharacterState(memeber.name, memeber.Deck, memeber.HP, memeber.MP, memeber.Level, memeber.XP);
+            memeber = memeber.NextMember;
+        }
     }
 
     // Update is called once per frame

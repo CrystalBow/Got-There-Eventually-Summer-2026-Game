@@ -23,6 +23,7 @@ public class TransferCenter : MonoBehaviour
     private readonly List<string> _partyOrder = new List<string>();
     
     public IReadOnlyList<string> PartyOrder => _partyOrder;
+    public List<string> foeQueue = new List<string>();
     
     private void Awake()
     {
