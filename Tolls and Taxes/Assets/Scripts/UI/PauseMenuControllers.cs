@@ -7,7 +7,10 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] private GameObject darkOverlay;
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject controlsPanel;
-    [SerializeField] private string startSceneName = "Prototype Start";
+    [SerializeField] private GameObject partyDetailsPanel;
+    [SerializeField]
+    private string startSceneName =
+        "Prototype Start";
 
     private bool isPaused;
 
@@ -18,6 +21,7 @@ public class PauseMenuController : MonoBehaviour
         darkOverlay.SetActive(false);
         pausePanel.SetActive(false);
         controlsPanel.SetActive(false);
+        partyDetailsPanel.SetActive(false);
     }
 
     private void Update()
@@ -28,7 +32,8 @@ public class PauseMenuController : MonoBehaviour
             return;
         }
 
-        if (controlsPanel.activeSelf)
+        if (controlsPanel.activeSelf ||
+            partyDetailsPanel.activeSelf)
         {
             ShowPauseMenu();
         }
@@ -50,6 +55,7 @@ public class PauseMenuController : MonoBehaviour
         darkOverlay.SetActive(true);
         pausePanel.SetActive(true);
         controlsPanel.SetActive(false);
+        partyDetailsPanel.SetActive(false);
     }
 
     public void ResumeGame()
@@ -60,17 +66,27 @@ public class PauseMenuController : MonoBehaviour
         darkOverlay.SetActive(false);
         pausePanel.SetActive(false);
         controlsPanel.SetActive(false);
+        partyDetailsPanel.SetActive(false);
     }
 
     public void ShowControls()
     {
         pausePanel.SetActive(false);
         controlsPanel.SetActive(true);
+        partyDetailsPanel.SetActive(false);
+    }
+
+    public void ShowPartyDetails()
+    {
+        pausePanel.SetActive(false);
+        controlsPanel.SetActive(false);
+        partyDetailsPanel.SetActive(true);
     }
 
     public void ShowPauseMenu()
     {
         controlsPanel.SetActive(false);
+        partyDetailsPanel.SetActive(false);
         pausePanel.SetActive(true);
     }
 

@@ -15565,6 +15565,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 692136783340818277, guid: fc2d57fa47e95fe4f90b577ec5051a72, type: 3}
+      propertyPath: 'partyMembers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1989689170}
+    - target: {fileID: 692136783340818277, guid: fc2d57fa47e95fe4f90b577ec5051a72, type: 3}
+      propertyPath: 'partyMembers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 719930121}
+    - target: {fileID: 692136783340818277, guid: fc2d57fa47e95fe4f90b577ec5051a72, type: 3}
+      propertyPath: 'partyMembers.Array.data[2]'
+      value: 
+      objectReference: {fileID: 18304931}
     - target: {fileID: 4033683151747083440, guid: fc2d57fa47e95fe4f90b577ec5051a72, type: 3}
       propertyPath: m_Name
       value: PauseControlsUI
