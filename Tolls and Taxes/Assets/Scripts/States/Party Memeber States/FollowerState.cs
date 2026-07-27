@@ -60,6 +60,17 @@ public class FollowerState : State
         }
         partyMember.Crumb = this.transform.position;
     }
+
+    public override void UnsubcribeState()
+    {
+        
+    }
+
+    public override void ResubscribeStates()
+    {
+        
+    }
+
     /// <summary>
     /// Checks if it's time to follow the person in front
     /// </summary>

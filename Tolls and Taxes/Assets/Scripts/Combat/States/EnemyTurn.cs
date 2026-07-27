@@ -28,6 +28,16 @@ public class EnemyTurn : State
         throw new System.NotImplementedException();
     }
 
+    public override void UnsubcribeState()
+    {
+        
+    }
+
+    public override void ResubscribeStates()
+    {
+        
+    }
+
     public void performEnemyTurn()
     {
         // Get an index of all living allies

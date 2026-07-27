@@ -33,8 +33,8 @@
                 "Buffs": {},
                 "Healing": {
                     "First Aid": {
-                        "Description": "Heal 3!",
-                        "Damage": -3,
+                        "Description": "Heal 2!",
+                        "Damage": -2,
                         "Time": -1,
                         "Cost": 1,
                         "Effects": []
@@ -152,7 +152,8 @@
         "Attack Down": 9,
         "Defense Down": 10,
         "Speed Down": 11,
-        "Magic Inefficiency": 12
+        "Magic Inefficiency": 12,
+        "Self Defense Down": 13
     },
     "Cards": {
         "Attacks": {

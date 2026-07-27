@@ -108,6 +108,26 @@ public class DeckViewing : State
         displayDetails();
     }
 
+    public override void UnsubcribeState()
+    {
+        moveInput.performed -= MoveInputOnperformed;
+        nextInput.performed -= NextInputOnperformed;
+        previousInput.performed -= PreviousInputOnperformed;
+        cancelInput.performed -= CancelInputOnperformed;
+    }
+
+    public override void ResubscribeStates()
+    {
+        if (moveInput == null)
+        {
+            return;
+        }
+        moveInput.performed += MoveInputOnperformed;
+        nextInput.performed += NextInputOnperformed;
+        previousInput.performed += PreviousInputOnperformed;
+        cancelInput.performed += CancelInputOnperformed;
+    }
+
     public void showDeck()
     {
         deckList.Clear();

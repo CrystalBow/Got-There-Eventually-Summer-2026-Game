@@ -19,7 +19,7 @@ public class TopofRound : State {
 
         if (combatCenter.aliveEnemies == 0)
         {
-            SceneManager.LoadScene("Prototype Start");
+            CombatTransitionManager.Instance.EndCombat();
         }
         else if (combatCenter.aliveAllies == 0)
         {
@@ -48,18 +48,27 @@ public class TopofRound : State {
         {
             ChangeState(this.AddComponent<EnemyTurn>());
         }
-        // throw new System.NotImplementedException();
     }
     
 
     public override void ExitState()
     {
         Destroy(this);
-        // throw new System.NotImplementedException();
+     
     }
 
     public override void UpdateState()
     {
         throw new System.NotImplementedException();
+    }
+
+    public override void UnsubcribeState()
+    {
+        
+    }
+
+    public override void ResubscribeStates()
+    {
+        
     }
 }

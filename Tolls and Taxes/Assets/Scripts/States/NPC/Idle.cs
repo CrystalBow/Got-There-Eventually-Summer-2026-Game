@@ -17,6 +17,16 @@ public class Idle : State
         
     }
 
+    public override void UnsubcribeState()
+    {
+        
+    }
+
+    public override void ResubscribeStates()
+    {
+        
+    }
+
     /// <inheritdoc/>
     public override void EnterState()
     {

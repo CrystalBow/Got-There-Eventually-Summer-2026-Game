@@ -151,6 +151,31 @@ public class CardPicker : State
         
     }
 
+    public override void UnsubcribeState()
+    {
+        moveAction.performed -= OnMove;
+        cancelAction.performed -= OnCancel;
+        NextAction.performed -= OnNext;
+        PreviousAction.performed -= OnPrevious;
+        approveAction.performed -= OnApproved;
+        discardAction.performed -= OnDiscard;
+    }
+
+    public override void ResubscribeStates()
+    {
+        if (moveAction == null)
+        {
+            return;
+        }
+        moveAction.performed += OnMove;
+        cancelAction.performed += OnCancel;
+        NextAction.performed += OnNext;
+        PreviousAction.performed += OnPrevious;
+        approveAction.performed += OnApproved;
+        discardAction.performed += OnDiscard;
+    }
+
+
     private void OnMove(InputAction.CallbackContext ctx)
     {
         // Check the rate limiter

@@ -32,6 +32,7 @@ public class PlayerTurn : State
         discardAction.performed += OnDiscard;
         restAction = InputSystem.actions.FindAction("Player/Attack");
         restAction.performed += OnRest;
+        combatant.Deck.DrawHand(5-combatant.Deck.HandCards.Count);
         if (combatant.Deck.HandCards.Count == 0)
         {
             moveAction.performed -= OnMove;
@@ -67,8 +68,7 @@ public class PlayerTurn : State
         }
         UnfocusCurrentCard();
         CardHandler handler = this.AddComponent<CardHandler>();
-        handler.currentPlayer = combatant;
-        handler.currentCard = combatant.Deck.HandCards[chosenCardIndex];
+        handler.Begin(combatant.Deck.HandCards[chosenCardIndex],combatant);
         ChangeState(handler);
     }
 
@@ -97,7 +97,6 @@ public class PlayerTurn : State
 
     public override void UpdateState()
     {
-        combatant.Deck.DrawHand(5-combatant.Deck.HandCards.Count);
         center.cardTray.SetActive(true);
         for (int i = 0; i < center.cardUI.Count; i++)
         {
@@ -113,6 +112,26 @@ public class PlayerTurn : State
                 center.cardUI[i].gameObject.SetActive(false);
             }
         }
+    }
+
+    public override void UnsubcribeState()
+    {
+        moveAction.performed -= OnMove;
+        approveAction.performed -= OnApproved;
+        discardAction.performed -= OnDiscard;
+        restAction.performed -= OnRest;
+    }
+
+    public override void ResubscribeStates()
+    {
+        if (moveAction == null)
+        {
+            return;
+        }
+        moveAction.performed += OnMove;
+        approveAction.performed += OnApproved;
+        discardAction.performed += OnDiscard;
+        restAction.performed += OnRest;
     }
 
     public void changeIndex(int amount)

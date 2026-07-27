@@ -12,17 +12,18 @@ public class PlayerCombatant : Combatant
     public int currentMP { get; set; }
     public PlayableData StaticPlayableData { get; set; }
     public Deck Deck;
+    
 
-    protected override void Start()
+    public override void Initialize()
     {
         StaticPlayableData = DataCenter.Instance.Allies[CombatantName];
+        StaticData = StaticPlayableData;
         TransferCenter.CharacterSessionData data = TransferCenter.Instance.GetCharacterState(CombatantName);
         currentMP = data.CurrentMp;
         currentHP =  data.CurrentHp;
         currentXP = data.CurrentXp;
         Level = data.CurrentLevel;
         Deck = data.Deck;
-        StaticData = StaticPlayableData;
         CardHandler.CallAllies += CallAllies;
     }
 

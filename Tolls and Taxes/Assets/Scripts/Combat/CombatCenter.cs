@@ -30,12 +30,12 @@ public class CombatCenter : Character
 
         public int CompareTo(InitiativeToken other)
         {
-            int OtherSpeed = other.Reference.StaticData.Speed;
-            int ourSpeed = Reference.StaticData.Speed;
             if (other == null)
             {
                 return 1;
             }
+            int OtherSpeed = other.Reference.StaticData.Speed;
+            int ourSpeed = Reference.StaticData.Speed;
             if (other.isAlly)
             {
                 PlayerCombatant playerCombatant = other.Reference as PlayerCombatant;
@@ -43,7 +43,7 @@ public class CombatCenter : Character
             }
             if (isAlly)
             {
-                PlayerCombatant playerCombatant = other.Reference as PlayerCombatant;
+                PlayerCombatant playerCombatant = this.Reference as PlayerCombatant;
                 ourSpeed = DataCenter.Instance.SpeedCalculation(playerCombatant.StaticPlayableData, playerCombatant.Level);
             }
             return ourSpeed.CompareTo(OtherSpeed);

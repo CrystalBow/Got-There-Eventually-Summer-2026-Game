@@ -47,6 +47,20 @@ public class InteractState : State
         leader.InteractionActivation();
     }
 
+    public override void UnsubcribeState()
+    {
+        interactAction.canceled -= OnInteract;
+    }
+
+    public override void ResubscribeStates()
+    {
+        if (interactAction == null)
+        {
+            return;
+        }
+        interactAction.started += OnInteract;
+    }
+
     private void OnInteract(InputAction.CallbackContext ctx)
     {
         // When the botton is lifted player movement is made available again.

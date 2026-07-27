@@ -54,6 +54,20 @@ public class RestState : State
         throw new System.NotImplementedException();
     }
 
+    public override void UnsubcribeState()
+    {
+        cancelAction.performed -= OnCancel;
+    }
+
+    public override void ResubscribeStates()
+    {
+        if (cancelAction == null)
+        {
+            return;
+        }
+        cancelAction.performed += OnCancel;
+    }
+
     /// <summary>
     /// Coroutine that shuffles everyone's decks after timer expires
     /// </summary>

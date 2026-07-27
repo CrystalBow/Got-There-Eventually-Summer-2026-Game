@@ -35,7 +35,31 @@ public class PlayerMovement : State
     {
         Owner.body.linearVelocity = MoveDirection;
     }
-    
+
+    public override void UnsubcribeState()
+    {
+        moveAction.performed -= OnMove;
+        moveAction.canceled -= OnMove;
+        cardAction.performed -= OnCard;
+        interactAction.performed -= OnInteract;
+        resetAction.performed -= OnReset;
+        DeckViewAction.performed -= DeckViewActionOnPerformed;
+    }
+
+    public override void ResubscribeStates()
+    {
+        if (moveAction == null)
+        {
+            return;
+        }
+        moveAction.performed += OnMove;
+        moveAction.canceled += OnMove;
+        cardAction.performed += OnCard;
+        interactAction.performed += OnInteract;
+        resetAction.performed += OnReset;
+        DeckViewAction.performed += DeckViewActionOnPerformed;
+    }
+
     /// <inheritdoc/>
     public override void EnterState()
     {

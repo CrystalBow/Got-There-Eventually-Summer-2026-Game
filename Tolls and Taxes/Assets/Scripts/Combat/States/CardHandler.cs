@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 
 public class CardHandler : State
 {
-    public static List<Combatant> foes;
-    public static List<PlayerCombatant> allies;
+    public static List<Combatant> foes = new List<Combatant>();
+    public static List<PlayerCombatant> allies =  new List<PlayerCombatant>();
     public static Action CallFoes;
     public static Action CallAllies;
     public CardByte currentCard;
@@ -20,8 +20,6 @@ public class CardHandler : State
     public override void EnterState()
     {
         Owner = this.GetComponent<Character>();
-        foes = new List<Combatant>();
-        allies = new List<PlayerCombatant>();
         moveInput = InputSystem.actions.FindAction("Player/Move");
         moveInput.performed += OnMove;
         ApproveInput = InputSystem.actions.FindAction("Player/Jump");
@@ -31,6 +29,12 @@ public class CardHandler : State
         UpdateState();
     }
 
+    public void Begin(CardByte Card, PlayerCombatant Player)
+    {
+        currentCard = Card;
+        currentPlayer = Player;
+    }
+    
     private void OnCancel(InputAction.CallbackContext obj)
     {
         if (currentCard.StaticData.Cost <= currentPlayer.currentMP)
@@ -87,6 +91,7 @@ public class CardHandler : State
 
     public override void UpdateState()
     {
+        
         if (currentCard.StaticData.Cost <= currentPlayer.currentMP)
         {
             currentPlayer.currentMP -= currentCard.StaticData.Cost;
@@ -119,6 +124,24 @@ public class CardHandler : State
             CallAllies?.Invoke();
         }
         FocusTarget();
+    }
+
+    public override void UnsubcribeState()
+    {
+        moveInput.performed -= OnMove;
+        CancelInput.performed -= OnCancel;
+        ApproveInput.performed -= OnApprove;
+    }
+
+    public override void ResubscribeStates()
+    {
+        if (moveInput == null)
+        {
+            return;
+        }
+        moveInput.performed += OnMove;
+        CancelInput.performed += OnCancel;
+        ApproveInput.performed += OnApprove;
     }
 
     public void evaluateExit()

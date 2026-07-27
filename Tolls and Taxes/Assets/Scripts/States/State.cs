@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 /// <summary>
 /// An abstract class that acts as a basis for our state machines. 
@@ -45,5 +46,19 @@ public abstract class State : MonoBehaviour
         Owner.CurrentState = newState;
         newState.EnterState();
     }
+    
+    public abstract void UnsubcribeState();
+    public abstract void ResubscribeStates();
+    
 
+    public void OnDisable()
+    {
+        UnsubcribeState();
+    }
+
+    public void OnEnable()
+    {
+        ResubscribeStates();
+    }
+    
 }

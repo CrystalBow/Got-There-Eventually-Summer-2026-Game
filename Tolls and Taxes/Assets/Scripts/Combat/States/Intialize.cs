@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEngine;
 
-    public class Intialize : State
+public class Intialize : State
     {
         CombatCenter combatCenter;
         
@@ -16,6 +17,7 @@ using Unity.VisualScripting;
             Combatant[] combatants =  this.GameObject().GetComponentsInChildren<Combatant>();
             foreach (Combatant combatant in combatants)
             {
+                combatant.Initialize();
                 if (combatant is PlayerCombatant)
                 {
                     combatCenter.aliveAllies += 1;
@@ -28,7 +30,8 @@ using Unity.VisualScripting;
                 }
             }
             //ChangeState(this.AddComponent<TopofRound>());
-            ChangeState(this.AddComponent<PlayerTurn>());
+            Debug.Log("Going to top of Round");
+            ChangeState(this.AddComponent<TopofRound>());
         }
 
         public override void ExitState()
@@ -39,5 +42,15 @@ using Unity.VisualScripting;
         public override void UpdateState()
         {
             throw new System.NotImplementedException();
+        }
+
+        public override void UnsubcribeState()
+        {
+            
+        }
+
+        public override void ResubscribeStates()
+        {
+            
         }
     }

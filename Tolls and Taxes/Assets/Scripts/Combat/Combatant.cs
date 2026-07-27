@@ -19,12 +19,9 @@ public class Combatant : Character
      * We therefore use this event to do so.
      */
     public static event Action<Combatant> OnDeath;
+    
 
-    /*
-     * staticdata refers to data that is not regularly changed during combat (speed, attack etc.)
-     * It is important to note that effects do exist, and we must account for them when making actual decisions on stats.
-     */
-    protected override void Start()
+    public virtual void Initialize()
     {
         StaticData = DataCenter.Instance.Locations[Location][CombatantName];
         currentHP = StaticData.Hp;
