@@ -101,4 +101,15 @@ public class EffectList
             this.effectName = theName;
         }
     }
+
+    public string GetEffectStrings()
+    {
+        string toReturn = "";
+        foreach (var thisName in currentEffects)
+        {
+            toReturn = toReturn + thisName.effectName + " ";
+        }
+
+        return toReturn;
+    }
 }

@@ -12,6 +12,8 @@ public class Combatant : Character
     public string CombatantName;
     public string Location;
     public UnitData StaticData;
+    // EffectList maintains a list of effects
+    public EffectList ourEffects;
     public int currentHP { get; set; }
 
     /*
@@ -25,6 +27,7 @@ public class Combatant : Character
     {
         StaticData = DataCenter.Instance.Locations[Location][CombatantName];
         currentHP = StaticData.Hp;
+        ourEffects = new EffectList();
         CardHandler.CallFoes += CallFoes;
     }
 
@@ -42,13 +45,13 @@ public class Combatant : Character
      */
     public virtual void damage(int damageNumber)
     {
-        if (StaticData.Defense >= damageNumber)
+        if (StaticData.Defense + EffectCenter.GetDefenseModifier(ourEffects) >= damageNumber)
         {
             return;
         }
 
         // If the damage kills this enemy, we want to ensure we count it and take it off the screen.
-        currentHP -= (damageNumber - StaticData.Defense);
+        currentHP -= (damageNumber - (StaticData.Defense + EffectCenter.GetDefenseModifier(ourEffects)));
         if (isDead())
         {
             OnDeath?.Invoke(this);

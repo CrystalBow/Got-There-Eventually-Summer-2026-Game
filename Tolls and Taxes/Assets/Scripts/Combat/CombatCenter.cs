@@ -36,17 +36,17 @@ public class CombatCenter : Character
             {
                 return 1;
             }
-            int OtherSpeed = other.Reference.StaticData.Speed;
-            int ourSpeed = Reference.StaticData.Speed;
+            int OtherSpeed = other.Reference.StaticData.Speed + EffectCenter.GetSpeedModifier(other.Reference.ourEffects);
+            int ourSpeed = Reference.StaticData.Speed + EffectCenter.GetSpeedModifier(Reference.ourEffects);
             if (other.isAlly)
             {
                 PlayerCombatant playerCombatant = other.Reference as PlayerCombatant;
-                OtherSpeed = DataCenter.Instance.SpeedCalculation(playerCombatant.StaticPlayableData, playerCombatant.Level);
+                OtherSpeed = DataCenter.Instance.SpeedCalculation(playerCombatant.StaticPlayableData, playerCombatant.Level) + EffectCenter.GetSpeedModifier(playerCombatant.ourEffects);
             }
             if (isAlly)
             {
                 PlayerCombatant playerCombatant = this.Reference as PlayerCombatant;
-                ourSpeed = DataCenter.Instance.SpeedCalculation(playerCombatant.StaticPlayableData, playerCombatant.Level);
+                ourSpeed = DataCenter.Instance.SpeedCalculation(playerCombatant.StaticPlayableData, playerCombatant.Level) + EffectCenter.GetSpeedModifier(playerCombatant.ourEffects);
             }
             return ourSpeed.CompareTo(OtherSpeed);
         }

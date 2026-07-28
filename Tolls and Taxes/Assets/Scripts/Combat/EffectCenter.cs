@@ -1,9 +1,64 @@
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
-public class EffectCenter : MonoBehaviour
+public static class EffectCenter // : MonoBehaviour
 {
 
-    public int GetSpeedModifier(EffectList listToCheck)
+    /*
+     * This function checks for Damage multiplier effects and returns the largest one present.
+     */
+    public static int GetDamageMultiplier(EffectList listToCheck)
+    {
+        if (listToCheck.effectIsPresent("4x") == true)
+        {
+            return 4;
+        }
+        else if (listToCheck.effectIsPresent("3x") == true)
+        {
+            return 3;
+        }
+        else if (listToCheck.effectIsPresent("2x") == true)
+        {
+            return 2;
+        }
+
+        return 1;
+    }
+
+    /*
+     * This function takes a spell's mp cost and an effect list and returns an altered cost.
+     */
+    public static int returnEffectedMPValue (int initialMP, EffectList listToCheck)
+    {
+        bool containsEfficiency = listToCheck.effectIsPresent("Magic Efficiency");
+        bool containsInefficiency = listToCheck.effectIsPresent("Magic Inefficiency");
+
+        if (containsEfficiency && containsInefficiency)
+        {
+            return initialMP;
+        }
+        else if (containsEfficiency == true)
+        {
+            int toReturn = initialMP;
+            toReturn = initialMP / 2;
+
+            // No free 1 mp skills
+            if (toReturn == 0)
+            {
+                return 1;
+            }
+
+            return toReturn;
+        }
+        else if (containsInefficiency == true)
+        {
+            return (initialMP * 2);
+        }
+
+        return initialMP;
+
+    }
+    public static int GetSpeedModifier(EffectList listToCheck)
     {
         int toReturn = 0;
 
@@ -20,7 +75,7 @@ public class EffectCenter : MonoBehaviour
         return toReturn;
     }
 
-    public int GetAttackModifier(EffectList listToCheck)
+    public static int GetAttackModifier(EffectList listToCheck)
     {
         int toReturn = 0;
 
@@ -37,7 +92,7 @@ public class EffectCenter : MonoBehaviour
         return toReturn;
     }
 
-    public int GetDefenseModifier(EffectList listToCheck)
+    public static int GetDefenseModifier(EffectList listToCheck)
     {
         int toReturn = 0;
 

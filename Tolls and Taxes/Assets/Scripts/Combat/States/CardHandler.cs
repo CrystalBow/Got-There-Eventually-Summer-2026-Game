@@ -34,15 +34,15 @@ public class CardHandler : State
         currentCard = Card;
         currentPlayer = Player;
     }
-    
+
     private void OnCancel(InputAction.CallbackContext obj)
     {
         if (currentCard.StaticData.Cost <= currentPlayer.currentMP)
         {
             currentPlayer.currentMP += currentCard.StaticData.Cost;
-            if (currentPlayer.currentMP > currentPlayer.StaticPlayableData.Mp)
+            if (currentPlayer.currentMP > DataCenter.Instance.maxManaCalculation(currentPlayer.StaticPlayableData, currentPlayer.Level))
             {
-                currentPlayer.currentMP = currentPlayer.StaticPlayableData.Mp;
+                currentPlayer.currentMP = DataCenter.Instance.maxManaCalculation(currentPlayer.StaticPlayableData, currentPlayer.Level);
             }
         }
         ChangeState(this.AddComponent<PlayerTurn>());
@@ -55,11 +55,14 @@ public class CardHandler : State
             evaluateExit();
         } else if (allies.Count == 0)
         {
-            foes[targetIndex].damage(currentCard.StaticData.Damage + currentPlayer.StaticPlayableData.Attack);
+            // Because player decrements their own effects at end of turn AFTER this action, we add 1 to the time to account for this.
+            foes[targetIndex].damage(currentCard.StaticData.Damage + DataCenter.Instance.AttackCalculation(currentPlayer.StaticPlayableData, currentPlayer.Level) + EffectCenter.GetAttackModifier(currentPlayer.ourEffects));
+            EvaluateEffects(targetIndex, false, currentCard.StaticData.Effects, currentCard.StaticData.Time + 1);
         }
         else
         {
             allies[targetIndex].damage(currentCard.StaticData.Damage);
+            EvaluateEffects(targetIndex, true, currentCard.StaticData.Effects, currentCard.StaticData.Time);
         }
         currentPlayer.Deck.DiscardCard(currentCard);
         evaluateExit();
@@ -94,7 +97,7 @@ public class CardHandler : State
         
         if (currentCard.StaticData.Cost <= currentPlayer.currentMP)
         {
-            currentPlayer.currentMP -= currentCard.StaticData.Cost;
+            currentPlayer.currentMP -= EffectCenter.returnEffectedMPValue(currentCard.StaticData.Cost, currentPlayer.ourEffects);
             int MaxMP = DataCenter.Instance.maxManaCalculation(currentPlayer.StaticPlayableData, currentPlayer.Level);
             if (currentPlayer.currentMP > MaxMP)
             {
@@ -114,7 +117,7 @@ public class CardHandler : State
             {
                 foreach (Combatant foe in foes)
                 {
-                    foe.damage(currentCard.StaticData.Damage + currentPlayer.StaticPlayableData.Attack);
+                    foe.damage(currentCard.StaticData.Damage + DataCenter.Instance.AttackCalculation(currentPlayer.StaticPlayableData, currentPlayer.Level) + EffectCenter.GetAttackModifier(currentPlayer.ourEffects));
                 }
                 currentPlayer.Deck.DiscardCard(currentCard);
                 evaluateExit();
@@ -233,6 +236,29 @@ public class CardHandler : State
         else
         {
             foes[targetIndex].GetComponent<SpriteRenderer>().color = Color.white;
+        }
+    }
+
+    public void EvaluateEffects(int ourTargetIndex, bool isAlly, List<int> EffectsToEvaluate, int effectTime)
+    {
+        foreach(var effect in EffectsToEvaluate)
+        {
+            if (isAlly == true)
+            {
+                allies[targetIndex].ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
+            }
+            else
+            {
+                // effect 13 is self Defense Down, so we convert it to Defense Down and add it to the player.
+                if (effect == 13)
+                {
+                    currentPlayer.ourEffects.instateEffect(DataCenter.Instance.GetEffectName(10), effectTime);
+                }
+                else
+                {
+                    foes[targetIndex].ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
+                }
+            }
         }
     }
 }

@@ -10,6 +10,8 @@ public class PlayerCombatant : Combatant
     public int Level;
     public int currentXP;
     public int currentMP { get; set; }
+
+
     public PlayableData StaticPlayableData { get; set; }
     public Deck Deck;
     
@@ -22,6 +24,7 @@ public class PlayerCombatant : Combatant
         currentMP = data.CurrentMp;
         currentHP =  data.CurrentHp;
         currentXP = data.CurrentXp;
+        ourEffects = new EffectList();
         Level = data.CurrentLevel;
         Deck = data.Deck;
         CardHandler.CallAllies += CallAllies;
@@ -44,7 +47,7 @@ public class PlayerCombatant : Combatant
 
     public override void damage(int damageNumber)
     {
-        int defense = DataCenter.Instance.DefenseCalculation(StaticPlayableData, Level);
+        int defense = DataCenter.Instance.DefenseCalculation(StaticPlayableData, Level) + EffectCenter.GetDefenseModifier(ourEffects);
         if (defense >= damageNumber)
         {
             

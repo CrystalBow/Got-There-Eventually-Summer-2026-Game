@@ -21,6 +21,8 @@ public class EnemyTurn : State
 
     public override void ExitState()
     {
+        combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.ourEffects.DecrementEffectTimers();
+        Debug.Log(combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.CombatantName + " has these effects: " + combatCenter.initiativeOrder[combatCenter.turnPosition].Reference .ourEffects.GetEffectStrings());
         Destroy(this);
     }
 

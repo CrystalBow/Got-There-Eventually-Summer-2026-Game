@@ -88,6 +88,10 @@ public class PlayerTurn : State
 
     public override void ExitState()
     {
+        // We need to decrement effect timer at end of turn.
+        combatant.ourEffects.DecrementEffectTimers();
+        Debug.Log(combatant.CombatantName + " has these effects: " + combatant.ourEffects.GetEffectStrings());
+
         moveAction.performed -= OnMove;
         approveAction.performed -= OnApproved;
         discardAction.performed -= OnDiscard;
