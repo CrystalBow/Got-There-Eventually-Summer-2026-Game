@@ -236,9 +236,6 @@ public class PartyDetailsMenuController : MonoBehaviour
                 staticData,
                 level);
 
-        int nextXp =
-            DataCenter.Instance.NextXpCalcultation(level);
-
         hpText.text =
             $"HP   {Mathf.Max(0, member.HP)} / {maxHp}";
 
@@ -255,7 +252,7 @@ public class PartyDetailsMenuController : MonoBehaviour
             $"SPEED   {speed}";
 
         xpText.text =
-            $"XP   {Mathf.Max(0, member.XP)} / {nextXp}";
+            $"XP   {Mathf.Max(0, member.XP)}";
     }
 
     private Sprite FindPortrait(string memberName)
