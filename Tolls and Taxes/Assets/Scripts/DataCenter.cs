@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
+using TMPro;
 using UnityEngine;
 
 /// <summary>
@@ -116,9 +117,31 @@ public class DataCenter : MonoBehaviour
         return StatCalculation(playableData.Mp, playableData.MpScale, level);
     }
 
-    public int NextXpCalcultation(int level = 1)
+    public int NextXpCalculation(int level = 1)
     {
         return 10 * level*level;
     }
     
+    public int XPRemainder(int currentLevel, int xp)
+    {
+        // Checks to determine levelUp and returns remainder
+        int toRemove = NextXpCalculation(currentLevel);
+        
+        if (xp > toRemove)
+        {
+            return xp - toRemove;
+        }
+
+        return xp;
+    }
+
+    public bool shouldLevel(int currentLevel, int xp)
+    {
+        if (xp > NextXpCalculation(currentLevel)) {
+            return true;
+        }
+
+        return false;
+    }
+
 }

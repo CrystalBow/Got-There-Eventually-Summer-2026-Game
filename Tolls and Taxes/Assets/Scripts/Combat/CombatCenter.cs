@@ -90,5 +90,24 @@ public class CombatCenter : Character
     {
         OnGameWon?.Invoke();
     }
-    
+
+    /*
+     * This function calculates the xp to rewar
+     */
+    public int EnemyStatSum()
+    {
+        int sumOfStats = 0;
+
+        foreach (var individual in initiativeOrder)
+        {
+            if (individual.isAlly == false)
+            {
+                sumOfStats += individual.Reference.StaticData.Attack;
+                sumOfStats += individual.Reference.StaticData.Speed;
+                sumOfStats += individual.Reference.StaticData.Defense;
+            }
+        }
+
+        return sumOfStats;
+    }
 }
