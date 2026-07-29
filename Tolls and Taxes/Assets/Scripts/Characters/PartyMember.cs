@@ -45,8 +45,9 @@ public class PartyMember : Character
     {
         //Fetch from transfer center
         TransferCenter.CharacterSessionData data = TransferCenter.Instance.GetCharacterState(MemberName);
-        //Temp renderer
+        //Base Class Initializations
         spriteRenderer = GetComponent<SpriteRenderer>();
+        body = GetComponent<Rigidbody2D>();
         //Deploy from transfer center
         Deck = data.Deck;
         HP = data.CurrentHp;

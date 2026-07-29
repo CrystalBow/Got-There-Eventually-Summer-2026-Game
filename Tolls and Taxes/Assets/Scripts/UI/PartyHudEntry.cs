@@ -10,6 +10,7 @@ public class PartyHudEntry : MonoBehaviour
 
     [SerializeField] private Image hpFill;
     [SerializeField] private Image mpFill;
+    [SerializeField] public Image Icon;
 
     public void SetStats(
         string memberName,

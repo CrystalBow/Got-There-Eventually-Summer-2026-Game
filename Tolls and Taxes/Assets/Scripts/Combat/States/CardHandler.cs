@@ -61,8 +61,19 @@ public class CardHandler : State
         }
         else
         {
-            allies[targetIndex].damage(currentCard.StaticData.Damage);
-            EvaluateEffects(targetIndex, true, currentCard.StaticData.Effects, currentCard.StaticData.Time);
+            if (currentCard.StaticData.Cost < 0)
+            {
+                allies[targetIndex].currentMP -= currentCard.StaticData.Cost;
+                int MaxMP = DataCenter.Instance.maxManaCalculation(currentPlayer.StaticPlayableData, currentPlayer.Level);  
+                if (allies[targetIndex].currentMP > MaxMP)
+                {
+                    allies[targetIndex].currentMP = MaxMP;
+                }
+            }
+            else
+            {
+                allies[targetIndex].damage(currentCard.StaticData.Damage);
+            }
         }
         currentPlayer.Deck.DiscardCard(currentCard);
         evaluateExit();

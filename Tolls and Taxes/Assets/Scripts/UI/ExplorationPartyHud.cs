@@ -48,6 +48,7 @@ public class ExplorationPartyHud : MonoBehaviour
                 staticData.Hp,
                 member.MP,
                 staticData.Mp);
+            entry.Icon.sprite = member.spriteRenderer.sprite;
         }
     }
 }

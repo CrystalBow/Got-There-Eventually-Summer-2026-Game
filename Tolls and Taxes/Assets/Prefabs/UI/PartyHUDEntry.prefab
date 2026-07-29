@@ -598,6 +598,7 @@ MonoBehaviour:
   mpText: {fileID: 7027099105332517174}
   hpFill: {fileID: 4922470606776140196}
   mpFill: {fileID: 6617564245761407362}
+  Icon: {fileID: 4629028568833533123}
 --- !u!1 &6555118434782507506
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,8 +770,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 8, y: -8}
-  m_SizeDelta: {x: 72, y: 72}
+  m_AnchoredPosition: {x: 8.7, y: 50}
+  m_SizeDelta: {x: 72, y: 130}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &7531108325280078682
 CanvasRenderer:
@@ -800,8 +801,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1de6cc68e5b390d4c8e4ed9ea7e5489a, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 54a130ae7023b004cb8ce6b1747f3f56, type: 3}
+  m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4

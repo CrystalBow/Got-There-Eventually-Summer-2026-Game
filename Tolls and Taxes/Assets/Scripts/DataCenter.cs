@@ -119,7 +119,7 @@ public class DataCenter : MonoBehaviour
 
     public int NextXpCalculation(int level = 1)
     {
-        return 10 * level*level;
+        return 15 * level*level;
     }
     
     public int XPRemainder(int currentLevel, int xp)

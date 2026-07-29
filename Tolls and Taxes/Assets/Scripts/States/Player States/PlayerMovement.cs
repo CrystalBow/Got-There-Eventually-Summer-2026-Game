@@ -33,6 +33,14 @@ public class PlayerMovement : State
     /// <inheritdoc/>
     public override void UpdateState()
     {
+        if (MoveDirection.x < 0)
+        {
+            Owner.spriteRenderer.flipX = true;
+        }
+        else if (MoveDirection.x > 0)
+        {
+            Owner.spriteRenderer.flipX = false;
+        }
         Owner.body.linearVelocity = MoveDirection;
     }
 

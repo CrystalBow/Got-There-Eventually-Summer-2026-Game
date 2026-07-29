@@ -76,11 +76,20 @@ public class FollowerState : State
     /// </summary>
     public bool CheckDistance()
     {
+        Vector3 MoveDirection = partyMember.FollowTarget - this.transform.position;
+        
         // Ensure that we don't get to far away from the party leader without being on top of him.
-        if ((partyMember.FollowTarget - this.transform.position).sqrMagnitude > partyMember.distance * partyMember.distance)
+        if (MoveDirection.sqrMagnitude > partyMember.distance * partyMember.distance)
         {
             // Let's get moving!
             this.transform.position = Vector3.MoveTowards(this.transform.position, partyMember.FollowTarget, partyMember.Leader.speed * 1.5f *  Time.deltaTime);
+            if (MoveDirection.x < 0)
+            {
+                Owner.spriteRenderer.flipX = true;
+            } else if (MoveDirection.x > 0)
+            {
+                Owner.spriteRenderer.flipX = false;
+            }
             return true;
         }
         return false;

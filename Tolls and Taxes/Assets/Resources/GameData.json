@@ -5,12 +5,12 @@
             "Mp": 6,
             "Attack": 3,
             "Defense": 1,
-            "Speed": 6,
+            "Speed": 5,
             "HpScale": 1.2,
             "MpScale": 0.6,
             "AttackScale": 1.4,
             "DefenseScale": 0.6,
-            "SpeedScale": 1.15,
+            "SpeedScale": 0.15,
             "SpecialtyCards": {
                 "Attacks": {
                     "Crushing Blow": {
@@ -51,7 +51,7 @@
                     },
                     "The 4 Way Path": {
                         "Description": "Attack 4 times!",
-                        "Damage": 1,
+                        "Damage": 2,
                         "Time": -1,
                         "Cost": 4,
                         "Effects": [
@@ -69,12 +69,12 @@
             "Mp": 5,
             "Attack": 2,
             "Defense": 2,
-            "Speed": 4,
+            "Speed": 3,
             "HpScale": 1.5,
             "MpScale": 0.5,
             "AttackScale": 1.05,
             "DefenseScale": 0.8,
-            "SpeedScale": 0.9,
+            "SpeedScale": 0.025,
             "SpecialtyCards": {
                 "Attacks": {
                     "Trip": {
@@ -87,10 +87,10 @@
                         ]
                     },
                     "Full Swing": {
-                        "Description": "Deal 6 Damage, but increase card costs for 3 rounds.",
-                        "Damage": 6,
-                        "Time": -1,
-                        "Cost": 0,
+                        "Description": "Deal 7 Damage, but increase card costs for 3 rounds.",
+                        "Damage": 7,
+                        "Time": 2,
+                        "Cost": 1,
                         "Effects": [
                             12
                         ]
@@ -117,12 +117,12 @@
             "Mp": 8,
             "Attack": 2,
             "Defense": 1,
-            "Speed": 5,
+            "Speed": 4,
             "HpScale": 1.1,
             "MpScale": 0.8,
             "AttackScale": 1.0,
             "DefenseScale": 0.65,
-            "SpeedScale": 1.05,
+            "SpeedScale": 0.05,
             "SpecialtyCards": {
                 "Attacks": {
                     "Radiant Mace": {
@@ -154,7 +154,7 @@
                     },
                     "Holy Light": {
                         "Description": "Heal an ally and raise their defense for 2 turns.",
-                        "Damage": -1,
+                        "Damage": -3,
                         "Time": 1,
                         "Cost": 1,
                         "Effects": [
@@ -172,32 +172,38 @@
                 "Hp": 9,
                 "Attack": 5,
                 "Defense": 1,
-                "Speed": 3
+                "Speed": 4
             },
             "Zombie": {
                 "Hp": 12,
                 "Attack": 3,
                 "Defense": 2,
-                "Speed": 1
+                "Speed": 2
             },
             "Bandit": {
                 "Hp": 15,
                 "Attack": 5,
                 "Defense": 3,
-                "Speed": 4
+                "Speed": 5
             },
             "Living Shrub": {
                 "Hp": 3,
                 "Attack": 3,
                 "Defense": 1,
-                "Speed": 2
+                "Speed": 3
             },
             "Tutorial Bug": {
-                "Hp": 25,
+                "Hp": 50,
                 "Attack": 6,
                 "Defense": 4,
-                "Speed": 4
-            }
+                "Speed": 5
+            },
+            "Traitor Knight" : {
+                "Hp": 25,
+                "Attack": 7,
+                "Defense": 9,
+                "Speed": 6
+            } 
         }
     },
     "Effects": {
@@ -268,7 +274,7 @@
                 "Description": "Heal 1!",
                 "Damage": -1,
                 "Time": -1,
-                "Cost": 1,
+                "Cost": 2,
                 "Effects": []
             }
         },
