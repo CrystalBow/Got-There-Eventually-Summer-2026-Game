@@ -20,6 +20,13 @@ public class CardHandler : State
     public override void EnterState()
     {
         Owner = this.GetComponent<Character>();
+
+        // Shows the controls used while choosing a target for the selected card.
+        // This only updates the reminder text and does not alter targeting behavior.
+        // Added by Maria G
+        ControlReminderUI.Instance?.Show(
+            ControlReminderContext.TargetSelection);
+
         moveInput = InputSystem.actions.FindAction("Player/Move");
         moveInput.performed += OnMove;
         ApproveInput = InputSystem.actions.FindAction("Player/Jump");

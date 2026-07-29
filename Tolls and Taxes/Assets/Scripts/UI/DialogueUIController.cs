@@ -76,6 +76,10 @@ public class DialogueUIController : MonoBehaviour
             return;
         }
 
+        // Replaces the normal gameplay reminder with the dialogue controls.
+        ControlReminderUI.Instance?.Show(
+            ControlReminderContext.Dialogue);
+
         activeLines = lines;
         currentLineIndex = 0;
         isDialogueOpen = true;
@@ -130,6 +134,10 @@ public class DialogueUIController : MonoBehaviour
         {
             Time.timeScale = previousTimeScale;
         }
+
+        // Restores the normal exploration reminder after dialogue closes.
+        ControlReminderUI.Instance?.Show(
+            ControlReminderContext.Exploration);
     }
 
     private void DisplayCurrentLine()

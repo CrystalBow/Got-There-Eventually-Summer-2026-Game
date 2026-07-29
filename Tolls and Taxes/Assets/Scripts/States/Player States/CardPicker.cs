@@ -44,6 +44,12 @@ public class CardPicker : State
         ShowHand();
         PartyMember.MaficEffciencyExpire += PartyMemberOnMaficEffciencyExpire;
         PartyMember.MaficIneffciencyExpire += PartyMemberOnMaficIneffciencyExpire;
+
+        // Shows the controls used while selecting cards in exploration.
+        // The null-safe call allows this state to work even when no reminder UI is present.
+        ControlReminderUI.Instance?.Show(
+            ControlReminderContext.ExplorationCards);
+
         // Subscribe to controls
         moveAction = InputSystem.actions.FindAction("Player/Move");
         moveAction.performed += OnMove;

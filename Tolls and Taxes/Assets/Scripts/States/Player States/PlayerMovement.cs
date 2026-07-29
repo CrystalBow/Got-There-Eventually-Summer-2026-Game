@@ -74,7 +74,12 @@ public class PlayerMovement : State
         //Initialize and Cast
         Owner = this.GetComponent<Character>();
         leader =  Owner as PartyLeader;
-        
+
+        // Updates the on-screen help text for normal exploration controls
+        // This only changes the reminder UI and does not affect player movement
+        ControlReminderUI.Instance?.Show(
+            ControlReminderContext.Exploration);
+
         //Initialize Controls
         moveAction = InputSystem.actions.FindAction("Player/Move");
         moveAction.performed += OnMove;

@@ -23,7 +23,13 @@ public class PlayerTurn : State
             iterate();
             return;
         }
-        
+
+        // Updates the reminder for the player's combat card-selection state
+        // This is display-only and does not modify combat input or turn logic
+        // Added by Maria G
+        ControlReminderUI.Instance?.Show(
+            ControlReminderContext.CombatCards);
+
         moveAction = InputSystem.actions.FindAction("Player/Move");
         moveAction.performed += OnMove;
         approveAction = InputSystem.actions.FindAction("Player/Jump");

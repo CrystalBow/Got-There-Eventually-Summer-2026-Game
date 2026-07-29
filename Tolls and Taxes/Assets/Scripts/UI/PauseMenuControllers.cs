@@ -54,6 +54,10 @@ public class PauseMenuController : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0f;
 
+        // Displays keyboard/controller navigation controls while the pause menu is open.
+        ControlReminderUI.Instance?.Show(
+            ControlReminderContext.Menu);
+
         SetActive(darkOverlay, true);
         SetActive(pausePanel, true);
         SetActive(controlsPanel, false);
@@ -64,6 +68,10 @@ public class PauseMenuController : MonoBehaviour
     {
         isPaused = false;
         Time.timeScale = 1f;
+
+        // Restores the normal exploration controls after leaving the pause menu.
+        ControlReminderUI.Instance?.Show(
+            ControlReminderContext.Exploration);
 
         SetActive(darkOverlay, false);
         SetActive(pausePanel, false);
