@@ -67,6 +67,12 @@ public class EffectList
      */
     public void DecrementEffectTimers()
     {
+
+        if (currentEffects.Count == 0)
+        {
+            return;
+        }
+
         for (int i = 0; i < this.currentEffects.Count; i++) 
         {
             currentEffects[i].timeTilEnd -= 1;

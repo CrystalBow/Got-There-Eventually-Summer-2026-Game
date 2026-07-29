@@ -23,8 +23,15 @@ public class EnemyTurn : State
 
     public override void ExitState()
     {
-        combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.ourEffects.DecrementEffectTimers();
-        Debug.Log(combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.CombatantName + " has these effects: " + combatCenter.initiativeOrder[combatCenter.turnPosition].Reference .ourEffects.GetEffectStrings());
+        Debug.Log("Turnpos is " + combatCenter.turnPosition);
+
+        // We check for out of bounds before a decrement.
+        if (combatCenter.turnPosition < combatCenter.initiativeOrder.Count)
+        {
+            combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.ourEffects.DecrementEffectTimers();
+            Debug.Log(combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.CombatantName + " has these effects: " + combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.ourEffects.GetEffectStrings());
+        }
+
         Destroy(this);
     }
 
@@ -45,6 +52,11 @@ public class EnemyTurn : State
 
     public void performEnemyTurn()
     {
+        if (combatCenter.aliveAllies == 0)
+        {
+            return;
+        }
+
         // Get an index of all living allies
         List<int> alliedIndices = new List<int>();
 
@@ -66,7 +78,9 @@ public class EnemyTurn : State
 
         foreach (var index in alliedIndices)
         {
-            PlayerCombatant toAnalyze = combatCenter.initiativeOrder[alliedIndices[index]].Reference as PlayerCombatant;
+            Debug.Log("index is " + index + " initiativeOrder size is " + combatCenter.initiativeOrder.Count);
+
+            PlayerCombatant toAnalyze = combatCenter.initiativeOrder[index].Reference as PlayerCombatant;
 
             int ourEnemyAttack = combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.StaticData.Attack + EffectCenter.GetAttackModifier(combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.ourEffects);
 
