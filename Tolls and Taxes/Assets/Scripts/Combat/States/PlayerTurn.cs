@@ -195,9 +195,5 @@ public class PlayerTurn : State
             }
         }
     }
-
-    private void OnDestroy()
-    {
-        ExitState();
-    }
+    
 }
