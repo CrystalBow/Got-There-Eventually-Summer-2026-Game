@@ -8,9 +8,7 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject controlsPanel;
     [SerializeField] private GameObject partyDetailsPanel;
-    [SerializeField]
-    private string startSceneName =
-        "Prototype Start";
+    [SerializeField] private string startSceneName = "Prototype Start";
 
     private bool isPaused;
 
@@ -18,10 +16,10 @@ public class PauseMenuController : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        darkOverlay.SetActive(false);
-        pausePanel.SetActive(false);
-        controlsPanel.SetActive(false);
-        partyDetailsPanel.SetActive(false);
+        SetActive(darkOverlay, false);
+        SetActive(pausePanel, false);
+        SetActive(controlsPanel, false);
+        SetActive(partyDetailsPanel, false);
     }
 
     private void Update()
@@ -32,8 +30,7 @@ public class PauseMenuController : MonoBehaviour
             return;
         }
 
-        if (controlsPanel.activeSelf ||
-            partyDetailsPanel.activeSelf)
+        if (IsActive(controlsPanel) || IsActive(partyDetailsPanel))
         {
             ShowPauseMenu();
         }
@@ -52,10 +49,10 @@ public class PauseMenuController : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0f;
 
-        darkOverlay.SetActive(true);
-        pausePanel.SetActive(true);
-        controlsPanel.SetActive(false);
-        partyDetailsPanel.SetActive(false);
+        SetActive(darkOverlay, true);
+        SetActive(pausePanel, true);
+        SetActive(controlsPanel, false);
+        SetActive(partyDetailsPanel, false);
     }
 
     public void ResumeGame()
@@ -63,31 +60,31 @@ public class PauseMenuController : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1f;
 
-        darkOverlay.SetActive(false);
-        pausePanel.SetActive(false);
-        controlsPanel.SetActive(false);
-        partyDetailsPanel.SetActive(false);
+        SetActive(darkOverlay, false);
+        SetActive(pausePanel, false);
+        SetActive(controlsPanel, false);
+        SetActive(partyDetailsPanel, false);
     }
 
     public void ShowControls()
     {
-        pausePanel.SetActive(false);
-        controlsPanel.SetActive(true);
-        partyDetailsPanel.SetActive(false);
+        SetActive(pausePanel, false);
+        SetActive(controlsPanel, true);
+        SetActive(partyDetailsPanel, false);
     }
 
     public void ShowPartyDetails()
     {
-        pausePanel.SetActive(false);
-        controlsPanel.SetActive(false);
-        partyDetailsPanel.SetActive(true);
+        SetActive(pausePanel, false);
+        SetActive(controlsPanel, false);
+        SetActive(partyDetailsPanel, true);
     }
 
     public void ShowPauseMenu()
     {
-        controlsPanel.SetActive(false);
-        partyDetailsPanel.SetActive(false);
-        pausePanel.SetActive(true);
+        SetActive(controlsPanel, false);
+        SetActive(partyDetailsPanel, false);
+        SetActive(pausePanel, true);
     }
 
     public void ReturnToStart()
@@ -105,6 +102,19 @@ public class PauseMenuController : MonoBehaviour
 #else
         Application.Quit();
 #endif
+    }
+
+    private static bool IsActive(GameObject target)
+    {
+        return target != null && target.activeSelf;
+    }
+
+    private static void SetActive(GameObject target, bool active)
+    {
+        if (target != null)
+        {
+            target.SetActive(active);
+        }
     }
 
     private void OnDisable()
