@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using NUnit;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,53 @@ public class TopofRound : State {
 
         if (combatCenter.aliveEnemies == 0)
         {
+            int xpToAward = 0;
+
+            foreach (var combatant in combatCenter.initiativeOrder)
+            {
+                if (combatant.isAlly == false)
+                {
+                    xpToAward += combatant.Reference.StaticData.Attack;
+                    xpToAward += combatant.Reference.StaticData.Defense;
+                    xpToAward += combatant.Reference.StaticData.Speed;
+                }
+            }
+
+            foreach (var combatant in combatCenter.initiativeOrder)
+            {
+                if (combatant.isAlly == true)
+                {
+                    PlayerCombatant temporaryAllyReference = combatant.Reference as PlayerCombatant;
+
+                    int xpPostLevel;
+                    int endLevel;
+                    int hpToSave;
+
+                    if (DataCenter.Instance.shouldLevel(temporaryAllyReference.Level, temporaryAllyReference.currentXP + xpToAward) == true)
+                    {
+                        xpPostLevel = DataCenter.Instance.XPRemainder(temporaryAllyReference.Level, temporaryAllyReference.currentXP + xpToAward);
+                        endLevel = temporaryAllyReference.Level + 1;
+                    }
+                    else
+                    {
+                        xpPostLevel = temporaryAllyReference.currentXP + xpToAward;
+                        endLevel = temporaryAllyReference.Level;
+                    }
+
+                    if (temporaryAllyReference.isDead() == true)
+                    {
+                        hpToSave = 1;
+                    }
+                    else
+                    {
+                        hpToSave = temporaryAllyReference.currentHP;
+                    }
+
+                        TransferCenter.Instance.SaveCharacterState(temporaryAllyReference.CombatantName, temporaryAllyReference.Deck,
+                            hpToSave, temporaryAllyReference.currentMP, endLevel, xpPostLevel);
+                }
+            }
+
             CombatTransitionManager.Instance.EndCombat();
         }
         else if (combatCenter.aliveAllies == 0)
