@@ -52,7 +52,7 @@ public class Intialize : State
             
         }
 
-        public override void ResubscribeStates()
+        public override void ResubscribeState()
         {
             
         }

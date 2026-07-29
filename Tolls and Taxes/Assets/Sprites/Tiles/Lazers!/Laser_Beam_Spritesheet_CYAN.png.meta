@@ -1,0 +1,702 @@
+fileFormatVersion: 2
+guid: c50f2d5ce5cc5aa4b8a1b2863c20fd2e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6156756040061368353
+    second: Laser_Beam_Spritesheet_CYAN_0
+  - first:
+      213: 562122425397557838
+    second: Laser_Beam_Spritesheet_CYAN_1
+  - first:
+      213: -5200971747737347531
+    second: Laser_Beam_Spritesheet_CYAN_2
+  - first:
+      213: -8991743228128889448
+    second: Laser_Beam_Spritesheet_CYAN_3
+  - first:
+      213: -587655375513742766
+    second: Laser_Beam_Spritesheet_CYAN_4
+  - first:
+      213: 7131800053764213547
+    second: Laser_Beam_Spritesheet_CYAN_5
+  - first:
+      213: -2447836658866373175
+    second: Laser_Beam_Spritesheet_CYAN_6
+  - first:
+      213: -5564951268669036158
+    second: Laser_Beam_Spritesheet_CYAN_7
+  - first:
+      213: -7282357336169389453
+    second: Laser_Beam_Spritesheet_CYAN_8
+  - first:
+      213: -5172731366971002223
+    second: Laser_Beam_Spritesheet_CYAN_9
+  - first:
+      213: -6002577743123419671
+    second: Laser_Beam_Spritesheet_CYAN_10
+  - first:
+      213: 6609747558624039913
+    second: Laser_Beam_Spritesheet_CYAN_11
+  - first:
+      213: 2205386953290173329
+    second: Laser_Beam_Spritesheet_CYAN_12
+  - first:
+      213: 3074016435176645029
+    second: Laser_Beam_Spritesheet_CYAN_13
+  - first:
+      213: 6109310070893283049
+    second: Laser_Beam_Spritesheet_CYAN_14
+  - first:
+      213: 8593559464097794788
+    second: Laser_Beam_Spritesheet_CYAN_15
+  - first:
+      213: 5919998128987774387
+    second: Laser_Beam_Spritesheet_CYAN_16
+  - first:
+      213: 6688725407257729881
+    second: Laser_Beam_Spritesheet_CYAN_17
+  - first:
+      213: 1133112177618011941
+    second: Laser_Beam_Spritesheet_CYAN_18
+  - first:
+      213: 8338031056062120072
+    second: Laser_Beam_Spritesheet_CYAN_19
+  - first:
+      213: 671882247867685866
+    second: Laser_Beam_Spritesheet_CYAN_20
+  - first:
+      213: -4393868346707938669
+    second: Laser_Beam_Spritesheet_CYAN_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1283990aff0317550800000000000000
+      internalID: 6156756040061368353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4a3a1e1e5f0dc700800000000000000
+      internalID: 562122425397557838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_2
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53ad54950cf62d7b0800000000000000
+      internalID: -5200971747737347531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_3
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8957adf9c29e63380800000000000000
+      internalID: -8991743228128889448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_4
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 209
+        width: 60
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 252972cac8a38d7f0800000000000000
+      internalID: -587655375513742766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_5
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 208
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2b4abdec5e39f260800000000000000
+      internalID: 7131800053764213547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_6
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 207
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cd37182789870ed0800000000000000
+      internalID: -2447836658866373175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_7
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 159
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2896f963e4255c2b0800000000000000
+      internalID: -5564951268669036158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_8
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 159
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 372e92a169edfea90800000000000000
+      internalID: -7282357336169389453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_9
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 159
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1923c216a34c638b0800000000000000
+      internalID: -5172731366971002223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_10
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 159
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ed667c785f82bca0800000000000000
+      internalID: -6002577743123419671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_11
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 60
+        width: 18
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e39ac6726a8abb50800000000000000
+      internalID: 6609747558624039913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_12
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 113
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19b4427dfbb1b9e10800000000000000
+      internalID: 2205386953290173329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_13
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 112
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a1aa6439a919aa20800000000000000
+      internalID: 3074016435176645029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_14
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 111
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e68f461421a8c450800000000000000
+      internalID: 6109310070893283049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_15
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 60
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4eacebd4dc4724770800000000000000
+      internalID: 8593559464097794788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_16
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 59
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bd1b4dceee082250800000000000000
+      internalID: 5919998128987774387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_17
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 59
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95b1abbc15023dc50800000000000000
+      internalID: 6688725407257729881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_18
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 20
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5274795a58f99bf00800000000000000
+      internalID: 1133112177618011941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_19
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 15
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88002c69113a6b370800000000000000
+      internalID: 8338031056062120072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_20
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 13
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeb5b0b3851035900800000000000000
+      internalID: 671882247867685866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_CYAN_21
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 12
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 392f3a4b408d503c0800000000000000
+      internalID: -4393868346707938669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Laser_Beam_Spritesheet_CYAN_0: 6156756040061368353
+      Laser_Beam_Spritesheet_CYAN_1: 562122425397557838
+      Laser_Beam_Spritesheet_CYAN_10: -6002577743123419671
+      Laser_Beam_Spritesheet_CYAN_11: 6609747558624039913
+      Laser_Beam_Spritesheet_CYAN_12: 2205386953290173329
+      Laser_Beam_Spritesheet_CYAN_13: 3074016435176645029
+      Laser_Beam_Spritesheet_CYAN_14: 6109310070893283049
+      Laser_Beam_Spritesheet_CYAN_15: 8593559464097794788
+      Laser_Beam_Spritesheet_CYAN_16: 5919998128987774387
+      Laser_Beam_Spritesheet_CYAN_17: 6688725407257729881
+      Laser_Beam_Spritesheet_CYAN_18: 1133112177618011941
+      Laser_Beam_Spritesheet_CYAN_19: 8338031056062120072
+      Laser_Beam_Spritesheet_CYAN_2: -5200971747737347531
+      Laser_Beam_Spritesheet_CYAN_20: 671882247867685866
+      Laser_Beam_Spritesheet_CYAN_21: -4393868346707938669
+      Laser_Beam_Spritesheet_CYAN_3: -8991743228128889448
+      Laser_Beam_Spritesheet_CYAN_4: -587655375513742766
+      Laser_Beam_Spritesheet_CYAN_5: 7131800053764213547
+      Laser_Beam_Spritesheet_CYAN_6: -2447836658866373175
+      Laser_Beam_Spritesheet_CYAN_7: -5564951268669036158
+      Laser_Beam_Spritesheet_CYAN_8: -7282357336169389453
+      Laser_Beam_Spritesheet_CYAN_9: -5172731366971002223
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

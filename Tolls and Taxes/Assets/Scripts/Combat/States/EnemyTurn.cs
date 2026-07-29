@@ -36,7 +36,7 @@ public class EnemyTurn : State
         
     }
 
-    public override void ResubscribeStates()
+    public override void ResubscribeState()
     {
         
     }

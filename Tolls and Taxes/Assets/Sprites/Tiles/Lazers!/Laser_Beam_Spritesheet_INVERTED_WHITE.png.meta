@@ -1,0 +1,702 @@
+fileFormatVersion: 2
+guid: 64157061873a87f48927ca7f77925cd4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7831927181991080179
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_0
+  - first:
+      213: 2684453795690378361
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_1
+  - first:
+      213: 3638030494915796195
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_2
+  - first:
+      213: 3466450274485122751
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_3
+  - first:
+      213: -5976925850911772159
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_4
+  - first:
+      213: -6450078205142521790
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_5
+  - first:
+      213: -4998930045275598419
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_6
+  - first:
+      213: -6456515367591115845
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_7
+  - first:
+      213: 6623643586483151091
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_8
+  - first:
+      213: 2052795310414345124
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_9
+  - first:
+      213: 5615660136419443115
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_10
+  - first:
+      213: 5779777407738659172
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_11
+  - first:
+      213: -2542048051618487063
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_12
+  - first:
+      213: -6864800877133689528
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_13
+  - first:
+      213: 6789294525360591869
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_14
+  - first:
+      213: 8051640956211082333
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_15
+  - first:
+      213: -4769956342574486413
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_16
+  - first:
+      213: 4106159604259545079
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_17
+  - first:
+      213: -4598759782718237806
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_18
+  - first:
+      213: 8627164740981953679
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_19
+  - first:
+      213: 3661610301199426969
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_20
+  - first:
+      213: -1903082596464920863
+    second: Laser_Beam_Spritesheet_INVERTED_WHITE_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0f02ba29b76f4390800000000000000
+      internalID: -7831927181991080179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 974f21c1188114520800000000000000
+      internalID: 2684453795690378361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_2
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ec9e73c571ec7230800000000000000
+      internalID: 3638030494915796195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_3
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb6bd3a982e4b1030800000000000000
+      internalID: 3466450274485122751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_4
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 209
+        width: 60
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 102fd8f0b91bd0da0800000000000000
+      internalID: -5976925850911772159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_5
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 208
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 248adf0eb08bc76a0800000000000000
+      internalID: -6450078205142521790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_6
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 207
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da1125afb9b30aab0800000000000000
+      internalID: -4998930045275598419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_7
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 159
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb381e33b79d566a0800000000000000
+      internalID: -6456515367591115845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_8
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 159
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f06f139fb8ebeb50800000000000000
+      internalID: 6623643586483151091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_9
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 159
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a3b5d9657efc7c10800000000000000
+      internalID: 2052795310414345124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_10
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 159
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba14a9a1425deed40800000000000000
+      internalID: 5615660136419443115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_11
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 60
+        width: 18
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46147150ee4e53050800000000000000
+      internalID: 5779777407738659172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_12
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 113
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e46e41f3c4d8bcd0800000000000000
+      internalID: -2542048051618487063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_13
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 112
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d08a839f35bb0a0800000000000000
+      internalID: -6864800877133689528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_14
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 111
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df35f9b466b683e50800000000000000
+      internalID: 6789294525360591869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_15
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 60
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d54b2fd4acc2dbf60800000000000000
+      internalID: 8051640956211082333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_16
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 59
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37ce9be8af5bdcdb0800000000000000
+      internalID: -4769956342574486413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_17
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 59
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ffd2fa97620cf830800000000000000
+      internalID: 4106159604259545079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_18
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 20
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2931ab7c75ced20c0800000000000000
+      internalID: -4598759782718237806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_19
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 15
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f84110d8f98d9b770800000000000000
+      internalID: 8627164740981953679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_20
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 13
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99527ec3b27a0d230800000000000000
+      internalID: 3661610301199426969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_INVERTED_WHITE_21
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 12
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e6fa732674e695e0800000000000000
+      internalID: -1903082596464920863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Laser_Beam_Spritesheet_INVERTED_WHITE_0: -7831927181991080179
+      Laser_Beam_Spritesheet_INVERTED_WHITE_1: 2684453795690378361
+      Laser_Beam_Spritesheet_INVERTED_WHITE_10: 5615660136419443115
+      Laser_Beam_Spritesheet_INVERTED_WHITE_11: 5779777407738659172
+      Laser_Beam_Spritesheet_INVERTED_WHITE_12: -2542048051618487063
+      Laser_Beam_Spritesheet_INVERTED_WHITE_13: -6864800877133689528
+      Laser_Beam_Spritesheet_INVERTED_WHITE_14: 6789294525360591869
+      Laser_Beam_Spritesheet_INVERTED_WHITE_15: 8051640956211082333
+      Laser_Beam_Spritesheet_INVERTED_WHITE_16: -4769956342574486413
+      Laser_Beam_Spritesheet_INVERTED_WHITE_17: 4106159604259545079
+      Laser_Beam_Spritesheet_INVERTED_WHITE_18: -4598759782718237806
+      Laser_Beam_Spritesheet_INVERTED_WHITE_19: 8627164740981953679
+      Laser_Beam_Spritesheet_INVERTED_WHITE_2: 3638030494915796195
+      Laser_Beam_Spritesheet_INVERTED_WHITE_20: 3661610301199426969
+      Laser_Beam_Spritesheet_INVERTED_WHITE_21: -1903082596464920863
+      Laser_Beam_Spritesheet_INVERTED_WHITE_3: 3466450274485122751
+      Laser_Beam_Spritesheet_INVERTED_WHITE_4: -5976925850911772159
+      Laser_Beam_Spritesheet_INVERTED_WHITE_5: -6450078205142521790
+      Laser_Beam_Spritesheet_INVERTED_WHITE_6: -4998930045275598419
+      Laser_Beam_Spritesheet_INVERTED_WHITE_7: -6456515367591115845
+      Laser_Beam_Spritesheet_INVERTED_WHITE_8: 6623643586483151091
+      Laser_Beam_Spritesheet_INVERTED_WHITE_9: 2052795310414345124
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

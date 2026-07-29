@@ -9,6 +9,7 @@ public class DeckViewing : State
     PartyLeader leader;
     PartyMember CurrentMember;
     List<GameObject> PartyMemberIcons;
+    private List<ViewIcon> ArrowList;
     private int ChosenPartyIndex;
     private List<CardByte> deckList;
     private int CardInspectIndex;
@@ -23,6 +24,7 @@ public class DeckViewing : State
         Owner = this.GetComponent<Character>();
         leader = Owner as PartyLeader;
         CurrentMember = Owner as PartyMember;
+        ArrowList =  new List<ViewIcon>();
         leader.DeckMenu.gameObject.SetActive(true);
         PartyMemberIcons = new List<GameObject>();
         PartyMemberIcons.Add(Instantiate(leader.DeckMenu.IconCloner, leader.DeckMenu.PartyPanel.GetComponent<RectTransform>(), false));
@@ -30,6 +32,7 @@ public class DeckViewing : State
         PartyMemberIcons[0].GetComponent<Image>().type = Image.Type.Sliced;
         PartyMemberIcons[0].GetComponent<Image>().sprite = leader.spriteRenderer.sprite;
         PartyMemberIcons[0].gameObject.SetActive(true);
+        ArrowList.Add(PartyMemberIcons[0].GetComponent<ViewIcon>());
         CurrentMember = leader.NextMember;
         while (leader != CurrentMember)
         {
@@ -37,6 +40,7 @@ public class DeckViewing : State
             PartyMemberIcons[ChosenPartyIndex].GetComponent<Image>().type = Image.Type.Sliced;
             PartyMemberIcons[ChosenPartyIndex].GetComponent<Image>().sprite = CurrentMember.spriteRenderer.sprite;
             PartyMemberIcons[ChosenPartyIndex].gameObject.SetActive(true);
+            ArrowList.Add(PartyMemberIcons[ChosenPartyIndex].GetComponent<ViewIcon>());
             CurrentMember = CurrentMember.NextMember;
             ChosenPartyIndex++;
         }
@@ -116,7 +120,7 @@ public class DeckViewing : State
         cancelInput.performed -= CancelInputOnperformed;
     }
 
-    public override void ResubscribeStates()
+    public override void ResubscribeState()
     {
         if (moveInput == null)
         {
@@ -186,6 +190,7 @@ public class DeckViewing : State
     
     public void changePartyMemeber(int by)
     {
+        ArrowList[ChosenPartyIndex].Arrow.gameObject.SetActive(false);
         if (by > 0)
         {
             ChosenPartyIndex++;
@@ -204,6 +209,7 @@ public class DeckViewing : State
         {
             ChosenPartyIndex = PartyMemberIcons.Count - 1;
         }
+        ArrowList[ChosenPartyIndex].Arrow.gameObject.SetActive(true);
         showDeck();
     }
     

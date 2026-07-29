@@ -52,7 +52,7 @@ public class InteractState : State
         interactAction.canceled -= OnInteract;
     }
 
-    public override void ResubscribeStates()
+    public override void ResubscribeState()
     {
         if (interactAction == null)
         {

@@ -59,7 +59,7 @@ public class RestState : State
         cancelAction.performed -= OnCancel;
     }
 
-    public override void ResubscribeStates()
+    public override void ResubscribeState()
     {
         if (cancelAction == null)
         {

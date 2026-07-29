@@ -119,7 +119,7 @@ public class BuildDeckScript : MonoBehaviour
         currDeck.AddCard(CardByte.Create("First Aid","Healing", DataCenter.Instance.GlobalCards.Healing["First Aid"]));
         currDeck.AddCard(CardByte.Create("Growl","Debuffs", DataCenter.Instance.GlobalCards.Debuffs["Growl"]));
         AttackerDeck = currDeck;
-        TransferCenter.Instance.SaveCharacterState("Marvin Bold",DefenderDeck,currAlly.Hp, currAlly.Mp,1,0);
+        TransferCenter.Instance.SaveCharacterState("Marvin Bold",AttackerDeck,currAlly.Hp, currAlly.Mp,1,0);
         currDeck = new Deck();
         
     }

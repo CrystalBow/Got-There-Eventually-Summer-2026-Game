@@ -147,7 +147,7 @@ public class CardHandler : State
         ApproveInput.performed -= OnApprove;
     }
 
-    public override void ResubscribeStates()
+    public override void ResubscribeState()
     {
         if (moveInput == null)
         {

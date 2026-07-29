@@ -1,0 +1,702 @@
+fileFormatVersion: 2
+guid: 23d10f648bf70fb4d9d475b9846378db
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7180413507780893451
+    second: Laser_Beam_Spritesheet_ORANGE_0
+  - first:
+      213: -1148979469047798175
+    second: Laser_Beam_Spritesheet_ORANGE_1
+  - first:
+      213: -7812815764269966715
+    second: Laser_Beam_Spritesheet_ORANGE_2
+  - first:
+      213: -2112641704148950672
+    second: Laser_Beam_Spritesheet_ORANGE_3
+  - first:
+      213: 2984118808522434730
+    second: Laser_Beam_Spritesheet_ORANGE_4
+  - first:
+      213: -2532511463019720216
+    second: Laser_Beam_Spritesheet_ORANGE_5
+  - first:
+      213: -3818553362139414355
+    second: Laser_Beam_Spritesheet_ORANGE_6
+  - first:
+      213: -4761307362862770848
+    second: Laser_Beam_Spritesheet_ORANGE_7
+  - first:
+      213: 7833449910489359449
+    second: Laser_Beam_Spritesheet_ORANGE_8
+  - first:
+      213: -7063028024033030841
+    second: Laser_Beam_Spritesheet_ORANGE_9
+  - first:
+      213: 8376878018096902539
+    second: Laser_Beam_Spritesheet_ORANGE_10
+  - first:
+      213: -9061951051583145168
+    second: Laser_Beam_Spritesheet_ORANGE_11
+  - first:
+      213: 8902939355040162122
+    second: Laser_Beam_Spritesheet_ORANGE_12
+  - first:
+      213: -4788383695392667500
+    second: Laser_Beam_Spritesheet_ORANGE_13
+  - first:
+      213: -4719792249446671334
+    second: Laser_Beam_Spritesheet_ORANGE_14
+  - first:
+      213: 5633859897648131714
+    second: Laser_Beam_Spritesheet_ORANGE_15
+  - first:
+      213: 9168715099723687068
+    second: Laser_Beam_Spritesheet_ORANGE_16
+  - first:
+      213: -1349410819952268683
+    second: Laser_Beam_Spritesheet_ORANGE_17
+  - first:
+      213: -2443124106471614848
+    second: Laser_Beam_Spritesheet_ORANGE_18
+  - first:
+      213: 7919575761133382599
+    second: Laser_Beam_Spritesheet_ORANGE_19
+  - first:
+      213: 5171151127190196643
+    second: Laser_Beam_Spritesheet_ORANGE_20
+  - first:
+      213: 7120722532404042911
+    second: Laser_Beam_Spritesheet_ORANGE_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0b52b7ba04f5a360800000000000000
+      internalID: 7180413507780893451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 166603da2410e00f0800000000000000
+      internalID: -1148979469047798175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_2
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58add1bd47d439390800000000000000
+      internalID: -7812815764269966715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_3
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 255
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 071a68630936ea2e0800000000000000
+      internalID: -2112641704148950672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_4
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 209
+        width: 60
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa8aa8dee38b96920800000000000000
+      internalID: 2984118808522434730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_5
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 208
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e1da110e36badcd0800000000000000
+      internalID: -2532511463019720216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_6
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 207
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da08ecdd2f5c10bc0800000000000000
+      internalID: -3818553362139414355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_7
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 159
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 065dc121e207cedb0800000000000000
+      internalID: -4761307362862770848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_8
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 159
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 954a880b03106bc60800000000000000
+      internalID: 7833449910489359449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_9
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 159
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74dc1e40f651bfd90800000000000000
+      internalID: -7063028024033030841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_10
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 159
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b81b173cc26a04470800000000000000
+      internalID: 8376878018096902539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_11
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 60
+        width: 18
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03bb866e78b7d3280800000000000000
+      internalID: -9061951051583145168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_12
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 113
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a41a3027c289d8b70800000000000000
+      internalID: 8902939355040162122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_13
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 112
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49809d3266e3c8db0800000000000000
+      internalID: -4788383695392667500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_14
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 111
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1cd616a4fdef7eb0800000000000000
+      internalID: -4719792249446671334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_15
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 60
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28ea2a93abd7f2e40800000000000000
+      internalID: 5633859897648131714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_16
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 59
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c946ac52ec1dd3f70800000000000000
+      internalID: 9168715099723687068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_17
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 59
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57a2dac320ee54de0800000000000000
+      internalID: -1349410819952268683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_18
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 20
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 086d093c197481ed0800000000000000
+      internalID: -2443124106471614848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_19
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 15
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cb262ee13cf7ed60800000000000000
+      internalID: 7919575761133382599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_20
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 13
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a158006d8e93c740800000000000000
+      internalID: 5171151127190196643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser_Beam_Spritesheet_ORANGE_21
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 12
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9c10108a63e1d260800000000000000
+      internalID: 7120722532404042911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Laser_Beam_Spritesheet_ORANGE_0: 7180413507780893451
+      Laser_Beam_Spritesheet_ORANGE_1: -1148979469047798175
+      Laser_Beam_Spritesheet_ORANGE_10: 8376878018096902539
+      Laser_Beam_Spritesheet_ORANGE_11: -9061951051583145168
+      Laser_Beam_Spritesheet_ORANGE_12: 8902939355040162122
+      Laser_Beam_Spritesheet_ORANGE_13: -4788383695392667500
+      Laser_Beam_Spritesheet_ORANGE_14: -4719792249446671334
+      Laser_Beam_Spritesheet_ORANGE_15: 5633859897648131714
+      Laser_Beam_Spritesheet_ORANGE_16: 9168715099723687068
+      Laser_Beam_Spritesheet_ORANGE_17: -1349410819952268683
+      Laser_Beam_Spritesheet_ORANGE_18: -2443124106471614848
+      Laser_Beam_Spritesheet_ORANGE_19: 7919575761133382599
+      Laser_Beam_Spritesheet_ORANGE_2: -7812815764269966715
+      Laser_Beam_Spritesheet_ORANGE_20: 5171151127190196643
+      Laser_Beam_Spritesheet_ORANGE_21: 7120722532404042911
+      Laser_Beam_Spritesheet_ORANGE_3: -2112641704148950672
+      Laser_Beam_Spritesheet_ORANGE_4: 2984118808522434730
+      Laser_Beam_Spritesheet_ORANGE_5: -2532511463019720216
+      Laser_Beam_Spritesheet_ORANGE_6: -3818553362139414355
+      Laser_Beam_Spritesheet_ORANGE_7: -4761307362862770848
+      Laser_Beam_Spritesheet_ORANGE_8: 7833449910489359449
+      Laser_Beam_Spritesheet_ORANGE_9: -7063028024033030841
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

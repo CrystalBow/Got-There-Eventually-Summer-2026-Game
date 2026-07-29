@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,6 +15,9 @@ public class PartyMember : Character
     [NonSerialized] public int XP;
     [NonSerialized] public int Level;
     public Deck Deck = new Deck();
+
+    public static event Action MaficEffciencyExpire;
+    public static event Action MaficIneffciencyExpire;
     
     // Linked List Links
     public PartyMember NextMember;
@@ -38,8 +42,12 @@ public class PartyMember : Character
     //Card UI Stuff
     public GameObject cardTray;
     public List<CardUI> cards = new List<CardUI>();
+    
+    // Arrow UI
+    public GameObject ArrowPointer;
     // Effect Tracking
     public Dictionary<int, Coroutine> effectRoster = new Dictionary<int, Coroutine>();
+    public Dictionary<int, Coroutine> expiringEffectRoster = new Dictionary<int, Coroutine>();
     
     protected override void Start()
     {
@@ -87,5 +95,82 @@ public class PartyMember : Character
         MP = data.CurrentMp;
         Level = data.CurrentLevel;
         XP = data.CurrentXp;
+    }
+    
+    // ----------------------------------------------------- Effects stuff
+    //Coroutine for effects 
+    IEnumerator effect(float time, int id)
+    {
+        yield return new WaitForSeconds(time);
+        removeEffect(id);
+    }
+
+    public void applyEffect(float time, int id)
+    {
+        if (effectRoster.ContainsKey(id))
+        {
+            //Override duplicates to prevent stacking
+            expiringEffectRoster.Add(id, effectRoster[id]);
+            effectRoster.Remove(id);
+            removeEffect(id);
+        }
+        // Logic to make it happen.
+        switch (id)
+        {
+            case 7:
+                Leader.ApplySpeedBoost();
+                break;
+        }
+        effectRoster.Add(id, StartCoroutine(effect(time, id)));
+    }
+    
+    
+    public void removeEffect(int id)
+    {
+        effectRoster.Remove(id);
+        //Logic upon removal.
+        switch (id)
+        {
+            case 7:
+                Leader.RemoveSpeedBoost();
+                break;
+            case 8:
+                MaficEffciencyExpire?.Invoke();
+                break;
+            case 12:
+                MaficIneffciencyExpire?.Invoke();
+                break;
+        }
+    }
+    
+    public void TakeDamage(int damage)
+    {
+        Double defense = DataCenter.Instance.DefenseCalculation(DataCenter.Instance.Allies[MemberName], Level);
+        if (effectRoster.ContainsKey(13)||effectRoster.ContainsKey(10))
+        {
+            defense = Math.Floor(defense / 2);
+        } else if (effectRoster.ContainsKey(6))
+        {
+            defense *= 2;
+        }
+        int defesneInt = (int)defense;
+        HP -= damage - defesneInt;
+        if (HP <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public virtual void OnDestroy()
+    {
+        foreach (var item in effectRoster)
+        {
+            StopCoroutine(item.Value);
+        }
+        effectRoster.Clear();
+        expiringEffectRoster.Clear();
+        PreviousMember.NextMember = NextMember;
+        NextMember.PreviousMember = PreviousMember;
+        CurrentState.ExitState();
     }
 }

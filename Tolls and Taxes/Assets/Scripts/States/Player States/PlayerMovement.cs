@@ -54,7 +54,7 @@ public class PlayerMovement : State
         DeckViewAction.performed -= DeckViewActionOnPerformed;
     }
 
-    public override void ResubscribeStates()
+    public override void ResubscribeState()
     {
         if (moveAction == null)
         {
@@ -140,10 +140,4 @@ public class PlayerMovement : State
     }
     
     
-
-    //Can't recall why this was here...
-    private void OnDestroy()
-    {
-        ExitState();
-    }
 }

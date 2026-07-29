@@ -126,7 +126,7 @@ public class PlayerTurn : State
         restAction.performed -= OnRest;
     }
 
-    public override void ResubscribeStates()
+    public override void ResubscribeState()
     {
         if (moveAction == null)
         {

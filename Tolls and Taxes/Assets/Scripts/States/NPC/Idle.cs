@@ -22,7 +22,7 @@ public class Idle : State
         
     }
 
-    public override void ResubscribeStates()
+    public override void ResubscribeState()
     {
         
     }

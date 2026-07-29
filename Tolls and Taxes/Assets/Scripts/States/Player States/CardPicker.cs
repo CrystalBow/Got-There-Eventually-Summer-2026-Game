@@ -38,11 +38,12 @@ public class CardPicker : State
         Owner.body.linearVelocity = Vector2.zero;
         leader = Owner as PartyLeader;
         _activeMember = leader;
-        leader.spriteRenderer.color = Color.blue;
+        leader.ArrowPointer.gameObject.SetActive(true);
         isLimited = false;
         // Activate UI
         ShowHand();
-        
+        PartyMember.MaficEffciencyExpire += PartyMemberOnMaficEffciencyExpire;
+        PartyMember.MaficIneffciencyExpire += PartyMemberOnMaficIneffciencyExpire;
         // Subscribe to controls
         moveAction = InputSystem.actions.FindAction("Player/Move");
         moveAction.performed += OnMove;
@@ -57,13 +58,23 @@ public class CardPicker : State
         discardAction =  InputSystem.actions.FindAction("Player/Attack");
         discardAction.performed += OnDiscard;
     }
-    
+
+    private void PartyMemberOnMaficIneffciencyExpire()
+    {
+        ShowHand();
+    }
+
+    private void PartyMemberOnMaficEffciencyExpire()
+    {
+        ShowHand();
+    }
+
     private void OnDiscard(InputAction.CallbackContext obj)
     {
         // Player discards their hand.
         UnfocusCard();
         _activeMember.Deck.DiscardHand();
-        _activeMember.spriteRenderer.color = Color.white;
+        _activeMember.ArrowPointer.gameObject.SetActive(false);
         HideHand();
         ChangeState(this.AddComponent<PlayerMovement>());
     }
@@ -77,12 +88,23 @@ public class CardPicker : State
         {
             return;
         }
-        CardLogic(_activeMember.Deck.HandCards[chosenCardIndex]);
         UnfocusCard();
-        _activeMember.Deck.DiscardCard(_activeMember.Deck.HandCards[chosenCardIndex]);
-        _activeMember.spriteRenderer.color = Color.white;
         HideHand();
-        ChangeState(this.AddComponent<PlayerMovement>());
+        _activeMember.ArrowPointer.gameObject.SetActive(false);
+        if (CardLogic(_activeMember.Deck.HandCards[chosenCardIndex]))
+        {
+            _activeMember.Deck.DiscardCard(_activeMember.Deck.HandCards[chosenCardIndex]);
+            ChangeState(this.AddComponent<PlayerMovement>());
+            
+        }
+        else
+        {
+            TargetPicker picker =  this.AddComponent<TargetPicker>();
+            picker.Card = _activeMember.Deck.HandCards[chosenCardIndex];
+            picker.User = _activeMember;
+            picker.HandIndex = chosenCardIndex;
+            ChangeState(picker);
+        }
     }
 
     private void OnPrevious(InputAction.CallbackContext obj)
@@ -122,7 +144,7 @@ public class CardPicker : State
     private void OnCancel(InputAction.CallbackContext obj)
     {
         // Canceling sends us back to walking
-        _activeMember.spriteRenderer.color = Color.white;
+        _activeMember.ArrowPointer.gameObject.SetActive(false);
         HideHand();
         ChangeState(this.AddComponent<PlayerMovement>());
     }
@@ -137,6 +159,8 @@ public class CardPicker : State
         PreviousAction.performed -= OnPrevious;
         approveAction.performed -= OnApproved;
         discardAction.performed -= OnDiscard;
+        PartyMember.MaficEffciencyExpire -= PartyMemberOnMaficEffciencyExpire;
+        PartyMember.MaficIneffciencyExpire -= PartyMemberOnMaficIneffciencyExpire;
         // Halt the rate limiter
         if (limiter != null)
         {
@@ -159,9 +183,11 @@ public class CardPicker : State
         PreviousAction.performed -= OnPrevious;
         approveAction.performed -= OnApproved;
         discardAction.performed -= OnDiscard;
+        PartyMember.MaficEffciencyExpire -= PartyMemberOnMaficEffciencyExpire;
+        PartyMember.MaficIneffciencyExpire -= PartyMemberOnMaficIneffciencyExpire;
     }
 
-    public override void ResubscribeStates()
+    public override void ResubscribeState()
     {
         if (moveAction == null)
         {
@@ -173,6 +199,8 @@ public class CardPicker : State
         PreviousAction.performed += OnPrevious;
         approveAction.performed += OnApproved;
         discardAction.performed += OnDiscard;
+        PartyMember.MaficEffciencyExpire += PartyMemberOnMaficEffciencyExpire;
+        PartyMember.MaficIneffciencyExpire += PartyMemberOnMaficIneffciencyExpire;
     }
 
 
@@ -184,7 +212,7 @@ public class CardPicker : State
             // Change who the targeted member is.
             Vector2 direction = ctx.ReadValue<Vector2>();
             float x = direction.x;
-            _activeMember.spriteRenderer.color = Color.white;
+            _activeMember.ArrowPointer.gameObject.SetActive(false);
             if (x > 0)
             {
                 SwapSelection(_activeMember.NextMember);
@@ -193,7 +221,7 @@ public class CardPicker : State
             {
                 SwapSelection(_activeMember.PreviousMember);
             }
-            _activeMember.spriteRenderer.color = Color.blue;
+            _activeMember.ArrowPointer.gameObject.SetActive(true);
             limiter = StartCoroutine(slowJoystick(0.2f));
         }
     }
@@ -211,7 +239,7 @@ public class CardPicker : State
             {
                 _activeMember.cards[i].gameObject.SetActive(true);
                 bool isSelected = (i == chosenCardIndex);
-                _activeMember.cards[i].DisplayCard(_activeMember.Deck.HandCards[i], isSelected);
+                _activeMember.cards[i].DisplayCard(_activeMember.Deck.HandCards[i], isSelected, _activeMember.effectRoster.ContainsKey(8), _activeMember.effectRoster.ContainsKey(12));
             }
             else
             {
@@ -272,24 +300,58 @@ public class CardPicker : State
     /// Takes in a card byte and executes the card.
     /// </summary>
     /// <param name="cardByte">the chose cards data</param>
-    private void CardLogic(CardByte cardByte)
+    private bool CardLogic(CardByte cardByte)
     {
-        //Register Cost
-        if (cardByte.StaticData.Cost != 0)
+        bool allDone = true;
+        if (cardByte.StaticData.Cost >= 0)
         {
-            if (cardByte.StaticData.Cost <= _activeMember.MP)
+            Double finalCost = cardByte.StaticData.Cost;
+            if (_activeMember.effectRoster.ContainsKey(8))
             {
-                _activeMember.MP -= cardByte.StaticData.Cost;
-                if (_activeMember.MP > DataCenter.Instance.Allies[_activeMember.MemberName].Mp)
+                finalCost = Math.Floor(finalCost/2);
+            }
+            else if (_activeMember.effectRoster.ContainsKey(12))
+            {
+                if (finalCost == 0)
                 {
-                    _activeMember.MP = DataCenter.Instance.Allies[_activeMember.MemberName].Mp;
+                    finalCost = 1.0;
                 }
+                else
+                {
+                    finalCost = finalCost * 2;
+                }
+            }
+            if (finalCost < _activeMember.MP)
+            {
+                _activeMember.MP -= (int)finalCost;
             }
             else
             {
-                return;
+                return true;
+            }
+        } else if (cardByte.StaticData.Cost < 0)
+        {
+            allDone = false;
+        }
+
+        
+
+        bool isBuff = false;
+        if (cardByte.StaticData.Effects.Count > 0)
+        {
+            List<int> buffsIDs = new List<int>();
+            buffsIDs.Add(DataCenter.Instance.Effects["Attack Up"]);
+            buffsIDs.Add(DataCenter.Instance.Effects["Defense Up"]);
+            buffsIDs.Add(DataCenter.Instance.Effects["Magic Efficiency"]);
+            foreach (int buffID in buffsIDs)
+            {
+                if (cardByte.StaticData.Effects.Contains(buffID))
+                {
+                    isBuff = true;
+                }
             }
         }
+        
         
         //Deal Damage
         if (cardByte.StaticData.Damage > 0)
@@ -316,28 +378,158 @@ public class CardPicker : State
                                 leader.transform.position);
                         }
                     }
-                    
+                    target.Hp -= DamageCalc(cardByte.StaticData.Damage);
+                    Destroyable.destroyables.Clear();
+                }
+            }
+
+            if (cardByte.StaticData.Effects.Contains(2))
+            {
+                leader.AttackActivation();
+                List<Destroyable> potentialTargets = Destroyable.destroyables;
+                if (potentialTargets.Count > 0)
+                {
+                    Destroyable target = potentialTargets[0];
+                    float targetDistance = Vector2.Distance(leader.transform.position, target.transform.position);
+                    for (int i = 1; i < potentialTargets.Count; i++)
+                    {
+                        if (targetDistance > Vector2.Distance(potentialTargets[i].transform.position,
+                                leader.transform.position))
+                        {
+                            target = potentialTargets[i];
+                            targetDistance = Vector2.Distance(potentialTargets[i].transform.position,
+                                leader.transform.position);
+                        }
+                    }
+                    target.Hp -= DamageCalc(cardByte.StaticData.Damage);
+                    Destroyable.destroyables.Clear();
+                }
+            }
+
+            if (cardByte.StaticData.Effects.Contains(3))
+            {
+                leader.AttackActivation();
+                List<Destroyable> potentialTargets = Destroyable.destroyables;
+                if (potentialTargets.Count > 0)
+                {
+                    Destroyable target = potentialTargets[0];
+                    float targetDistance = Vector2.Distance(leader.transform.position, target.transform.position);
+                    for (int i = 1; i < potentialTargets.Count; i++)
+                    {
+                        if (targetDistance > Vector2.Distance(potentialTargets[i].transform.position,
+                                leader.transform.position))
+                        {
+                            target = potentialTargets[i];
+                            targetDistance = Vector2.Distance(potentialTargets[i].transform.position,
+                                leader.transform.position);
+                        }
+                    }
+                    target.Hp -= DamageCalc(cardByte.StaticData.Damage);
+                    Destroyable.destroyables.Clear();
+                }
+                potentialTargets.Clear();
+                leader.AttackActivation();
+                potentialTargets = Destroyable.destroyables;
+                if (potentialTargets.Count > 0)
+                {
+                    Destroyable target = potentialTargets[0];
+                    float targetDistance = Vector2.Distance(leader.transform.position, target.transform.position);
+                    for (int i = 1; i < potentialTargets.Count; i++)
+                    {
+                        if (targetDistance > Vector2.Distance(potentialTargets[i].transform.position,
+                                leader.transform.position))
+                        {
+                            target = potentialTargets[i];
+                            targetDistance = Vector2.Distance(potentialTargets[i].transform.position,
+                                leader.transform.position);
+                        }
+                    }
+                    target.Hp -= DamageCalc(cardByte.StaticData.Damage);
+                    Destroyable.destroyables.Clear();
+                }
+            }
+
+            if (cardByte.StaticData.Effects.Contains(4))
+            {
+                leader.AttackActivation();
+                List<Destroyable> potentialTargets = Destroyable.destroyables;
+                if (potentialTargets.Count > 0)
+                {
+                    Destroyable target = potentialTargets[0];
+                    float targetDistance = Vector2.Distance(leader.transform.position, target.transform.position);
+                    for (int i = 1; i < potentialTargets.Count; i++)
+                    {
+                        if (targetDistance > Vector2.Distance(potentialTargets[i].transform.position,
+                                leader.transform.position))
+                        {
+                            target = potentialTargets[i];
+                            targetDistance = Vector2.Distance(potentialTargets[i].transform.position,
+                                leader.transform.position);
+                        }
+                    }
+                    target.Hp -= DamageCalc(cardByte.StaticData.Damage);
+                    Destroyable.destroyables.Clear();
+                }
+                potentialTargets.Clear();
+                leader.AttackActivation();
+                potentialTargets = Destroyable.destroyables;
+                if (potentialTargets.Count > 0)
+                {
+                    Destroyable target = potentialTargets[0];
+                    float targetDistance = Vector2.Distance(leader.transform.position, target.transform.position);
+                    for (int i = 1; i < potentialTargets.Count; i++)
+                    {
+                        if (targetDistance > Vector2.Distance(potentialTargets[i].transform.position,
+                                leader.transform.position))
+                        {
+                            target = potentialTargets[i];
+                            targetDistance = Vector2.Distance(potentialTargets[i].transform.position,
+                                leader.transform.position);
+                        }
+                    }
+                    target.Hp -= DamageCalc(cardByte.StaticData.Damage);
+                    Destroyable.destroyables.Clear();
+                }
+                potentialTargets.Clear();
+                leader.AttackActivation();
+                potentialTargets = Destroyable.destroyables;
+                if (potentialTargets.Count > 0)
+                {
+                    Destroyable target = potentialTargets[0];
+                    float targetDistance = Vector2.Distance(leader.transform.position, target.transform.position);
+                    for (int i = 1; i < potentialTargets.Count; i++)
+                    {
+                        if (targetDistance > Vector2.Distance(potentialTargets[i].transform.position,
+                                leader.transform.position))
+                        {
+                            target = potentialTargets[i];
+                            targetDistance = Vector2.Distance(potentialTargets[i].transform.position,
+                                leader.transform.position);
+                        }
+                    }
                     target.Hp -= DamageCalc(cardByte.StaticData.Damage);
                     Destroyable.destroyables.Clear();
                 }
             }
             
-            
-            
+        } else if (isBuff || cardByte.StaticData.Damage < 0)
+        {
+            allDone = false;
             
         }
         
-        //Simple Healing
-        if (cardByte.StaticData.Damage < 0)
-        {
-            _activeMember.HP += HealCalc(cardByte.StaticData.Damage);
-        }
         
         //Apply Effect
         if (cardByte.StaticData.Effects.Contains(7))
         {
             leader.applyEffect(cardByte.StaticData.Time * 4, 7);
         }
+        if (cardByte.StaticData.Effects.Contains(13))
+        {
+            _activeMember.applyEffect(cardByte.StaticData.Time * 6, 13);
+        }
+
+        return allDone;
     }
     /// <summary>
     /// Calculates Damage
@@ -346,7 +538,16 @@ public class CardPicker : State
     /// <returns>the calculated damage</returns>
     public int DamageCalc(int Base)  
     {
-        return Base + DataCenter.Instance.Allies[_activeMember.MemberName].Attack;
+        double Damage = DataCenter.Instance.AttackCalculation(DataCenter.Instance.Allies[_activeMember.MemberName], _activeMember.Level);
+        if (_activeMember.effectRoster.ContainsKey(5))
+        {
+            Damage *= 2;
+        }
+        if (_activeMember.effectRoster.ContainsKey(9))
+        {
+            Damage = Math.Floor(Damage / 2);
+        }
+        return Base+(int)Damage;
     }
 
     /// <summary>

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 /// <summary>
 /// For the party leader during environment exploration
@@ -18,6 +19,7 @@ public class PartyLeader : PartyMember
     
     //Speed stat.
     public int speed;
+    private bool isDoubled;
     
     //Start the queue
     private void Awake()
@@ -41,6 +43,7 @@ public class PartyLeader : PartyMember
         Crumb = this.transform.position;
         CurrentState.EnterState();
         speed = DataCenter.Instance.Allies[MemberName].Speed;
+        isDoubled = false;
     }
 
     private void FoeOnPreBattleProcessing()
@@ -78,43 +81,33 @@ public class PartyLeader : PartyMember
     {
         AOEAttack?.Invoke(new Vector2(this.transform.position.x, this.transform.position.y), damage);
     }
-    
-    // ----------------------------------------------------- Effects stuff
-    //Coroutine for effects 
-    IEnumerator effect(float time, int id)
+
+    public void ApplySpeedBoost()
     {
-        yield return new WaitForSeconds(time);
-        removeEffect(id);
+        if (!isDoubled)
+        {
+            isDoubled = true;
+            speed = speed * 2;
+        }
     }
 
-    public void applyEffect(float time, int id)
+    public void RemoveSpeedBoost()
     {
-        if (effectRoster.ContainsKey(id))
+        if (isDoubled)
         {
-            //Override duplicates to prevent stacking
-            StopCoroutine(effectRoster[id]);
-            removeEffect(id);
+            isDoubled = false;
+            speed = speed / 2;
         }
-        // Logic to make it happen.
-        switch (id)
-        {
-            case 7:
-                speed = speed * 2;
-                break;
-        }
-        effectRoster.Add(id, StartCoroutine(effect(time, id)));
     }
     
-    
-    public void removeEffect(int id)
+    public override void OnDestroy()
     {
-        effectRoster.Remove(id);
-        //Logic upon removal.
-        switch (id)
+        foreach (var item in effectRoster)
         {
-            case 7:
-                speed = speed / 2;
-                break;
+            StopCoroutine(item.Value);
         }
+        CurrentState.ExitState();
+        SceneManager.LoadScene("Prototype Start");
     }
+
 }

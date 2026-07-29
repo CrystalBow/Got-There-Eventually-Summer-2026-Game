@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,8 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] private GameObject controlsPanel;
     [SerializeField] private GameObject partyDetailsPanel;
     [SerializeField] private string startSceneName = "Prototype Start";
+    public static Action PauseGameAction;
+    public static Action ResumeGameAction;
 
     private bool isPaused;
 
@@ -37,9 +40,11 @@ public class PauseMenuController : MonoBehaviour
         else if (isPaused)
         {
             ResumeGame();
+            ResumeGameAction?.Invoke();
         }
         else
         {
+            PauseGameAction?.Invoke();
             PauseGame();
         }
     }

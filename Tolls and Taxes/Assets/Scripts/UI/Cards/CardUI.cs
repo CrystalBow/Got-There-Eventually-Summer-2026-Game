@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -20,14 +21,32 @@ public class CardUI : MonoBehaviour
     /// <summary>
     /// Updates the text and background sprite of this UI container.
     /// </summary>
-    public void DisplayCard(CardByte card, bool isFocused = false)
+    public void DisplayCard(CardByte card, bool isFocused = false, bool magicEffcient = false, bool magicIneffcient = false)
     {
         nameText.text = card.Name;
         typeText.text = card.Type;
 
         if (card.StaticData != null)
         {
-            costText.text = card.StaticData.Cost.ToString();
+            Double finalCost = card.StaticData.Cost;
+            if (magicEffcient)
+            {
+                finalCost = Math.Floor(finalCost/2);
+            }
+
+            if (magicIneffcient)
+            {
+                if (finalCost == 0)
+                {
+                    finalCost = 1;
+                }
+                else
+                {
+                    finalCost *= 2;
+                }
+            }
+            int finalCostInt = (int)finalCost;
+            costText.text = finalCostInt.ToString();
         }
         else
         {

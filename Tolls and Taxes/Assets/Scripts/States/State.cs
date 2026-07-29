@@ -48,7 +48,7 @@ public abstract class State : MonoBehaviour
     }
     
     public abstract void UnsubcribeState();
-    public abstract void ResubscribeStates();
+    public abstract void ResubscribeState();
     
 
     public void OnDisable()
@@ -58,7 +58,24 @@ public abstract class State : MonoBehaviour
 
     public void OnEnable()
     {
-        ResubscribeStates();
+        PauseMenuController.PauseGameAction += PauseGameAction;
+        PauseMenuController.ResumeGameAction += ResumeGameAction;
+        ResubscribeState();
     }
-    
+
+    public void OnDestroy()
+    {
+        PauseMenuController.PauseGameAction -= PauseGameAction;
+        PauseMenuController.ResumeGameAction -= ResumeGameAction;
+    }
+
+    private void ResumeGameAction()
+    {
+        ResubscribeState();
+    }
+
+    private void PauseGameAction()
+    {
+        UnsubcribeState();
+    }
 }
