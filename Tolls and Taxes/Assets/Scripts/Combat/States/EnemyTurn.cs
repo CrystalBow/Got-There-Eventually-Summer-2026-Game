@@ -116,6 +116,8 @@ public class EnemyTurn : State
                     raffleManager[assignIndex] += 7;
                 }
             }
+
+            assignIndex += 1;
         }
 
         /*
