@@ -1,8 +1,10 @@
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 /*
  * The EnemyTurn class is a state class that performs an enemy turn when triggered by a separate state.
@@ -58,16 +60,106 @@ public class EnemyTurn : State
             }
         }
 
+        int[] raffleManager = new int[alliedIndices.Count];
+
+        int assignIndex = 0;
+
+        foreach (var index in alliedIndices)
+        {
+            PlayerCombatant toAnalyze = combatCenter.initiativeOrder[alliedIndices[index]].Reference as PlayerCombatant;
+
+            int ourEnemyAttack = combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.StaticData.Attack + EffectCenter.GetAttackModifier(combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.ourEffects);
+
+            int defenseOfAlly = DataCenter.Instance.DefenseCalculation(toAnalyze.StaticPlayableData, toAnalyze.Level) + EffectCenter.GetDefenseModifier(toAnalyze.ourEffects);
+
+            int damagePerTurn = ourEnemyAttack - defenseOfAlly;
+
+            if (toAnalyze.currentHP <= damagePerTurn)
+            {
+                raffleManager[assignIndex] += 15;
+            }
+            else if (toAnalyze.currentHP <= damagePerTurn * 2)
+            {
+                raffleManager[assignIndex] += 5;
+            }
+            else if (toAnalyze.currentHP <= damagePerTurn * 3)
+            {
+                raffleManager[assignIndex] += 3;
+            }
+            else
+            {
+                raffleManager[assignIndex] += 1;
+            }
+
+            Combatant ourEnemyReference = combatCenter.initiativeOrder[combatCenter.turnPosition].Reference;
+            int ourEnemyDefense = combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.StaticData.Defense + EffectCenter.GetDefenseModifier(combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.ourEffects);
+            int playerAnalyzeAttack = DataCenter.Instance.AttackCalculation(toAnalyze.StaticPlayableData, toAnalyze.Level) + EffectCenter.GetAttackModifier(toAnalyze.ourEffects);
+
+            if (playerAnalyzeAttack >= (ourEnemyReference.currentHP + ourEnemyDefense))
+            {
+                raffleManager[assignIndex] += 8;
+            }
+            else if ((playerAnalyzeAttack * 2) >= (ourEnemyReference.currentHP + ourEnemyDefense))
+            {
+                raffleManager[assignIndex] += 3;
+            }
+
+            if (EffectCenter.GetAttackModifier(toAnalyze.ourEffects) == 1)
+            {
+                raffleManager[assignIndex] += 5;
+            }
+
+            if (EffectCenter.GetDefenseModifier(toAnalyze.ourEffects) == -1)
+            {
+                if (damagePerTurn > 0)
+                {
+                    raffleManager[assignIndex] += 7;
+                }
+            }
+        }
+
+        /*
+         * We "roll" a random ticket and make a choice.
+         * We therefore add the previous tickets to each cell, so we can use them to determine when to stop.
+         */
+        for (int i = 0; i < raffleManager.Length - 1; i++)
+        {
+            raffleManager[i + 1] += raffleManager[i];
+        }
+
+        bool foundEnemy = false;
+
+        // Generate a random int in the full range of the raffle encompassing all tickets.
+        int attackTarget = UnityEngine.Random.Range(0, raffleManager[raffleManager.Length - 1]);
+
+        int navigator = 0;
+
+        while (foundEnemy == false)
+        {
+            if (raffleManager[navigator] > attackTarget)
+            {
+                foundEnemy = true;
+            }
+            else
+            {
+                navigator++;
+            }
+        }
+
+        combatCenter.initiativeOrder[alliedIndices[navigator]].Reference.damage(combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.StaticData.Attack + EffectCenter.GetAttackModifier(combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.ourEffects));
+
         /*
          * We already have a set of ally indices in the new list, so we choose a random target.
          * It's important to note, the indexes of attackTarget is NOT the index of the ally in initiativeOrder
          * attackTarget[x] holds an index for an ally in the initiativeOrder, which means you must reference both.
          */
-        int attackTarget = Random.Range(0, alliedIndices.Count);
-        
+
+        // int attackTarget = Random.Range(0, alliedIndices.Count);
+
         // Right now, we just do basic damage.
         // Recall that defense is automatically accounted for without external input by the combatant classes.
-        combatCenter.initiativeOrder[alliedIndices[attackTarget]].Reference.damage(combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.StaticData.Attack);
+
+        // combatCenter.initiativeOrder[alliedIndices[attackTarget]].Reference.damage(combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.StaticData.Attack);
 
         // We know we just attacked, so we reference this automatically tracked variable to see if the player has lost.
         if (combatCenter.aliveAllies == 0)
