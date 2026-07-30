@@ -78,9 +78,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1713444257
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: 841239493
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4208372176907103369, guid: e1b4351ac6b29f447a09d9b24a9ff604, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -192,9 +192,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1713444257
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: 841239493
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7268044111528266703, guid: e1b4351ac6b29f447a09d9b24a9ff604, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -306,9 +306,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1713444257
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: 841239493
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6265509867601671387, guid: e1b4351ac6b29f447a09d9b24a9ff604, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -465,3 +465,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hazards
   Damage: 0
+  Speed: {x: 0, y: 0}
+  cooldown: 0

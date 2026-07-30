@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Mono.Cecil;
+
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -27,6 +27,7 @@ public class TargetPicker : State
 
     public override void EnterState()
     {
+        ControlReminderUI.Instance.Show(ControlReminderContext.TargetSelection);
         BuffIDs.Clear();
         BuffIDs.Add(5);
         BuffIDs.Add(6);
@@ -61,6 +62,11 @@ public class TargetPicker : State
                     Target.applyEffect(Card.StaticData.Time * 6, buffID);
                 }
             }
+        }
+
+        if (Card.StaticData.Damage < 0)
+        {
+            Target.TakeDamage(Card.StaticData.Damage - DataCenter.Instance.AttackCalculation(DataCenter.Instance.Allies[User.MemberName], User.Level));
         }
         
         if (Card.StaticData.Cost < 0)

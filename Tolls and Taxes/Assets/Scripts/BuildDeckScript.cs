@@ -25,6 +25,8 @@ public class BuildDeckScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        int Level = 1;
         // Deck Builds
         Deck currDeck = new Deck();
         //Healer (Samantha Pel)
@@ -54,7 +56,7 @@ public class BuildDeckScript : MonoBehaviour
         currDeck.AddCard(CardByte.Create("Attack!", "Attacks", DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
         currDeck.AddCard(CardByte.Create("Attack!", "Attacks", DataCenter.Instance.GlobalCards.Attacks["Attack!"]));
         HealerDeck = currDeck;
-        TransferCenter.Instance.SaveCharacterState("Samantha Pel", HealerDeck, currAlly.Hp, currAlly.Mp,1,0);
+        TransferCenter.Instance.SaveCharacterState("Samantha Pel", HealerDeck, DataCenter.Instance.maxHealthCalculation(currAlly, Level), DataCenter.Instance.maxManaCalculation(currAlly, Level),level:Level,0);
         
         
         //Defender (John Goblinus)
@@ -88,7 +90,7 @@ public class BuildDeckScript : MonoBehaviour
         
         
         DefenderDeck = currDeck;
-        TransferCenter.Instance.SaveCharacterState("John Goblinus",DefenderDeck,currAlly.Hp, currAlly.Mp,1,0);
+        TransferCenter.Instance.SaveCharacterState("John Goblinus",DefenderDeck,DataCenter.Instance.maxHealthCalculation(currAlly, Level), DataCenter.Instance.maxManaCalculation(currAlly, Level),Level, 0);
         
         
         //Attacker (Marvin Bold)
@@ -119,7 +121,7 @@ public class BuildDeckScript : MonoBehaviour
         currDeck.AddCard(CardByte.Create("First Aid","Healing", DataCenter.Instance.GlobalCards.Healing["First Aid"]));
         currDeck.AddCard(CardByte.Create("Growl","Debuffs", DataCenter.Instance.GlobalCards.Debuffs["Growl"]));
         AttackerDeck = currDeck;
-        TransferCenter.Instance.SaveCharacterState("Marvin Bold",AttackerDeck,currAlly.Hp, currAlly.Mp,1,0);
+        TransferCenter.Instance.SaveCharacterState("Marvin Bold",AttackerDeck,DataCenter.Instance.maxHealthCalculation(currAlly,Level), DataCenter.Instance.maxManaCalculation(currAlly,Level),Level,0);
         currDeck = new Deck();
         
     }

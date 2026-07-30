@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.U2D;
 
 /*
  * This script manages an individual combatatant for the player.
@@ -29,6 +30,18 @@ public class PlayerCombatant : Combatant
         Deck = data.Deck;
         CardHandler.CallAllies += CallAllies;
         CombatCenter.OnGameWon += CombatCenterOnOnGameWon;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (CombatantName == "Samantha Pel")
+        {
+            spriteRenderer.sprite = spriteAtlas.GetSprite("Sam");
+        }
+        else if (CombatantName == "John Goblinus")
+        {
+            spriteRenderer.sprite = spriteAtlas.GetSprite("Knight");
+        } else if (CombatantName == "Marvin Bold")
+        {
+            spriteRenderer.sprite = spriteAtlas.GetSprite("Marvin");
+        }
     }
 
     private void CombatCenterOnOnGameWon()
@@ -78,5 +91,10 @@ public class PlayerCombatant : Combatant
             }
         }
         
+    }
+
+    public override void OnDestroy()
+    {
+        CardHandler.CallAllies -= CallAllies;
     }
 }

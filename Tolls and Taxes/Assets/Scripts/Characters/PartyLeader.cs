@@ -38,6 +38,8 @@ public class PartyLeader : PartyMember
         Deck.Shuffle();
         HP = data.CurrentHp;
         MP = data.CurrentMp;
+        Level =  data.CurrentLevel;
+        XP = data.CurrentXp;
         CurrentState = this.AddComponent<PlayerMovement>();
         body = this.GetComponent<Rigidbody2D>();
         Crumb = this.transform.position;
@@ -45,6 +47,7 @@ public class PartyLeader : PartyMember
         speed = DataCenter.Instance.Allies[MemberName].Speed;
         isDoubled = false;
     }
+    
 
     private void FoeOnPreBattleProcessing()
     {
@@ -107,7 +110,7 @@ public class PartyLeader : PartyMember
             StopCoroutine(item.Value);
         }
         CurrentState.ExitState();
-        SceneManager.LoadScene("Prototype Start");
+        SceneManager.LoadScene("Prototype GameOver");
     }
 
 }

@@ -14,6 +14,9 @@ public class Scenetrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene("Prototype Combat");
+        if (collision.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("StartMenu");
+        }
     }
 }

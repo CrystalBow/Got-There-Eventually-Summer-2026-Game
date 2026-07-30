@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class StartMenuController : MonoBehaviour
 {
-    private string gameplaySceneName = "Prototype Exploration";
+    private string gameplaySceneName = "Yimer's Extra Workshop";
 
     public void StartGame()
     {

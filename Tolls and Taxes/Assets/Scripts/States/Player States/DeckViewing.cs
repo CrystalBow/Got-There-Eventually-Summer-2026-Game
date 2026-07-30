@@ -25,6 +25,7 @@ public class DeckViewing : State
         leader = Owner as PartyLeader;
         CurrentMember = Owner as PartyMember;
         ArrowList =  new List<ViewIcon>();
+        ControlReminderUI.Instance.Show(ControlReminderContext.Menu);
         leader.DeckMenu.gameObject.SetActive(true);
         PartyMemberIcons = new List<GameObject>();
         PartyMemberIcons.Add(Instantiate(leader.DeckMenu.IconCloner, leader.DeckMenu.PartyPanel.GetComponent<RectTransform>(), false));
@@ -44,6 +45,7 @@ public class DeckViewing : State
             CurrentMember = CurrentMember.NextMember;
             ChosenPartyIndex++;
         }
+        ArrowList[0].Arrow.gameObject.SetActive(true);
         deckList = new List<CardByte>();
         ChosenPartyIndex = 0;
         CardInspectIndex = 0;
@@ -97,7 +99,10 @@ public class DeckViewing : State
 
     public override void ExitState()
     {
-       leader.DeckMenu.gameObject.SetActive(false);
+        if (leader.DeckMenu != null)
+        {
+            leader.DeckMenu.gameObject.SetActive(false);
+        }
        moveInput.performed -= MoveInputOnperformed;
        nextInput.performed -= NextInputOnperformed;
        previousInput.performed -= PreviousInputOnperformed;

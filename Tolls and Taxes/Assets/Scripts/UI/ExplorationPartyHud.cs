@@ -45,9 +45,9 @@ public class ExplorationPartyHud : MonoBehaviour
             entry.SetStats(
                 member.MemberName,
                 member.HP,
-                staticData.Hp,
+                DataCenter.Instance.maxHealthCalculation(staticData,member.Level),
                 member.MP,
-                staticData.Mp);
+                DataCenter.Instance.maxHealthCalculation(staticData,member.Level));
             entry.Icon.sprite = member.spriteRenderer.sprite;
         }
     }

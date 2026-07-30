@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 
 /*
  * Combatant is a class that is also inherited by PlayerCombatant.
@@ -15,6 +16,7 @@ public class Combatant : Character
     // EffectList maintains a list of effects
     public EffectList ourEffects;
     public int currentHP { get; set; }
+    public SpriteAtlas spriteAtlas;
 
     /*
      * It remains important to manage a counter for enemy and player death.
@@ -29,6 +31,28 @@ public class Combatant : Character
         currentHP = StaticData.Hp;
         ourEffects = new EffectList();
         CardHandler.CallFoes += CallFoes;
+        spriteRenderer =  GetComponent<SpriteRenderer>();
+        if (CombatantName == "Skeleton")
+        {
+            spriteRenderer.sprite = spriteAtlas.GetSprite("Skeleton");
+        } else if (CombatantName == "Zombie")
+        {
+            spriteRenderer.sprite = spriteAtlas.GetSprite("Zombie");
+        } else if (CombatantName == "Living Shrub")
+        {
+            spriteRenderer.sprite = spriteAtlas.GetSprite("Fire_Card_3_5");
+        } else if (CombatantName == "Bandit")
+        {
+            spriteRenderer.sprite = spriteAtlas.GetSprite("Bandit");
+        } else if (CombatantName == "Tutorial Bug")
+        {
+            spriteRenderer.sprite = spriteAtlas.GetSprite("Bug");
+        }  else if (CombatantName == "Traitor Knight")
+        {
+            spriteRenderer.sprite = spriteAtlas.GetSprite("Knight");
+        }
+
+        spriteRenderer.flipX = true;
     }
 
     private void CallFoes()
@@ -73,5 +97,9 @@ public class Combatant : Character
     {
         OnDeath?.Invoke(combatant);
     }
-    
+
+    public virtual void OnDestroy()
+    {
+        CardHandler.CallFoes -= CallFoes;
+    }
 }

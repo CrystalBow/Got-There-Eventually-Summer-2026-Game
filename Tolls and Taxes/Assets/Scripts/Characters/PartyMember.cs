@@ -145,6 +145,15 @@ public class PartyMember : Character
     
     public void TakeDamage(int damage)
     {
+        if (damage < 0)
+        {
+            HP -= damage;
+            if (HP > DataCenter.Instance.maxHealthCalculation(DataCenter.Instance.Allies[MemberName], Level))
+            {
+                HP = DataCenter.Instance.maxHealthCalculation(DataCenter.Instance.Allies[MemberName], Level);
+            }
+            return;
+        }
         Double defense = DataCenter.Instance.DefenseCalculation(DataCenter.Instance.Allies[MemberName], Level);
         if (effectRoster.ContainsKey(13)||effectRoster.ContainsKey(10))
         {

@@ -4,27 +4,43 @@ using UnityEngine;
 
 public class Hazards : MonoBehaviour
 {
-
     private Collider2D Dectector;
     private Rigidbody2D Body;
     public int Damage;
-    public float Speed;
+    public Vector2 Speed;
     public float cooldown;
     private bool IsActive;
-    
 
-    public void Start()
+    [HideInInspector] public float maxLifetime;
+    private float lifetimeTimer;
+
+    public void Awake()
     {
         Dectector = gameObject.GetComponent<Collider2D>();
         Body = gameObject.GetComponent<Rigidbody2D>();
+    }
+
+    public void OnEnable()
+    {
+        float angle = Vector2.SignedAngle(Vector2.right, Speed);
+        transform.rotation = Quaternion.Euler(0, 0, angle);
         IsActive = false;
+        
+        // Reset the timer every time it spawns
+        lifetimeTimer = 0f; 
     }
 
     public void Update()
     {
-        Body.linearVelocity = new Vector2(1*Speed, 0);
+        Body.linearVelocity = Speed;
+
+        // Track lifetime here! It automatically pauses when the scene is disabled.
+        lifetimeTimer += Time.deltaTime;
+        if (lifetimeTimer >= maxLifetime)
+        {
+            gameObject.SetActive(false); // Turning it off automatically returns it to the List pool
+        }
     }
-    
     
     public void OnTriggerEnter2D(Collider2D other)
     {

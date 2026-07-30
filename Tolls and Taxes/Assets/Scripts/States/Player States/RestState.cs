@@ -23,7 +23,7 @@ public class RestState : State
         Owner.body.linearVelocity = Vector2.zero;
         Owner.spriteRenderer.color = Color.darkGreen;
         leader = Owner as PartyLeader;
-        
+        ControlReminderUI.Instance.Show(ControlReminderContext.Rest);
         // Subscribe to controls
         cancelAction = InputSystem.actions.FindAction("Player/Crouch");
         cancelAction.performed += OnCancel;

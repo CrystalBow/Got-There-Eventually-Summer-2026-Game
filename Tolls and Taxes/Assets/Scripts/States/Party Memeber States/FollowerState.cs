@@ -7,6 +7,7 @@ public class FollowerState : State
 {
     // Owner reference for casting.
     protected PartyMember partyMember;
+    public Vector3 DebugTarget;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -49,11 +50,13 @@ public class FollowerState : State
         {
             case PartyMember.LineStatus.middle:
                 partyMember.FollowTarget = partyMember.PreviousMember.FollowCrumbs.Dequeue();
+                DebugTarget = partyMember.PreviousMember.FollowTarget;
                 CheckDistance();
                 partyMember.FollowCrumbs.Enqueue(partyMember.Crumb);
                 break;
             case PartyMember.LineStatus.second:
                 partyMember.FollowTarget = partyMember.Leader.FollowCrumbs.Dequeue();
+                DebugTarget =  partyMember.FollowTarget;
                 CheckDistance();
                 partyMember.FollowCrumbs.Enqueue(partyMember.Crumb);
                 break;
@@ -82,7 +85,7 @@ public class FollowerState : State
         if (MoveDirection.sqrMagnitude > partyMember.distance * partyMember.distance)
         {
             // Let's get moving!
-            this.transform.position = Vector3.MoveTowards(this.transform.position, partyMember.FollowTarget, partyMember.Leader.speed * 1.5f *  Time.deltaTime);
+            Owner.body.linearVelocity = MoveDirection.normalized * partyMember.Leader.speed;
             if (MoveDirection.x < 0)
             {
                 Owner.spriteRenderer.flipX = true;
@@ -92,6 +95,7 @@ public class FollowerState : State
             }
             return true;
         }
+        Owner.body.linearVelocity = Vector2.zero;
         return false;
     }
 }

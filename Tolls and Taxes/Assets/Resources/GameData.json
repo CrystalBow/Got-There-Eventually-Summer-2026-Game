@@ -1,8 +1,8 @@
 {
     "Ally": {
         "Marvin Bold": {
-            "Hp": 7,
-            "Mp": 6,
+            "Hp": 10,
+            "Mp": 11,
             "Attack": 3,
             "Defense": 1,
             "Speed": 5,
@@ -65,8 +65,8 @@
             }
         },
         "John Goblinus": {
-            "Hp": 9,
-            "Mp": 5,
+            "Hp": 12,
+            "Mp": 10,
             "Attack": 2,
             "Defense": 2,
             "Speed": 3,
@@ -113,13 +113,13 @@
             }
         },
         "Samantha Pel": {
-            "Hp": 7,
-            "Mp": 8,
+            "Hp": 10,
+            "Mp": 15,
             "Attack": 2,
             "Defense": 1,
             "Speed": 4,
             "HpScale": 1.1,
-            "MpScale": 0.8,
+            "MpScale": 1.0,
             "AttackScale": 1.0,
             "DefenseScale": 0.65,
             "SpeedScale": 0.05,
@@ -146,10 +146,10 @@
                 },
                 "Healing": {
                     "Meditate": {
-                        "Description": "Restore 2 mana.",
+                        "Description": "Restore 3 mana.",
                         "Damage": 0,
                         "Time": -1,
-                        "Cost": -2,
+                        "Cost": -3,
                         "Effects": []
                     },
                     "Holy Light": {
@@ -199,7 +199,7 @@
                 "Speed": 5
             },
             "Traitor Knight" : {
-                "Hp": 25,
+                "Hp": 30,
                 "Attack": 7,
                 "Defense": 9,
                 "Speed": 6

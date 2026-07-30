@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class Spikes : MonoBehaviour
@@ -23,6 +22,14 @@ public class Spikes : MonoBehaviour
         anim = GetComponent<Animator>();
         triggerZone = GetComponent<Collider2D>();
         timer = 0;
+        isUP = false;
+    }
+
+    public void OnEnable()
+    {
+        StopAllCoroutines();
+        isWaiting = false;
+        damageAvailiable = true;
         isUP = false;
     }
 

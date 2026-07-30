@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -9,7 +10,8 @@ public enum ControlReminderContext
     TargetSelection,
     Dialogue,
     Menu,
-    Hidden
+    Hidden,
+    Rest
 }
 
 public class ControlReminderUI : MonoBehaviour
@@ -33,6 +35,11 @@ public class ControlReminderUI : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        Instance = this;
+    }
+
     public void Show(ControlReminderContext context)
     {
         if (context == ControlReminderContext.Hidden)
@@ -46,13 +53,13 @@ public class ControlReminderUI : MonoBehaviour
         reminderText.text = context switch
         {
             ControlReminderContext.Exploration =>
-                "WASD — MOVE     SPACE — CARDS     V — DECK     ESC — PAUSE",
+                "WASD — MOVE     SPACE — CARDS     V — DECK     Enter — Shuffle",
 
             ControlReminderContext.ExplorationCards =>
-                "A / D — SELECT CARD     ENTER — USE     C — CANCEL",
+                "A / D — SELECT Character   1 / 2 - SELECT Card   Space — USE     C — CANCEL    Enter - Discard",
 
             ControlReminderContext.CombatCards =>
-                "A / D — SELECT CARD     ENTER — CONFIRM     C — CANCEL",
+                "A / D — SELECT CARD     ENTER — CONFIRM     C — DISCARD   Enter - SHUFFLE",
 
             ControlReminderContext.TargetSelection =>
                 "A / D — SELECT TARGET     ENTER — CONFIRM     C — BACK",
@@ -61,9 +68,16 @@ public class ControlReminderUI : MonoBehaviour
                 "ENTER / SPACE — CONTINUE",
 
             ControlReminderContext.Menu =>
-                "WASD / ARROWS — NAVIGATE     ENTER — SELECT     ESC — BACK",
+                "WASD - SELECT Character     1 / 2 - VIEW Card     ESC — Back",
+            ControlReminderContext.Rest => 
+                "C - CANCEL Shuffle",
 
             _ => string.Empty
         };
+    }
+
+    private void OnDisable()
+    {
+        Show(ControlReminderContext.Hidden);
     }
 }

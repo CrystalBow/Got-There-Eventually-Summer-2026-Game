@@ -148,6 +148,13 @@ public class EnemyTurn : State
         }
 
         bool foundEnemy = false;
+        
+        if (combatCenter.aliveAllies == 0)
+        {
+            Debug.Log("You DieD!!!!! ET");
+            SceneManager.LoadScene("Prototype GameOver");
+            return;
+        }
 
         // Generate a random int in the full range of the raffle encompassing all tickets.
         int attackTarget = UnityEngine.Random.Range(0, raffleManager[raffleManager.Length - 1]);

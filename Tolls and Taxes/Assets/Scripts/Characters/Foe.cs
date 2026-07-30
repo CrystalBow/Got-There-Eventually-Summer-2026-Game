@@ -1,12 +1,14 @@
 using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Foe : Character
 {
-    public Collider2D bodyCollider;
+    public BoxCollider2D bodyCollider;
     public List<String> Foes = new List<string>();
+    private bool triggered = false;
     
     
     public static event Action PreBattleProcessing;
@@ -14,17 +16,33 @@ public class Foe : Character
     
     protected override void Start()
     {
-        bodyCollider = GetComponent<Collider2D>();
+        bodyCollider = GetComponent<BoxCollider2D>();
+        body = GetComponent<Rigidbody2D>();
+        CurrentState = this.AddComponent<Patrol>();
+        CurrentState.EnterState();
     }
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        foreach (string item in Foes)
+        if (other.CompareTag("Player"))
         {
-           TransferCenter.Instance.foeQueue.Add(item); 
+            foreach (string item in Foes)
+            {
+                TransferCenter.Instance.foeQueue.Add(item); 
+            }
+            triggered = true;
+            PreBattleProcessing?.Invoke();
+            CombatTransitionManager.Instance.StartCombat();
         }
-        PreBattleProcessing?.Invoke();
-        CombatTransitionManager.Instance.StartCombat();
-        Destroy(this.gameObject);
+    }
+
+
+    public void OnEnable()
+    {
+        if (triggered)
+        {
+            Destroy(gameObject);
+        }
     }
 }

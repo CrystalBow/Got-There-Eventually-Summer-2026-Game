@@ -19,7 +19,10 @@ public class CardHandler : State
 
     public override void EnterState()
     {
+        ControlReminderUI.Instance.Show(ControlReminderContext.TargetSelection);
         Owner = this.GetComponent<Character>();
+        allies.Clear();
+        foes.Clear();
 
         // Shows the controls used while choosing a target for the selected card.
         // This only updates the reminder text and does not alter targeting behavior.
@@ -187,6 +190,8 @@ public class CardHandler : State
         CombatCenter center = Owner as CombatCenter;
         unFocusTarget();
         center.turnPosition++;
+        allies.Clear();
+        foes.Clear();
         if (center.turnPosition >= center.initiativeOrder.Count)
         {
             ChangeState(this.AddComponent<TopofRound>());

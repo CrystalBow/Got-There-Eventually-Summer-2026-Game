@@ -40,7 +40,7 @@ public abstract class State : MonoBehaviour
     /// <remarks>
     /// Calls enter and exit for you.
     /// </remarks>
-    protected void ChangeState(State newState)
+    public void ChangeState(State newState)
     {
         ExitState();
         Owner.CurrentState = newState;
