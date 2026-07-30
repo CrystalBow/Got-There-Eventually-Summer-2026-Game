@@ -98,10 +98,13 @@ public class PlayerTurn : State
         combatant.ourEffects.DecrementEffectTimers();
         Debug.Log(combatant.CombatantName + " has these effects: " + combatant.ourEffects.GetEffectStrings());
 
-        moveAction.performed -= OnMove;
-        approveAction.performed -= OnApproved;
-        discardAction.performed -= OnDiscard;
-        restAction.performed -= OnRest;
+        if (moveAction != null)
+        {
+            moveAction.performed -= OnMove;
+            approveAction.performed -= OnApproved;
+            discardAction.performed -= OnDiscard;
+            restAction.performed -= OnRest;
+        }
         Destroy(this);
     }
 
@@ -126,10 +129,14 @@ public class PlayerTurn : State
 
     public override void UnsubcribeState()
     {
-        moveAction.performed -= OnMove;
-        approveAction.performed -= OnApproved;
-        discardAction.performed -= OnDiscard;
-        restAction.performed -= OnRest;
+        // This check ensures we don't double check when we already subscribe
+        if (moveAction != null)
+        {
+            moveAction.performed -= OnMove;
+            approveAction.performed -= OnApproved;
+            discardAction.performed -= OnDiscard;
+            restAction.performed -= OnRest;
+        }
     }
 
     public override void ResubscribeState()

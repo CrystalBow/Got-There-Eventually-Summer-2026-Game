@@ -31,8 +31,12 @@ public class EnemyTurn : State
             combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.ourEffects.DecrementEffectTimers();
             Debug.Log(combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.CombatantName + " has these effects: " + combatCenter.initiativeOrder[combatCenter.turnPosition].Reference.ourEffects.GetEffectStrings());
         }
+        else
+        {
+            combatCenter.turnPosition = 0;
+        }
 
-        Destroy(this);
+            Destroy(this);
     }
 
     public override void UpdateState()
@@ -180,6 +184,7 @@ public class EnemyTurn : State
         // We know we just attacked, so we reference this automatically tracked variable to see if the player has lost.
         if (combatCenter.aliveAllies == 0)
         {
+            Debug.Log("You DieD!!!!! ET");
             SceneManager.LoadScene("Prototype GameOver");
             return;
         }

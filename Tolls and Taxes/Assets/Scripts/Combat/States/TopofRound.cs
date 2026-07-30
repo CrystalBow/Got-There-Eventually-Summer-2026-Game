@@ -71,6 +71,7 @@ public class TopofRound : State {
         }
         else if (combatCenter.aliveAllies == 0)
         {
+            Debug.Log("You DieD!!!!!");
             SceneManager.LoadScene("Prototype GameOver");
         }
 
