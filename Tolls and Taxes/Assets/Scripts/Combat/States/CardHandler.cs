@@ -89,6 +89,7 @@ public class CardHandler : State
             {
                 allies[targetIndex].damage(currentCard.StaticData.Damage - DataCenter.Instance.AttackCalculation(currentPlayer.StaticPlayableData, currentPlayer.Level) - EffectCenter.GetAttackModifier(currentPlayer.ourEffects));
                 EvaluateAllyEffects(targetIndex, currentCard.StaticData.Effects, currentCard.StaticData.Time);
+                EvaluateNegativeSelfEffects(currentPlayer, currentCard.StaticData.Effects, currentCard.StaticData.Time + 1);
             }
         }
         currentPlayer.Deck.DiscardCard(currentCard);
@@ -342,6 +343,22 @@ public class CardHandler : State
                     break;
                 case 8:
                     allies[ourTargetIndex].ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
+                    break;
+            }
+        }
+    }
+
+    public void EvaluateNegativeSelfEffects(PlayerCombatant toApply, List<int> EffectsToEvaluate, int effectTime)
+    {
+        foreach(var effect in EffectsToEvaluate)
+        {
+            switch(effect)
+            {
+                case 13:
+                    toApply.ourEffects.instateEffect(DataCenter.Instance.GetEffectName(10), effectTime);
+                    break;
+                case 14:
+                    toApply.ourEffects.instateEffect(DataCenter.Instance.GetEffectName(11), effectTime);
                     break;
             }
         }
