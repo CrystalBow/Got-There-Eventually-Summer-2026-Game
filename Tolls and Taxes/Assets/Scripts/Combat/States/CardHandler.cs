@@ -80,6 +80,7 @@ public class CardHandler : State
             else
             {
                 allies[targetIndex].damage(currentCard.StaticData.Damage);
+                EvaluateAllyEffects(targetIndex, currentCard.StaticData.Effects, currentCard.StaticData.Time);
             }
         }
         currentPlayer.Deck.DiscardCard(currentCard);
@@ -259,23 +260,60 @@ public class CardHandler : State
 
     public void EvaluateEffects(int ourTargetIndex, bool isAlly, List<int> EffectsToEvaluate, int effectTime)
     {
+
         foreach(var effect in EffectsToEvaluate)
         {
-            if (isAlly == true)
+            switch (effect)
             {
-                allies[targetIndex].ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
-            }
-            else
-            {
-                // effect 13 is self Defense Down, so we convert it to Defense Down and add it to the player.
-                if (effect == 13)
-                {
+                case 5:
+                    currentPlayer.ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
+                    break;
+                case 6:
+                    currentPlayer.ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
+                    break;
+                case 7:
+                    currentPlayer.ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
+                    break;
+                case 8:
+                    currentPlayer.ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
+                    break;
+                case 9:
+                    foes[ourTargetIndex].ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
+                    break;
+                case 10:
+                    foes[ourTargetIndex].ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
+                    break;
+                case 11:
+                    foes[ourTargetIndex].ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
+                    break;
+                case 12:
+                    currentPlayer.ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
+                    break;
+                case 13:
                     currentPlayer.ourEffects.instateEffect(DataCenter.Instance.GetEffectName(10), effectTime);
-                }
-                else
-                {
-                    foes[targetIndex].ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
-                }
+                    break;
+            }
+        }
+    }
+
+    public void EvaluateAllyEffects(int ourTargetIndex, List<int> EffectsToEvaluate, int effectTime)
+    {
+        foreach (var effect in EffectsToEvaluate)
+        {
+            switch (effect)
+            {
+                case 5:
+                    allies[ourTargetIndex].ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
+                    break;
+                case 6:
+                    allies[ourTargetIndex].ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
+                    break;
+                case 7:
+                    allies[ourTargetIndex].ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
+                    break;
+                case 8:
+                    allies[ourTargetIndex].ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
+                    break;
             }
         }
     }

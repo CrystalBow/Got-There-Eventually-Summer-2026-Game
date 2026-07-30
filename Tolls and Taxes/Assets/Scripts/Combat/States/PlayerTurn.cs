@@ -96,7 +96,7 @@ public class PlayerTurn : State
     {
         // We need to decrement effect timer at end of turn.
         combatant.ourEffects.DecrementEffectTimers();
-        Debug.Log(combatant.CombatantName + " has these effects: " + combatant.ourEffects.GetEffectStrings());
+        Debug.Log(combatant.CombatantName + " has these effects: " + combatant.ourEffects.GetEffectStrings() + " length is " + combatant.ourEffects.Length());
 
         if (moveAction != null)
         {
