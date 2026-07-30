@@ -151,7 +151,14 @@ public class CardHandler : State
             }
         } else if (currentCard.StaticData.Damage <= 0)
         {
-            CallAllies?.Invoke();
+            if (EffectCenter.enemyNeutralEffect(currentCard.StaticData.Effects) == true)
+            {
+                CallFoes?.Invoke();
+            }
+            else
+            {
+                CallAllies?.Invoke();
+            }
         }
         FocusTarget();
     }

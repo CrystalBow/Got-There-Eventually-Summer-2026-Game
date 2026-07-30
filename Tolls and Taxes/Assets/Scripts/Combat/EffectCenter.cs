@@ -9,6 +9,20 @@ public static class EffectCenter // : MonoBehaviour
     /*
      * This function checks for Damage multiplier effects and returns the largest one present.
      */
+
+    // This function checks for a non-damage enemy debuff effect
+    public static bool enemyNeutralEffect(List<int> listToCheck)
+    {
+        foreach(var effectTerm in listToCheck)
+        {
+            if ((effectTerm >= 9) && (effectTerm < 12))
+            {
+                return true;
+            } 
+        }
+
+        return false;
+    }
     public static int GetDamageMultiplier(List<int> listToCheck)
     {
         if (listToCheck.Contains(4) == true)
