@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -9,11 +11,19 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject controlsPanel;
     [SerializeField] private GameObject partyDetailsPanel;
-    [SerializeField] private string startSceneName = "Prototype Start";
+
+    [Header("Keyboard Navigation")]
+    [SerializeField] private GameObject resumeButton;
+    [SerializeField] private GameObject controlsBackButton;
+    [SerializeField] private GameObject partyDetailsFirstButton;
+
+    [SerializeField] private string startSceneName = "StartMenu";
+
     public static Action PauseGameAction;
     public static Action ResumeGameAction;
 
     private bool isPaused;
+    private Coroutine selectionRoutine;
 
     private void Awake()
     {
@@ -54,7 +64,6 @@ public class PauseMenuController : MonoBehaviour
         isPaused = true;
         Time.timeScale = 0f;
 
-        // Displays keyboard/controller navigation controls while the pause menu is open.
         ControlReminderUI.Instance?.Show(
             ControlReminderContext.Menu);
 
@@ -62,6 +71,8 @@ public class PauseMenuController : MonoBehaviour
         SetActive(pausePanel, true);
         SetActive(controlsPanel, false);
         SetActive(partyDetailsPanel, false);
+
+        SelectForKeyboard(resumeButton);
     }
 
     public void ResumeGame()
@@ -69,7 +80,6 @@ public class PauseMenuController : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1f;
 
-        // Restores the normal exploration controls after leaving the pause menu.
         ControlReminderUI.Instance?.Show(
             ControlReminderContext.Exploration);
 
@@ -77,6 +87,11 @@ public class PauseMenuController : MonoBehaviour
         SetActive(pausePanel, false);
         SetActive(controlsPanel, false);
         SetActive(partyDetailsPanel, false);
+
+        if (EventSystem.current != null)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
     }
 
     public void ShowControls()
@@ -84,6 +99,8 @@ public class PauseMenuController : MonoBehaviour
         SetActive(pausePanel, false);
         SetActive(controlsPanel, true);
         SetActive(partyDetailsPanel, false);
+
+        SelectForKeyboard(controlsBackButton);
     }
 
     public void ShowPartyDetails()
@@ -91,6 +108,8 @@ public class PauseMenuController : MonoBehaviour
         SetActive(pausePanel, false);
         SetActive(controlsPanel, false);
         SetActive(partyDetailsPanel, true);
+
+        SelectForKeyboard(partyDetailsFirstButton);
     }
 
     public void ShowPauseMenu()
@@ -98,6 +117,8 @@ public class PauseMenuController : MonoBehaviour
         SetActive(controlsPanel, false);
         SetActive(partyDetailsPanel, false);
         SetActive(pausePanel, true);
+
+        SelectForKeyboard(resumeButton);
     }
 
     public void ReturnToStart()
@@ -115,6 +136,32 @@ public class PauseMenuController : MonoBehaviour
 #else
         Application.Quit();
 #endif
+    }
+
+    private void SelectForKeyboard(GameObject target)
+    {
+        if (target == null || EventSystem.current == null)
+        {
+            return;
+        }
+
+        if (selectionRoutine != null)
+        {
+            StopCoroutine(selectionRoutine);
+        }
+
+        selectionRoutine = StartCoroutine(
+            SelectOnNextFrame(target));
+    }
+
+    private IEnumerator SelectOnNextFrame(GameObject target)
+    {
+        yield return null;
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(target);
+
+        selectionRoutine = null;
     }
 
     private static bool IsActive(GameObject target)
