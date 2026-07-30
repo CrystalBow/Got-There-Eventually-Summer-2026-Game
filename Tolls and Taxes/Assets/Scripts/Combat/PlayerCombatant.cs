@@ -48,6 +48,23 @@ public class PlayerCombatant : Combatant
     public override void damage(int damageNumber)
     {
         int defense = DataCenter.Instance.DefenseCalculation(StaticPlayableData, Level) + EffectCenter.GetDefenseModifier(ourEffects);
+
+        if (damageNumber < 0)
+        {
+            int toHeal = damageNumber * (-1);
+
+            if (currentHP + toHeal > StaticPlayableData.Hp)
+            {
+                currentHP = StaticPlayableData.Hp;
+            }
+            else
+            {
+                currentHP += toHeal;
+            }
+
+            return;
+        }
+
         if (defense >= damageNumber)
         {
             

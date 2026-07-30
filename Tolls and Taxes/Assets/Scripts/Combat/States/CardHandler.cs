@@ -87,7 +87,7 @@ public class CardHandler : State
             }
             else
             {
-                allies[targetIndex].damage(currentCard.StaticData.Damage);
+                allies[targetIndex].damage(currentCard.StaticData.Damage - DataCenter.Instance.AttackCalculation(currentPlayer.StaticPlayableData, currentPlayer.Level) - EffectCenter.GetAttackModifier(currentPlayer.ourEffects));
                 EvaluateAllyEffects(targetIndex, currentCard.StaticData.Effects, currentCard.StaticData.Time);
             }
         }
@@ -297,6 +297,9 @@ public class CardHandler : State
                     break;
                 case 13:
                     currentPlayer.ourEffects.instateEffect(DataCenter.Instance.GetEffectName(10), effectTime);
+                    break;
+                case 14:
+                    currentPlayer.ourEffects.instateEffect(DataCenter.Instance.GetEffectName(11), effectTime);
                     break;
             }
         }
