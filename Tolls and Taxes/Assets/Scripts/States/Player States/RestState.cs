@@ -75,6 +75,12 @@ public class RestState : State
     {
         Debug.Log("Resting!");
         yield return new WaitForSeconds(3f);
+
+        // Plays the reusable shuffle animation when the party decks reset.
+        // This is visual only and does not change the existing deck logic.
+        // Added by Maria G.
+        DeckShuffleUI.PlayIfAvailable();
+
         leader.Deck.ResetAndShuffle();
         if (leader.NextMember != leader)
         {

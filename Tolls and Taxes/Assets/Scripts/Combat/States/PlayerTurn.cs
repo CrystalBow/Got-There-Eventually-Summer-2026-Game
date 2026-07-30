@@ -54,6 +54,12 @@ public class PlayerTurn : State
         {
             UnfocusCurrentCard();
         }
+
+        // Plays the combat shuffle animation for the rest/shuffle action.
+        // The existing code below still performs the actual deck reset.
+        // Added by Maria G.
+        DeckShuffleUI.PlayIfAvailable();
+
         combatant.Deck.ResetAndShuffle();
         iterate();
     }
