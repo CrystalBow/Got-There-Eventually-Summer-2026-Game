@@ -59,10 +59,10 @@ public class ControlReminderUI : MonoBehaviour
                 "A / D — SELECT Character   1 / 2 - SELECT Card   Space — USE     C — CANCEL    Enter - Discard",
 
             ControlReminderContext.CombatCards =>
-                "A / D — SELECT CARD     ENTER — CONFIRM     C — DISCARD   Enter - SHUFFLE",
+                "A / D — SELECT CARD     SPACE — CONFIRM     C — DISCARD   Enter - SHUFFLE",
 
             ControlReminderContext.TargetSelection =>
-                "A / D — SELECT TARGET     ENTER — CONFIRM     C — BACK",
+                "A / D — SELECT TARGET     SPACE — CONFIRM     C — BACK",
 
             ControlReminderContext.Dialogue =>
                 "ENTER / SPACE — CONTINUE",

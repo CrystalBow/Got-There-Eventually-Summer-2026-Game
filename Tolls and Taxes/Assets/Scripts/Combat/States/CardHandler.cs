@@ -192,6 +192,13 @@ public class CardHandler : State
         center.turnPosition++;
         allies.Clear();
         foes.Clear();
+
+        if (center.aliveEnemies == 0)
+        {
+            ChangeState(this.AddComponent<TopofRound>());
+            return;
+        }
+
         if (center.turnPosition >= center.initiativeOrder.Count)
         {
             ChangeState(this.AddComponent<TopofRound>());
