@@ -104,7 +104,7 @@
                         "Cost": 1,
                         "Effects": [
                             6,
-                            11
+                            14
                         ]
                     }
                 },
@@ -219,7 +219,8 @@
         "Defense Down": 10,
         "Speed Down": 11,
         "Magic Inefficiency": 12,
-        "Self Defense Down": 13
+        "Self Defense Down": 13,
+        "Self Speed Down": 14
     },
     "Cards": {
         "Attacks": {
