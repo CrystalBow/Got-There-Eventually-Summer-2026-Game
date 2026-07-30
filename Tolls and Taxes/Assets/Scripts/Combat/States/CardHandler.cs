@@ -44,9 +44,9 @@ public class CardHandler : State
 
     private void OnCancel(InputAction.CallbackContext obj)
     {
-        if (currentCard.StaticData.Cost <= currentPlayer.currentMP)
+        if (EffectCenter.returnEffectedMPValue(currentCard.StaticData.Cost, currentPlayer.ourEffects) <= currentPlayer.currentMP)
         {
-            currentPlayer.currentMP += currentCard.StaticData.Cost;
+            currentPlayer.currentMP += EffectCenter.returnEffectedMPValue(currentCard.StaticData.Cost, currentPlayer.ourEffects);
             if (currentPlayer.currentMP > DataCenter.Instance.maxManaCalculation(currentPlayer.StaticPlayableData, currentPlayer.Level))
             {
                 currentPlayer.currentMP = DataCenter.Instance.maxManaCalculation(currentPlayer.StaticPlayableData, currentPlayer.Level);
@@ -63,14 +63,22 @@ public class CardHandler : State
         } else if (allies.Count == 0)
         {
             // Because player decrements their own effects at end of turn AFTER this action, we add 1 to the time to account for this.
-            foes[targetIndex].damage(currentCard.StaticData.Damage + DataCenter.Instance.AttackCalculation(currentPlayer.StaticPlayableData, currentPlayer.Level) + EffectCenter.GetAttackModifier(currentPlayer.ourEffects));
-            EvaluateEffects(targetIndex, false, currentCard.StaticData.Effects, currentCard.StaticData.Time + 1);
+            if (currentCard.StaticData.Damage > 0)
+            {
+                // Runs as many times as the Damage effect specifies
+                for (int i = 0; i < EffectCenter.GetDamageMultiplier(currentCard.StaticData.Effects); i++)
+                {
+                    foes[targetIndex].damage(currentCard.StaticData.Damage + DataCenter.Instance.AttackCalculation(currentPlayer.StaticPlayableData, currentPlayer.Level) + EffectCenter.GetAttackModifier(currentPlayer.ourEffects));
+                }
+            }
+            EvaluateUserEffects(targetIndex, false, currentCard.StaticData.Effects, currentCard.StaticData.Time + 1);
+            EvaluateEnemyEffects(targetIndex, false, currentCard.StaticData.Effects, currentCard.StaticData.Time);
         }
         else
         {
             if (currentCard.StaticData.Cost < 0)
             {
-                allies[targetIndex].currentMP -= currentCard.StaticData.Cost;
+                allies[targetIndex].currentMP -= EffectCenter.returnEffectedMPValue(currentCard.StaticData.Cost, currentPlayer.ourEffects);
                 int MaxMP = DataCenter.Instance.maxManaCalculation(currentPlayer.StaticPlayableData, currentPlayer.Level);  
                 if (allies[targetIndex].currentMP > MaxMP)
                 {
@@ -114,7 +122,7 @@ public class CardHandler : State
     public override void UpdateState()
     {
         
-        if (currentCard.StaticData.Cost <= currentPlayer.currentMP)
+        if (EffectCenter.returnEffectedMPValue(currentCard.StaticData.Cost, currentPlayer.ourEffects) <= currentPlayer.currentMP)
         {
             currentPlayer.currentMP -= EffectCenter.returnEffectedMPValue(currentCard.StaticData.Cost, currentPlayer.ourEffects);
             int MaxMP = DataCenter.Instance.maxManaCalculation(currentPlayer.StaticPlayableData, currentPlayer.Level);
@@ -258,7 +266,7 @@ public class CardHandler : State
         }
     }
 
-    public void EvaluateEffects(int ourTargetIndex, bool isAlly, List<int> EffectsToEvaluate, int effectTime)
+    public void EvaluateUserEffects(int ourTargetIndex, bool isAlly, List<int> EffectsToEvaluate, int effectTime)
     {
 
         foreach(var effect in EffectsToEvaluate)
@@ -277,6 +285,23 @@ public class CardHandler : State
                 case 8:
                     currentPlayer.ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
                     break;
+                case 12:
+                    currentPlayer.ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
+                    break;
+                case 13:
+                    currentPlayer.ourEffects.instateEffect(DataCenter.Instance.GetEffectName(10), effectTime);
+                    break;
+            }
+        }
+    }
+
+    public void EvaluateEnemyEffects(int ourTargetIndex, bool isAlly, List<int> EffectsToEvaluate, int effectTime)
+    {
+
+        foreach (var effect in EffectsToEvaluate)
+        {
+            switch (effect)
+            {
                 case 9:
                     foes[ourTargetIndex].ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
                     break;
@@ -285,12 +310,6 @@ public class CardHandler : State
                     break;
                 case 11:
                     foes[ourTargetIndex].ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
-                    break;
-                case 12:
-                    currentPlayer.ourEffects.instateEffect(DataCenter.Instance.GetEffectName(effect), effectTime);
-                    break;
-                case 13:
-                    currentPlayer.ourEffects.instateEffect(DataCenter.Instance.GetEffectName(10), effectTime);
                     break;
             }
         }
