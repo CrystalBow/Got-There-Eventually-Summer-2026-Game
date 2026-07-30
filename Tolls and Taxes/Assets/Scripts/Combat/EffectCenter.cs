@@ -1,5 +1,7 @@
+using NUnit.Framework;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using System.Collections.Generic;
 
 public static class EffectCenter // : MonoBehaviour
 {
@@ -7,17 +9,17 @@ public static class EffectCenter // : MonoBehaviour
     /*
      * This function checks for Damage multiplier effects and returns the largest one present.
      */
-    public static int GetDamageMultiplier(EffectList listToCheck)
+    public static int GetDamageMultiplier(List<int> listToCheck)
     {
-        if (listToCheck.effectIsPresent("4x") == true)
+        if (listToCheck.Contains(4) == true)
         {
             return 4;
         }
-        else if (listToCheck.effectIsPresent("3x") == true)
+        else if (listToCheck.Contains(3) == true)
         {
             return 3;
         }
-        else if (listToCheck.effectIsPresent("2x") == true)
+        else if (listToCheck.Contains(2) == true)
         {
             return 2;
         }
