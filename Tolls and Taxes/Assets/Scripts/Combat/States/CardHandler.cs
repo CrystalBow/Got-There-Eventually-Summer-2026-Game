@@ -149,7 +149,7 @@ public class CardHandler : State
                 currentPlayer.Deck.DiscardCard(currentCard);
                 evaluateExit();
             }
-        } else if (currentCard.StaticData.Damage < 0)
+        } else if (currentCard.StaticData.Damage <= 0)
         {
             CallAllies?.Invoke();
         }
